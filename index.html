@@ -12,7 +12,6 @@
   >
 
   <style>
-
     * {
       box-sizing: border-box;
     }
@@ -24,32 +23,73 @@
     body {
       margin: 0;
       min-height: 100vh;
+      overflow-x: hidden;
 
+      color: #252525;
+
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        "Hiragino Mincho Pro",
+        "Times New Roman",
+        serif;
+
+      /* 大理石風 */
       background:
+        linear-gradient(
+          118deg,
+          transparent 0%,
+          rgba(70, 70, 70, 0.035) 18%,
+          transparent 27%,
+          rgba(85, 85, 85, 0.06) 38%,
+          transparent 47%,
+          rgba(100, 100, 100, 0.035) 64%,
+          transparent 78%
+        ),
         radial-gradient(
-          circle at 50% 0%,
-          rgba(126, 196, 218, 0.22) 0%,
-          rgba(126, 196, 218, 0) 34%
+          ellipse at 12% 10%,
+          rgba(255,255,255,.95),
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 88% 32%,
+          rgba(110,110,110,.13),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 18% 78%,
+          rgba(110,110,110,.09),
+          transparent 35%
         ),
         linear-gradient(
-          180deg,
-          #071c26 0%,
-          #0a3040 45%,
-          #061923 100%
+          155deg,
+          #f2f2ef 0%,
+          #d4d4d0 34%,
+          #eeeeeb 63%,
+          #c7c7c3 100%
         );
 
       background-attachment: fixed;
+    }
 
-      color: #fff;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
 
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
+      opacity: .55;
 
-      overflow-x: hidden;
+      background:
+        repeating-linear-gradient(
+          125deg,
+          transparent 0px,
+          transparent 92px,
+          rgba(60,60,60,.035) 94px,
+          transparent 98px,
+          transparent 175px
+        );
     }
 
 
@@ -60,11 +100,7 @@
     .container {
       width: min(92%, 760px);
       margin: 0 auto;
-
-      padding:
-        44px
-        0
-        46px;
+      padding: 42px 0 46px;
     }
 
 
@@ -73,127 +109,81 @@
        ======================================== */
 
     .hero {
-      padding:
-        26px
-        0
-        10px;
-
+      padding: 30px 0 10px;
       text-align: center;
     }
 
+    .collab,
+    .subtitle {
+      font-size: clamp(13px, 3.8vw, 18px);
+      font-weight: 500;
+      letter-spacing: clamp(2px, 1vw, 5px);
+      color: #454545;
+    }
+
     .collab {
-      display: inline-block;
-
-      margin-bottom: 7px;
-
-      font-size:
-        clamp(
-          13px,
-          4vw,
-          20px
-        );
-
-      font-weight: 700;
-
-      letter-spacing:
-        clamp(
-          2px,
-          1vw,
-          5px
-        );
-
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          0.86
-        );
+      margin-bottom: 10px;
     }
 
     .hero h1 {
       margin: 0;
 
-      font-size:
-        clamp(
-          39px,
-          10vw,
-          68px
-        );
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
 
+      font-size: clamp(43px, 11vw, 72px);
       line-height: 1;
-
-      font-weight: 900;
-
+      font-weight: 500;
       letter-spacing: -2px;
 
+      color: #171717;
+
       text-shadow:
-        0 0 25px
-        rgba(
-          156,
-          226,
-          245,
-          0.20
-        );
+        0 2px 18px rgba(255,255,255,.7);
+    }
+
+    .subtitle {
+      margin-top: 13px;
     }
 
 
     /* ========================================
-       神話風区切り線
+       神話風区切り
        ======================================== */
 
     .myth-divider {
       display: flex;
-
       align-items: center;
       justify-content: center;
 
-      gap: 12px;
-
-      margin:
-        31px
-        0;
+      gap: 13px;
+      margin: 30px 0;
     }
 
     .myth-divider::before,
     .myth-divider::after {
       content: "";
-
       flex: 1;
-
       height: 1px;
 
       background:
         linear-gradient(
           90deg,
           transparent,
-          rgba(
-            190,
-            232,
-            244,
-            0.9
-          ),
+          rgba(55,55,55,.58),
           transparent
         );
     }
 
     .myth-symbol {
-      padding-left: 7px;
+      padding-left: 6px;
 
-      color: #c8edf5;
-
-      font-size: 16px;
-
-      letter-spacing: 7px;
-
-      text-shadow:
-        0 0 10px
-        rgba(
-          183,
-          233,
-          247,
-          0.35
-        );
+      color: #555;
+      font-size: 14px;
+      letter-spacing: 6px;
     }
 
 
@@ -206,39 +196,24 @@
     }
 
     .release-date {
-      font-size: 18px;
-
-      font-weight: 800;
-
+      font-size: clamp(16px, 4.5vw, 20px);
+      font-weight: 600;
       letter-spacing: 2px;
     }
 
     .countdown-label {
-      margin-top: 15px;
+      margin-top: 13px;
 
-      font-size: 12px;
-
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          0.66
-        );
+      color: #666;
+      font-size: 11px;
+      letter-spacing: 2px;
     }
 
     #countdown {
       margin-top: 5px;
 
-      font-size:
-        clamp(
-          25px,
-          7vw,
-          34px
-        );
-
-      font-weight: 900;
-
+      font-size: clamp(26px, 7vw, 36px);
+      font-weight: 500;
       letter-spacing: 1px;
     }
 
@@ -248,17 +223,12 @@
        ======================================== */
 
     .section-title {
-      margin:
-        0
-        0
-        20px;
+      margin: 0 0 18px;
 
       text-align: center;
 
-      font-size: 19px;
-
-      font-weight: 800;
-
+      font-size: 18px;
+      font-weight: 500;
       letter-spacing: 4px;
     }
 
@@ -269,249 +239,178 @@
 
     .campaigns {
       display: grid;
-
-      gap: 16px;
+      gap: 11px;
     }
 
     .campaign {
-      padding: 18px;
+      padding: 13px 15px;
 
-      border:
-        2px
-        solid
-        #e34c4c;
+      border: 1px solid rgba(115,20,20,.75);
+      border-radius: 11px;
 
-      border-radius: 18px;
+      background: rgba(145, 30, 30, .60);
 
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.97
-        );
-
-      color: #111;
+      color: #fff;
 
       box-shadow:
-        0
-        6px
-        22px
-        rgba(
-          0,
-          0,
-          0,
-          0.12
-        );
+        0 5px 16px rgba(0,0,0,.10);
+
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
 
       transition:
-        background
-        0.25s,
-        border-color
-        0.25s,
-        color
-        0.25s;
+        background .25s,
+        border-color .25s,
+        color .25s;
     }
 
     .campaign.completed {
-      border-color:
-        rgba(
-          255,
-          255,
-          255,
-          0.65
-        );
+      border-color: rgba(70,70,70,.28);
 
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.13
-        );
+      background: rgba(255,255,255,.58);
 
-      color: #fff;
+      color: #303030;
     }
 
     .campaign.expired {
-      border-color:
-        rgba(
-          255,
-          255,
-          255,
-          0.25
-        );
+      border-color: rgba(70,70,70,.18);
 
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.07
-        );
+      background: rgba(100,100,100,.18);
 
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          0.68
-        );
+      color: rgba(30,30,30,.58);
     }
 
     .campaign-title {
-      font-size: 16px;
+      font-size: clamp(12px, 3.2vw, 14px);
+      font-weight: 600;
+      line-height: 1.45;
 
-      font-weight: 900;
-
-      line-height: 1.5;
+      white-space: nowrap;
     }
 
     .period {
-      margin-top: 6px;
+      margin-top: 5px;
 
-      color: #d63838;
-
-      font-size: 11px;
-
-      font-weight: 800;
-
-      line-height: 1.5;
-    }
-
-    .campaign.completed
-    .period,
-    .campaign.expired
-    .period {
-      color: inherit;
+      font-size: clamp(12px, 3.2vw, 14px);
+      font-weight: 600;
+      line-height: 1.45;
     }
 
     .campaign-final {
       display: none;
 
-      margin-top: 8px;
+      margin-top: 7px;
+      padding: 6px 8px;
 
-      padding: 8px 10px;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 7px;
 
-      border-radius: 9px;
-
-      background:
-        rgba(
-          225,
-          50,
-          50,
-          0.10
-        );
-
-      color: #d52d2d;
+      background: rgba(255,255,255,.13);
 
       text-align: center;
 
-      font-size: 12px;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
 
-      font-weight: 900;
+      font-size: 10px;
+      font-weight: 800;
     }
 
     .description {
-      margin-top: 13px;
+      margin-top: 7px;
 
-      font-size: 12px;
-
-      line-height: 1.75;
+      font-size: 11px;
+      line-height: 1.55;
     }
 
     .warning {
-      margin-top: 8px;
+      margin-top: 6px;
 
-      color: #d52c2c;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
 
-      font-size: 12px;
-
-      font-weight: 900;
-
-      line-height: 1.5;
-    }
-
-    .campaign.completed
-    .warning {
-      color: #fff;
+      font-size: 10.5px;
+      font-weight: 800;
+      line-height: 1.45;
     }
 
     .buttons {
       display: flex;
-
       flex-wrap: wrap;
 
-      gap: 8px;
-
-      margin-top: 15px;
+      gap: 6px;
+      margin-top: 9px;
     }
 
     .btn {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
 
-      min-height: 38px;
+      min-height: 32px;
 
-      padding:
-        9px
-        12px;
+      padding: 6px 13px;
 
-      border: 0;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 7px;
 
-      border-radius: 10px;
-
-      background: #092c3b;
-
+      background: rgba(25,25,25,.78);
       color: #fff;
 
       text-decoration: none;
 
-      font-family: inherit;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
 
-      font-size: 11px;
-
+      font-size: 10px;
       font-weight: 800;
 
       cursor: pointer;
 
-      -webkit-tap-highlight-color:
-        transparent;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .btn.red {
-      background: #df4545;
+      background: rgba(255,255,255,.90);
+      color: #7e1c1c;
     }
 
     .btn:active {
-      transform:
-        scale(
-          0.97
-        );
+      transform: scale(.97);
     }
 
     .btn:disabled {
-      opacity: 0.42;
-
+      opacity: .40;
       cursor: default;
-
       transform: none;
+    }
+
+    .campaign.completed .btn {
+      border-color: rgba(40,40,40,.20);
     }
 
     .done {
       display: none;
 
-      margin-top: 14px;
+      margin-top: 9px;
 
-      font-size: 13px;
-
-      font-weight: 900;
+      font-size: 12px;
+      font-weight: 700;
     }
 
-    .campaign.completed
-    .done {
+    .campaign.completed .done {
       display: block;
     }
 
@@ -524,115 +423,65 @@
       display: grid;
 
       grid-template-columns:
-        minmax(
-          0,
-          0.9fr
-        )
-        minmax(
-          0,
-          1.35fr
-        );
+        minmax(0, .9fr)
+        minmax(0, 1.35fr);
 
-      gap: 12px;
+      gap: 11px;
 
       align-items: start;
     }
 
     .schedule-list {
       display: grid;
-
-      gap: 8px;
+      gap: 7px;
     }
 
     .schedule-row {
-      padding:
-        11px
-        10px;
+      padding: 10px 9px;
 
-      border:
-        1px
-        solid
-        rgba(
-          255,
-          255,
-          255,
-          0.30
-        );
+      border: 1px solid rgba(55,55,55,.25);
+      border-radius: 10px;
 
-      border-radius: 12px;
-
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.07
-        );
+      background: rgba(255,255,255,.28);
     }
 
     .schedule-row.active {
-      border-color:
-        rgba(
-          190,
-          235,
-          247,
-          0.92
-        );
+      border-color: rgba(35,35,35,.72);
 
-      background:
-        rgba(
-          153,
-          222,
-          241,
-          0.12
-        );
+      background: rgba(255,255,255,.55);
 
       box-shadow:
-        0
-        0
-        16px
-        rgba(
-          156,
-          226,
-          245,
-          0.10
-        );
+        0 3px 13px rgba(0,0,0,.07);
     }
 
     .schedule-row.past {
-      opacity: 0.54;
+      opacity: .52;
     }
 
     .schedule-date-time {
       display: flex;
-
       align-items: baseline;
 
       gap: 6px;
-
       margin-bottom: 4px;
     }
 
     .schedule-date {
       font-size: 13px;
-
-      font-weight: 900;
+      font-weight: 700;
     }
 
     .schedule-time {
-      color: #bce8f4;
+      color: #555;
 
       font-size: 10px;
-
-      font-weight: 800;
+      font-weight: 600;
     }
 
     .schedule-name {
-      font-size: 11px;
-
-      font-weight: 700;
-
-      line-height: 1.45;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.4;
     }
 
 
@@ -644,84 +493,43 @@
       min-width: 0;
     }
 
-    .content-label {
-      margin-bottom: 9px;
-
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          0.65
-        );
-
-      font-size: 10px;
-
-      font-weight: 700;
-
-      letter-spacing: 1px;
-    }
-
     .contents {
       display: grid;
-
-      gap: 10px;
+      gap: 9px;
     }
 
     .video-card {
       display: flex;
-
       align-items: center;
 
-      gap: 10px;
+      gap: 9px;
 
-      padding: 9px;
+      padding: 8px;
 
-      border:
-        1px
-        solid
-        rgba(
-          255,
-          255,
-          255,
-          0.18
-        );
+      border: 1px solid rgba(50,50,50,.20);
+      border-radius: 11px;
 
-      border-radius: 13px;
+      background: rgba(255,255,255,.40);
 
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.08
-        );
+      box-shadow:
+        0 3px 12px rgba(0,0,0,.05);
     }
 
     .thumb {
       width: 105px;
-
-      aspect-ratio:
-        16 / 9;
+      aspect-ratio: 16 / 9;
 
       flex-shrink: 0;
 
       object-fit: cover;
 
-      border-radius: 8px;
+      border-radius: 7px;
 
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.08
-        );
+      background: rgba(80,80,80,.08);
     }
 
     .video-info {
       flex: 1;
-
       min-width: 0;
     }
 
@@ -730,10 +538,10 @@
 
       overflow: hidden;
 
+      color: #222;
+
       font-size: 11px;
-
-      font-weight: 900;
-
+      font-weight: 700;
       line-height: 1.35;
 
       text-overflow: ellipsis;
@@ -745,116 +553,82 @@
       align-items: center;
       justify-content: center;
 
-      padding:
-        7px
-        9px;
+      padding: 6px 9px;
 
-      border-radius: 8px;
+      border-radius: 6px;
 
-      background: #fff;
-
-      color: #082735;
+      background: #292929;
+      color: #fff;
 
       text-decoration: none;
 
-      font-size: 9px;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
 
-      font-weight: 900;
+      font-size: 9px;
+      font-weight: 800;
     }
 
     .waiting-card {
-      padding:
-        15px
-        12px;
+      padding: 14px 10px;
 
-      border:
-        1px
-        dashed
-        rgba(
-          255,
-          255,
-          255,
-          0.22
-        );
+      border: 1px dashed rgba(50,50,50,.25);
+      border-radius: 11px;
 
-      border-radius: 13px;
+      background: rgba(255,255,255,.20);
 
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          0.57
-        );
+      color: #666;
 
       text-align: center;
 
       font-size: 10px;
-
       line-height: 1.6;
     }
 
 
     /* ========================================
-       MV公開待機エリア
+       MV公開待機
        ======================================== */
 
     .mv-area {
-      margin-top: 28px;
+      margin-top: 25px;
     }
 
     .mv-coming {
-      padding:
-        20px
-        15px;
+      padding: 18px 14px;
 
-      border:
-        1px
-        solid
-        rgba(
-          255,
-          255,
-          255,
-          0.24
-        );
+      border: 1px solid rgba(50,50,50,.25);
+      border-radius: 13px;
 
-      border-radius: 16px;
-
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.06
-        );
+      background: rgba(255,255,255,.28);
 
       text-align: center;
     }
 
     .mv-coming-title {
       font-size: 17px;
-
-      font-weight: 900;
-
-      letter-spacing: 2px;
+      font-weight: 600;
+      letter-spacing: 3px;
     }
 
     .mv-coming-time {
-      margin-top: 7px;
+      margin-top: 6px;
 
-      color: #bce8f4;
+      color: #555;
 
       font-size: 12px;
-
-      font-weight: 800;
+      font-weight: 600;
     }
 
     #mvCountdown {
-      margin-top: 8px;
+      margin-top: 7px;
 
       font-size: 13px;
-
-      font-weight: 900;
+      font-weight: 600;
     }
 
 
@@ -864,7 +638,6 @@
 
     .modal {
       position: fixed;
-
       inset: 0;
 
       z-index: 1000;
@@ -876,13 +649,7 @@
 
       padding: 20px;
 
-      background:
-        rgba(
-          0,
-          0,
-          0,
-          0.72
-        );
+      background: rgba(0,0,0,.72);
     }
 
     .modal.show {
@@ -890,94 +657,79 @@
     }
 
     .modal-box {
-      width:
-        min(
-          100%,
-          420px
-        );
+      width: min(100%, 420px);
 
       padding: 22px;
 
-      border-radius: 18px;
+      border-radius: 15px;
 
-      background: #fff;
+      background:
+        linear-gradient(
+          145deg,
+          #f8f8f5,
+          #deded9
+        );
 
-      color: #111;
+      color: #222;
 
       text-align: center;
 
       box-shadow:
-        0
-        15px
-        50px
-        rgba(
-          0,
-          0,
-          0,
-          0.28
-        );
+        0 15px 50px rgba(0,0,0,.28);
     }
 
     .modal-title {
       font-size: 16px;
-
-      font-weight: 900;
+      font-weight: 700;
     }
 
     .modal-text {
-      margin:
-        13px
-        0
-        19px;
+      margin: 13px 0 19px;
 
       font-size: 13px;
-
       line-height: 1.7;
     }
 
     .modal-buttons {
       display: flex;
-
       gap: 8px;
     }
 
-    .modal-buttons
-    button,
-    .modal-buttons
-    a {
+    .modal-buttons button,
+    .modal-buttons a {
       flex: 1;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
-      min-height: 42px;
+      min-height: 40px;
 
       border: 0;
+      border-radius: 8px;
 
-      border-radius: 10px;
-
-      font-family: inherit;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
 
       text-decoration: none;
 
       font-size: 11px;
-
-      font-weight: 900;
+      font-weight: 800;
 
       cursor: pointer;
     }
 
     .cancel {
-      background: #eee;
-
+      background: #d4d4d4;
       color: #333;
     }
 
     .go {
-      background: #092c3b;
-
+      background: #292929;
       color: #fff;
     }
 
@@ -987,25 +739,16 @@
        ======================================== */
 
     .footer {
-      margin-top: 48px;
-
+      margin-top: 45px;
       padding-bottom: 6px;
 
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          0.48
-        );
+      color: rgba(30,30,30,.48);
 
       text-align: center;
 
       font-size: 10px;
-
       font-weight: 500;
-
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
     }
 
 
@@ -1013,32 +756,45 @@
        スマホ
        ======================================== */
 
-    @media (
-      max-width: 520px
-    ) {
+    @media (max-width: 520px) {
 
       .container {
         width: 94%;
-
-        padding-top: 30px;
+        padding-top: 27px;
       }
 
       .hero {
         padding-top: 18px;
       }
 
+      .collab,
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: clamp(40px, 11.5vw, 54px);
+      }
+
+      .campaign {
+        padding: 11px 12px;
+      }
+
+      .campaign-title,
+      .period {
+        font-size: 11px;
+      }
+
       .schedule-layout {
         grid-template-columns:
-          0.82fr
+          .82fr
           1.18fr;
 
-        gap: 8px;
+        gap: 7px;
       }
 
       .schedule-row {
-        padding:
-          9px
-          8px;
+        padding: 8px 7px;
       }
 
       .schedule-date {
@@ -1050,10 +806,6 @@
       }
 
       .schedule-name {
-        font-size: 9.5px;
-      }
-
-      .content-label {
         font-size: 9px;
       }
 
@@ -1063,7 +815,6 @@
 
       .thumb {
         width: 100%;
-
         margin-bottom: 7px;
       }
 
@@ -1072,19 +823,14 @@
       }
 
       .buttons {
-        gap: 7px;
+        gap: 5px;
       }
 
       .btn {
-        min-height: 36px;
-
-        padding:
-          8px
-          10px;
-
-        font-size: 10px;
+        min-height: 31px;
+        padding: 6px 10px;
+        font-size: 9.5px;
       }
-
     }
 
   </style>
@@ -1093,13 +839,10 @@
 
 <body>
 
-
 <div class="container">
 
 
-  <!-- =====================================
-       TOP
-       ===================================== -->
+  <!-- TOP -->
 
   <header class="hero">
 
@@ -1111,6 +854,10 @@
       Nameless MythS
     </h1>
 
+    <div class="subtitle">
+      ＂名も無き神話たち＂
+    </div>
+
   </header>
 
 
@@ -1121,9 +868,7 @@
   </div>
 
 
-  <!-- =====================================
-       RELEASE
-       ===================================== -->
+  <!-- RELEASE -->
 
   <section class="release">
 
@@ -1152,9 +897,7 @@
   </div>
 
 
-  <!-- =====================================
-       DIGITAL CAMPAIGN
-       ===================================== -->
+  <!-- DIGITAL CAMPAIGN -->
 
   <section>
 
@@ -1174,10 +917,8 @@
       >
 
         <div class="campaign-title">
-          デジタルキャンペーン<br>
-          「Pre-Add / Pre-Save」
+          デジタルキャンペーン「Pre-Add / Pre-Save」
         </div>
-
 
         <div
           class="period"
@@ -1186,17 +927,14 @@
           【期間：2026年9月24日〜9月27日23:59まで】
         </div>
 
-
         <div
           class="campaign-final"
           id="preSaveFinal"
         ></div>
 
-
         <div class="description">
           配信リリース当日にライブラリに追加されます。
         </div>
-
 
         <div class="buttons">
 
@@ -1207,9 +945,8 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            参加しに行く ↗
+            参加 ↗
           </a>
-
 
           <button
             class="btn red"
@@ -1227,7 +964,6 @@
 
         </div>
 
-
         <div class="done">
           ✓ 完了しました
         </div>
@@ -1243,10 +979,8 @@
       >
 
         <div class="campaign-title">
-          デジタルキャンペーン<br>
-          「Pre-Order」
+          デジタルキャンペーン「Pre-Order」
         </div>
-
 
         <div
           class="period"
@@ -1255,24 +989,19 @@
           【期間：2026年9月24日〜9月27日23:59まで】
         </div>
 
-
         <div
           class="campaign-final"
           id="preOrderFinal"
         ></div>
 
-
         <div class="warning">
           ⚠️応募の締切も9月27日23:59まで⚠️
         </div>
 
-
         <div class="description">
           iTunesにて「Nameless MythS」を予約購入し、
-          フォームから応募すると
-          特典スマホ壁紙画像GET（全員対象）
+          フォームから応募すると特典スマホ壁紙画像GET（全員対象）
         </div>
-
 
         <div class="buttons">
 
@@ -1282,9 +1011,8 @@
             type="button"
             onclick="openPreOrderModal()"
           >
-            予約しに行く ↗
+            予約 ↗
           </button>
-
 
           <a
             class="btn"
@@ -1295,7 +1023,6 @@
           >
             応募フォーム ↗
           </a>
-
 
           <button
             class="btn red"
@@ -1313,13 +1040,11 @@
 
         </div>
 
-
         <div class="done">
           ✓ 全て完了しました
         </div>
 
       </div>
-
 
     </div>
 
@@ -1333,9 +1058,7 @@
   </div>
 
 
-  <!-- =====================================
-       RELEASE SCHEDULE
-       ===================================== -->
+  <!-- RELEASE SCHEDULE -->
 
   <section>
 
@@ -1343,25 +1066,14 @@
       RELEASE SCHEDULE
     </h2>
 
-
     <div class="schedule-layout">
-
-
-      <!-- 左側：スケジュール -->
 
       <div
         class="schedule-list"
         id="scheduleList"
       ></div>
 
-
-      <!-- 右側：公開コンテンツ -->
-
       <div class="released-content">
-
-        <div class="content-label">
-          RELEASED CONTENT
-        </div>
 
         <div
           class="contents"
@@ -1369,7 +1081,6 @@
         ></div>
 
       </div>
-
 
     </div>
 
@@ -1399,25 +1110,17 @@
 
     </div>
 
-
   </section>
 
-
-  <!-- =====================================
-       最下層
-       ===================================== -->
 
   <footer class="footer">
     非公式ファンサイト
   </footer>
 
-
 </div>
 
 
-<!-- =======================================
-     PRE-ORDER確認POPUP
-     ======================================= -->
+<!-- PRE-ORDER確認POPUP -->
 
 <div
   class="modal"
@@ -1436,7 +1139,6 @@
       予約購入前にご確認ください
     </div>
 
-
     <div class="modal-text">
 
       キャンペーンへの応募には、<br>
@@ -1453,7 +1155,6 @@
 
     </div>
 
-
     <div class="modal-buttons">
 
       <button
@@ -1463,7 +1164,6 @@
       >
         戻る
       </button>
-
 
       <a
         class="go"
@@ -1484,29 +1184,24 @@
 
 <script>
 
-
   /* ========================================
      基本設定
      ======================================== */
-
 
   const RELEASE_TIME =
     new Date(
       "2026-09-28T00:00:00+09:00"
     );
 
-
   const MV_RELEASE_TIME =
     new Date(
       "2026-09-28T20:00:00+09:00"
     );
 
-
   const CAMPAIGN_END_TIME =
     new Date(
       "2026-09-27T23:59:59+09:00"
     );
-
 
   const FINAL_DAY_START =
     new Date(
@@ -1514,35 +1209,16 @@
     );
 
 
-  /*
-    ========================================
-    YouTube URL設定
-
-    公開されたら url: "" の中に
-    YouTube URLを入れるだけ。
-
-    URLを入れると、
-    RELEASED CONTENT側に
-    サムネイル＋再生ボタンが出る。
-
-    Nameless MythS本編MVは、
-    公開後にSTARS BASE型の
-    再生数機能へ変更予定。
-    ========================================
-  */
-
+  /* ========================================
+     RELEASE SCHEDULE
+     ======================================== */
 
   const SCHEDULE_ITEMS = [
 
     {
-      date:
-        "9/24",
-
-      time:
-        "20:00",
-
-      title:
-        "MV Teaser #1",
+      date: "9/24",
+      time: "20:00",
+      title: "MV Teaser #1",
 
       release:
         "2026-09-24T20:00:00+09:00",
@@ -1551,138 +1227,89 @@
         "https://youtu.be/ZIlaGs3yfP8?si=Hd1MhypqE6TntGKd"
     },
 
-
     {
-      date:
-        "9/25",
-
-      time:
-        "20:00",
-
-      title:
-        "MV Teaser #2",
+      date: "9/25",
+      time: "20:00",
+      title: "MV Teaser #2",
 
       release:
         "2026-09-25T20:00:00+09:00",
 
-      url:
-        ""
+      url: ""
     },
 
-
     {
-      date:
-        "9/26",
-
-      time:
-        "17:00",
-
-      title:
-        "MV Teaser #3",
+      date: "9/26",
+      time: "17:00",
+      title: "MV Teaser #3",
 
       release:
         "2026-09-26T17:00:00+09:00",
 
-      url:
-        ""
+      url: ""
     },
 
-
     {
-      date:
-        "9/27",
-
-      time:
-        "20:00",
-
-      title:
-        "MV Teaser #4",
+      date: "9/27",
+      time: "20:00",
+      title: "MV Teaser #4",
 
       release:
         "2026-09-27T20:00:00+09:00",
 
-      url:
-        ""
+      url: ""
     },
 
-
     {
-      date:
-        "9/28",
-
-      time:
-        "0:00",
-
-      title:
-        "“Nameless MythS” Digital Release",
+      date: "9/28",
+      time: "0:00",
+      title: "“Nameless MythS” Digital Release",
 
       release:
         "2026-09-28T00:00:00+09:00",
 
-      url:
-        ""
+      url: ""
     },
 
-
     {
-      date:
-        "9/28",
-
-      time:
-        "20:00",
-
-      title:
-        "Music Video",
+      date: "9/28",
+      time: "20:00",
+      title: "Music Video",
 
       release:
         "2026-09-28T20:00:00+09:00",
 
-      url:
-        ""
+      url: ""
     },
 
-
     {
-      date:
-        "9/29",
-
-      time:
-        "17:00",
-
-      title:
-        "Music Video Behind The Scenes",
+      date: "9/29",
+      time: "17:00",
+      title: "Music Video Behind The Scenes",
 
       release:
         "2026-09-29T17:00:00+09:00",
 
-      url:
-        ""
+      url: ""
     }
 
   ];
 
 
-  /*
-    ========================================
-    YouTube URL → Video ID
-    ========================================
-  */
+  /* ========================================
+     YouTube URL → Video ID
+     ======================================== */
 
-
-  function getYouTubeVideoId(
-    url
-  ) {
+  function getYouTubeVideoId(url) {
 
     if (!url) {
       return null;
     }
 
-
     try {
 
       const parsed =
         new URL(url);
-
 
       if (
         parsed.hostname.includes(
@@ -1691,14 +1318,10 @@
       ) {
 
         return parsed.pathname
-          .replace(
-            "/",
-            ""
-          )
+          .replace("/", "")
           .split("?")[0];
 
       }
-
 
       if (
         parsed.hostname.includes(
@@ -1717,7 +1340,6 @@
 
         }
 
-
         if (
           parsed.pathname.startsWith(
             "/embed/"
@@ -1729,13 +1351,11 @@
 
         }
 
-
         return parsed.searchParams.get(
           "v"
         );
 
       }
-
 
     } catch (error) {
 
@@ -1746,78 +1366,51 @@
 
     }
 
-
     return null;
-
   }
 
 
-  /*
-    ========================================
-    カウントダウン用
-    ========================================
-  */
+  /* ========================================
+     カウントダウン
+     ======================================== */
 
-
-  function getRemainingParts(
-    target
-  ) {
+  function getRemainingParts(target) {
 
     const now =
       new Date();
-
 
     const difference =
       target.getTime() -
       now.getTime();
 
-
-    if (
-      difference <= 0
-    ) {
-
+    if (difference <= 0) {
       return null;
-
     }
-
 
     const totalSeconds =
       Math.floor(
         difference / 1000
       );
 
-
     const days =
       Math.floor(
-        totalSeconds /
-        86400
+        totalSeconds / 86400
       );
-
 
     const hours =
       Math.floor(
-        (
-          totalSeconds %
-          86400
-        ) /
+        (totalSeconds % 86400) /
         3600
       );
 
-
     const minutes =
       Math.floor(
-        (
-          totalSeconds %
-          3600
-        ) /
+        (totalSeconds % 3600) /
         60
       );
 
-
     const seconds =
-      totalSeconds %
-      60;
-
+      totalSeconds % 60;
 
     return {
       days,
@@ -1825,13 +1418,10 @@
       minutes,
       seconds
     };
-
   }
 
 
-  function twoDigits(
-    number
-  ) {
+  function twoDigits(number) {
 
     return String(number)
       .padStart(
@@ -1842,12 +1432,9 @@
   }
 
 
-  /*
-    ========================================
-    RELEASEカウントダウン
-    ========================================
-  */
-
+  /* ========================================
+     RELEASEカウントダウン
+     ======================================== */
 
   function updateReleaseCountdown() {
 
@@ -1856,31 +1443,25 @@
         "releaseCountdownLabel"
       );
 
-
     const target =
       document.getElementById(
         "countdown"
       );
-
 
     const remaining =
       getRemainingParts(
         RELEASE_TIME
       );
 
-
     if (!remaining) {
 
-      label.textContent =
-        "";
+      label.textContent = "";
 
       target.textContent =
         "NOW RELEASED";
 
       return;
-
     }
-
 
     if (
       remaining.days >= 1
@@ -1912,12 +1493,9 @@
   }
 
 
-  /*
-    ========================================
-    MVカウントダウン
-    ========================================
-  */
-
+  /* ========================================
+     MVカウントダウン
+     ======================================== */
 
   function updateMvCountdown() {
 
@@ -1926,12 +1504,10 @@
         "mvCountdown"
       );
 
-
     const remaining =
       getRemainingParts(
         MV_RELEASE_TIME
       );
-
 
     if (!remaining) {
 
@@ -1939,9 +1515,7 @@
         "公開予定時刻になりました";
 
       return;
-
     }
-
 
     if (
       remaining.days > 0
@@ -1955,9 +1529,7 @@
         "時間";
 
       return;
-
     }
-
 
     target.textContent =
       "公開まで あと " +
@@ -1976,12 +1548,9 @@
   }
 
 
-  /*
-    ========================================
-    キャンペーン完了
-    ========================================
-  */
-
+  /* ========================================
+     キャンペーン完了
+     ======================================== */
 
   function completeCampaign(
     elementId,
@@ -1993,27 +1562,21 @@
         elementId
       );
 
-
     if (!campaign) {
       return;
     }
-
 
     localStorage.setItem(
       storageKey,
       "completed"
     );
 
-
     campaign.classList.add(
       "completed"
     );
 
-
     campaign
-      .querySelectorAll(
-        ".btn"
-      )
+      .querySelectorAll(".btn")
       .forEach(
         button => {
 
@@ -2027,14 +1590,12 @@
 
           }
 
-
           if (
             button.tagName ===
             "A"
           ) {
 
-            button.style
-              .pointerEvents =
+            button.style.pointerEvents =
               "none";
 
             button.style.opacity =
@@ -2058,98 +1619,84 @@
         storageKey
       );
 
-
     if (
-      completed ===
+      completed !==
       "completed"
     ) {
+      return;
+    }
 
-      const campaign =
-        document.getElementById(
-          elementId
-        );
-
-
-      if (!campaign) {
-        return;
-      }
-
-
-      campaign.classList.add(
-        "completed"
+    const campaign =
+      document.getElementById(
+        elementId
       );
 
+    if (!campaign) {
+      return;
+    }
 
-      campaign
-        .querySelectorAll(
-          ".btn"
-        )
-        .forEach(
-          button => {
+    campaign.classList.add(
+      "completed"
+    );
 
-            if (
-              button.tagName ===
-              "BUTTON"
-            ) {
+    campaign
+      .querySelectorAll(".btn")
+      .forEach(
+        button => {
 
-              button.disabled =
-                true;
+          if (
+            button.tagName ===
+            "BUTTON"
+          ) {
 
-            }
-
-
-            if (
-              button.tagName ===
-              "A"
-            ) {
-
-              button.style
-                .pointerEvents =
-                "none";
-
-              button.style.opacity =
-                "0.42";
-
-            }
+            button.disabled =
+              true;
 
           }
-        );
 
-    }
+          if (
+            button.tagName ===
+            "A"
+          ) {
+
+            button.style.pointerEvents =
+              "none";
+
+            button.style.opacity =
+              "0.42";
+
+          }
+
+        }
+      );
 
   }
 
 
-  /*
-    ========================================
-    キャンペーン期限
-    ========================================
-  */
-
+  /* ========================================
+     キャンペーン期限
+     ======================================== */
 
   function updateCampaignStatus() {
 
     const now =
       new Date();
 
-
     const isFinalDay =
       now >= FINAL_DAY_START &&
       now <= CAMPAIGN_END_TIME;
 
-
     const isExpired =
       now >
       CAMPAIGN_END_TIME;
-
 
     const remaining =
       getRemainingParts(
         CAMPAIGN_END_TIME
       );
 
-
     const finalTargets = [
+
       document.getElementById(
         "preSaveFinal"
       ),
@@ -2157,8 +1704,8 @@
       document.getElementById(
         "preOrderFinal"
       )
-    ];
 
+    ];
 
     if (
       isFinalDay &&
@@ -2178,7 +1725,6 @@
         twoDigits(
           remaining.seconds
         );
-
 
       finalTargets.forEach(
         target => {
@@ -2205,11 +1751,9 @@
 
     }
 
-
     if (!isExpired) {
       return;
     }
-
 
     [
       "preSaveCampaign",
@@ -2222,7 +1766,6 @@
             id
           );
 
-
         if (
           !campaign ||
           campaign.classList.contains(
@@ -2232,16 +1775,12 @@
           return;
         }
 
-
         campaign.classList.add(
           "expired"
         );
 
-
         campaign
-          .querySelectorAll(
-            ".btn"
-          )
+          .querySelectorAll(".btn")
           .forEach(
             button => {
 
@@ -2255,14 +1794,12 @@
 
               }
 
-
               if (
                 button.tagName ===
                 "A"
               ) {
 
-                button.style
-                  .pointerEvents =
+                button.style.pointerEvents =
                   "none";
 
                 button.style.opacity =
@@ -2273,12 +1810,10 @@
             }
           );
 
-
         const period =
           campaign.querySelector(
             ".period"
           );
-
 
         if (period) {
 
@@ -2293,12 +1828,9 @@
   }
 
 
-  /*
-    ========================================
-    PRE-ORDER POPUP
-    ========================================
-  */
-
+  /* ========================================
+     PRE-ORDER POPUP
+     ======================================== */
 
   function openPreOrderModal() {
 
@@ -2347,24 +1879,19 @@
     );
 
 
-  /*
-    ========================================
-    RELEASE SCHEDULE描画
-    ========================================
-  */
-
+  /* ========================================
+     RELEASE SCHEDULE描画
+     ======================================== */
 
   function drawSchedule() {
 
     const now =
       new Date();
 
-
     const scheduleList =
       document.getElementById(
         "scheduleList"
       );
-
 
     const nextIndex =
       SCHEDULE_ITEMS.findIndex(
@@ -2373,7 +1900,6 @@
             item.release
           ) > now
       );
-
 
     scheduleList.innerHTML =
       SCHEDULE_ITEMS
@@ -2388,16 +1914,11 @@
                 item.release
               );
 
-
             const isPast =
-              now >=
-              releaseTime;
-
+              now >= releaseTime;
 
             const isNext =
-              index ===
-              nextIndex;
-
+              index === nextIndex;
 
             return `
               <div
@@ -2434,12 +1955,9 @@
   }
 
 
-  /*
-    ========================================
-    公開済みコンテンツ描画
-    ========================================
-  */
-
+  /* ========================================
+     公開済みコンテンツ描画
+     ======================================== */
 
   function drawReleasedContents() {
 
@@ -2448,10 +1966,8 @@
         "releasedContents"
       );
 
-
     const now =
       new Date();
-
 
     const released =
       SCHEDULE_ITEMS.filter(
@@ -2460,7 +1976,6 @@
           if (!item.url) {
             return false;
           }
-
 
           return (
             now >=
@@ -2471,7 +1986,6 @@
 
         }
       );
-
 
     if (
       released.length === 0
@@ -2485,9 +1999,7 @@
       `;
 
       return;
-
     }
-
 
     target.innerHTML =
       released
@@ -2499,17 +2011,14 @@
                 item.url
               );
 
-
             if (!videoId) {
               return "";
             }
-
 
             const thumbnail =
               "https://i.ytimg.com/vi/" +
               videoId +
               "/hqdefault.jpg";
-
 
             return `
               <div class="video-card">
@@ -2548,24 +2057,19 @@
   }
 
 
-  /*
-    ========================================
-    初期化
-    ========================================
-  */
-
+  /* ========================================
+     初期化
+     ======================================== */
 
   restoreCampaignState(
     "preSaveCampaign",
     "nameless_presave"
   );
 
-
   restoreCampaignState(
     "preOrderCampaign",
     "nameless_preorder"
   );
-
 
   updateReleaseCountdown();
 
@@ -2576,12 +2080,6 @@
   drawSchedule();
 
   drawReleasedContents();
-
-
-  /*
-    1秒ごとに
-    カウントダウンだけ更新
-  */
 
 
   setInterval(
@@ -2598,14 +2096,6 @@
   );
 
 
-  /*
-    スケジュールは1分ごとに更新
-
-    公開時刻を過ぎたら
-    active位置などを自動変更
-  */
-
-
   setInterval(
     () => {
 
@@ -2617,9 +2107,7 @@
     60000
   );
 
-
 </script>
-
 
 </body>
 </html>
