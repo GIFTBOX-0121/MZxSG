@@ -250,9 +250,7 @@ body::before {
   display: flex;
   flex-direction: column;
   min-width: 0;
-
   padding: 16px 14px;
-
   border: 2px solid #b92d2d;
   border-radius: 11px;
 
@@ -267,9 +265,7 @@ body::before {
     );
 
   color: #222;
-
-  box-shadow:
-    0 4px 14px rgba(0,0,0,.08);
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
 
   font-family:
     -apple-system,
@@ -313,11 +309,6 @@ body::before {
   color: #666;
 }
 
-.campaign.expired {
-  border-color: rgba(70,70,70,.18);
-  opacity: .62;
-}
-
 .campaign-final {
   display: none;
   margin-top: 7px;
@@ -355,28 +346,15 @@ body::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-height: 31px;
   padding: 6px 12px;
-
   border: 0;
   border-radius: 7px;
-
   background: #292929;
   color: #fff;
-
   text-decoration: none;
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-
   font-size: 10px;
   font-weight: 800;
-
   cursor: pointer;
 }
 
@@ -465,10 +443,6 @@ body::before {
    公開済みコンテンツ
 ============================== */
 
-.released-content {
-  min-width: 0;
-}
-
 .contents {
   display: grid;
   gap: 9px;
@@ -479,7 +453,6 @@ body::before {
   border: 1px solid rgba(50,50,50,.20);
   border-radius: 10px;
   background: rgba(255,255,255,.40);
-  box-shadow: 0 3px 12px rgba(0,0,0,.05);
 }
 
 .thumb {
@@ -488,7 +461,6 @@ body::before {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 7px;
-  background: rgba(80,80,80,.08);
 }
 
 .video-info {
@@ -500,45 +472,16 @@ body::before {
 }
 
 .video-title {
-  margin: 0;
-  min-width: 0;
-  color: #222;
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-
   font-size: 11px;
   font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .play {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-
   padding: 6px 11px;
   border-radius: 6px;
-
   background: #292929;
   color: #fff;
-
   text-decoration: none;
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-
   font-size: 9px;
   font-weight: 800;
 }
@@ -553,28 +496,17 @@ body::before {
 }
 
 .mv-counter-card {
-  overflow: hidden;
   padding: 14px;
   border: 1px solid rgba(50,50,50,.25);
   border-radius: 14px;
   background: rgba(255,255,255,.45);
   box-shadow: 0 5px 18px rgba(0,0,0,.07);
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    Arial,
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 .mv-top {
   display: grid;
-  grid-template-columns:
-    minmax(0,1.25fr)
-    minmax(0,.85fr);
+  grid-template-columns: minmax(0,1.25fr) minmax(0,.85fr);
   gap: 12px;
   align-items: center;
 }
@@ -589,14 +521,12 @@ body::before {
 }
 
 .mv-top-info {
-  min-width: 0;
   text-align: center;
 }
 
 .mv-song-title {
   font-size: 18px;
   font-weight: 900;
-  line-height: 1.3;
 }
 
 .mv-release-badge {
@@ -606,7 +536,6 @@ body::before {
   border-radius: 8px;
   font-size: 10px;
   font-weight: 800;
-  line-height: 1.35;
 }
 
 .mv-countdown {
@@ -614,20 +543,17 @@ body::before {
   color: #555;
   font-size: 10px;
   font-weight: 700;
-  line-height: 1.4;
 }
 
 .mv-stats {
   display: grid;
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
+  grid-template-columns: repeat(2,minmax(0,1fr));
   margin-top: 17px;
   border-top: 1px solid rgba(70,70,70,.12);
   padding-top: 16px;
 }
 
 .mv-stat-column {
-  min-width: 0;
   padding: 0 12px;
 }
 
@@ -645,15 +571,12 @@ body::before {
 .mv-stat-number {
   margin-top: 5px;
   text-align: center;
-  color: #111;
   font-size: clamp(29px,7vw,43px);
   font-weight: 900;
-  letter-spacing: -1px;
 }
 
 .mv-stat-row {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 7px;
   margin-top: 12px;
@@ -665,17 +588,11 @@ body::before {
   color: #888;
 }
 
-.mv-stat-row-value {
-  color: #151515;
-  text-align: right;
-}
-
 .mv-stat-box {
   margin-top: 10px;
   padding: 8px 5px;
   border: 1px solid rgba(80,80,80,.22);
   border-radius: 8px;
-  background: rgba(255,255,255,.34);
   text-align: center;
   color: #555;
   font-size: 10px;
@@ -708,15 +625,14 @@ body::before {
 .mv-progress {
   margin-top: 14px;
   height: 10px;
-  overflow: hidden;
   border-radius: 999px;
   background: rgba(50,50,50,.08);
+  overflow: hidden;
 }
 
 .mv-progress-fill {
   width: 0%;
   height: 100%;
-  border-radius: inherit;
   background: #222;
 }
 
@@ -730,37 +646,22 @@ body::before {
 
 
 /* ==============================
-   RELATED MUSIC VIDEOS
+   RELATED MVs
 ============================== */
 
 .related-mvs {
   display: grid;
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 10px;
   margin-top: 12px;
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    Arial,
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 .related-mv {
-  min-width: 0;
   overflow: hidden;
-
   border: 1px solid rgba(50,50,50,.20);
   border-radius: 11px;
-
   background: rgba(255,255,255,.40);
-
-  box-shadow:
-    0 3px 12px rgba(0,0,0,.05);
 }
 
 .related-mv-link {
@@ -774,7 +675,6 @@ body::before {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: rgba(80,80,80,.08);
 }
 
 .related-mv-info {
@@ -791,10 +691,74 @@ body::before {
 
 .related-mv-title {
   margin-top: 3px;
-  color: #222;
   font-size: 12px;
   font-weight: 900;
-  line-height: 1.3;
+}
+
+
+/* ==============================
+   OFFICIAL YOUTUBE
+============================== */
+
+.official-youtube {
+  margin-top: 25px;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+.official-youtube-title {
+  margin-bottom: 11px;
+  text-align: center;
+  color: #444;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.official-youtube-buttons {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 7px;
+}
+
+.official-youtube-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  min-width: 0;
+  min-height: 42px;
+  padding: 8px 4px;
+
+  border: 1px solid rgba(40,40,40,.45);
+  border-radius: 8px;
+
+  background: rgba(255,255,255,.42);
+  color: #222;
+
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  transition:
+    background .15s ease,
+    transform .15s ease;
+}
+
+.official-youtube-btn:active {
+  transform: scale(.97);
+  background: rgba(255,255,255,.72);
+}
+
+.youtube-play {
+  font-size: 9px;
 }
 
 
@@ -806,11 +770,9 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 1000;
-
   display: none;
   align-items: center;
   justify-content: center;
-
   padding: 20px;
   background: rgba(0,0,0,.72);
 }
@@ -823,23 +785,9 @@ body::before {
   width: min(100%,420px);
   padding: 22px;
   border-radius: 15px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #f8f8f5,
-      #deded9
-    );
-
-  color: #222;
+  background: linear-gradient(145deg,#f8f8f5,#deded9);
   text-align: center;
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 .modal-title {
@@ -861,21 +809,15 @@ body::before {
 .modal-buttons button,
 .modal-buttons a {
   flex: 1;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   min-height: 40px;
-
   border: 0;
   border-radius: 8px;
-
   text-decoration: none;
-
   font-size: 11px;
   font-weight: 800;
-  cursor: pointer;
 }
 
 .cancel {
@@ -895,7 +837,6 @@ body::before {
 
 .footer {
   margin-top: 45px;
-  padding-bottom: 6px;
   color: rgba(30,30,30,.48);
   text-align: center;
   font-size: 10px;
@@ -903,7 +844,7 @@ body::before {
 
 
 /* ==============================
-   スマホ
+   MOBILE
 ============================== */
 
 @media (max-width:520px) {
@@ -911,20 +852,6 @@ body::before {
   .container {
     width: 94%;
     padding-top: 27px;
-  }
-
-  .hero {
-    padding-top: 18px;
-  }
-
-  .collab,
-  .subtitle {
-    font-size: 13px;
-  }
-
-  .hero h1 {
-    font-size:
-      clamp(39px,11vw,53px);
   }
 
   .campaigns {
@@ -952,9 +879,7 @@ body::before {
   }
 
   .schedule-layout {
-    grid-template-columns:
-      .82fr 1.18fr;
-
+    grid-template-columns: .82fr 1.18fr;
     gap: 7px;
   }
 
@@ -971,19 +896,12 @@ body::before {
     font-size: 9px;
   }
 
-  .btn {
-    min-height: 29px;
-    padding: 5px 8px;
-    font-size: 8.5px;
-  }
-
   .mv-counter-card {
     padding: 10px;
   }
 
   .mv-top {
-    grid-template-columns:
-      1.2fr .8fr;
+    grid-template-columns: 1.2fr .8fr;
     gap: 8px;
   }
 
@@ -998,13 +916,7 @@ body::before {
   }
 
   .mv-countdown {
-    margin-top: 6px;
     font-size: 8px;
-  }
-
-  .mv-stats {
-    margin-top: 13px;
-    padding-top: 13px;
   }
 
   .mv-stat-column {
@@ -1019,25 +931,13 @@ body::before {
     font-size: 29px;
   }
 
-  .mv-stat-row {
-    font-size: 8.5px;
-  }
-
+  .mv-stat-row,
   .mv-stat-box {
     font-size: 8.5px;
   }
 
-  .mv-goal-text {
-    font-size: 13px;
-  }
-
   .related-mvs {
     gap: 8px;
-    margin-top: 10px;
-  }
-
-  .related-mv-info {
-    padding: 8px 6px 9px;
   }
 
   .related-mv-group {
@@ -1046,6 +946,24 @@ body::before {
 
   .related-mv-title {
     font-size: 11px;
+  }
+
+  .official-youtube {
+    margin-top: 20px;
+  }
+
+  .official-youtube-title {
+    font-size: 11px;
+  }
+
+  .official-youtube-buttons {
+    gap: 5px;
+  }
+
+  .official-youtube-btn {
+    min-height: 38px;
+    padding: 7px 2px;
+    font-size: 9px;
   }
 
 }
@@ -1065,9 +983,7 @@ body::before {
     MAZZEL × STARGLOW
   </div>
 
-  <h1>
-    Nameless MythS
-  </h1>
+  <h1>Nameless MythS</h1>
 
   <div class="subtitle">
     ＂名も無き神話たち＂
@@ -1077,9 +993,7 @@ body::before {
 
 
 <div class="myth-divider">
-  <span class="myth-symbol">
-    ◇ ✦ ◇
-  </span>
+  <span class="myth-symbol">◇ ✦ ◇</span>
 </div>
 
 
@@ -1108,9 +1022,7 @@ body::before {
 
 
 <div class="myth-divider">
-  <span class="myth-symbol">
-    ◇ ✧ ◇
-  </span>
+  <span class="myth-symbol">◇ ✧ ◇</span>
 </div>
 
 
@@ -1123,7 +1035,6 @@ body::before {
 
 <div class="campaigns">
 
-
 <div
   class="campaign"
   id="preSaveCampaign"
@@ -1133,10 +1044,7 @@ body::before {
     Pre-Add / Pre-Save
   </div>
 
-  <div
-    class="period"
-    id="preSavePeriod"
-  >
+  <div class="period">
     【期間：9/24〜9/27 23:59】
   </div>
 
@@ -1163,12 +1071,7 @@ body::before {
     <button
       class="btn red"
       type="button"
-      onclick="
-        completeCampaign(
-          'preSaveCampaign',
-          'nameless_presave'
-        )
-      "
+      onclick="completeCampaign('preSaveCampaign','nameless_presave')"
     >
       完了
     </button>
@@ -1191,10 +1094,7 @@ body::before {
     Pre-Order
   </div>
 
-  <div
-    class="period"
-    id="preOrderPeriod"
-  >
+  <div class="period">
     【期間：9/24〜9/27 23:59】
   </div>
 
@@ -1235,12 +1135,7 @@ body::before {
     <button
       class="btn red"
       type="button"
-      onclick="
-        completeCampaign(
-          'preOrderCampaign',
-          'nameless_preorder'
-        )
-      "
+      onclick="completeCampaign('preOrderCampaign','nameless_preorder')"
     >
       全て完了
     </button>
@@ -1253,16 +1148,13 @@ body::before {
 
 </div>
 
-
 </div>
 
 </section>
 
 
 <div class="myth-divider">
-  <span class="myth-symbol">
-    ◇ ✦ ◇
-  </span>
+  <span class="myth-symbol">◇ ✦ ◇</span>
 </div>
 
 
@@ -1281,298 +1173,255 @@ body::before {
   ></div>
 
   <div class="released-content">
-
     <div
       class="contents"
       id="releasedContents"
     ></div>
+  </div>
+
+</div>
+
+
+<!-- NAMELESS MYTHS MV -->
+
+<div class="mv-area">
+
+<div class="mv-counter-card">
+
+  <div class="mv-top">
+
+    <img
+      class="mv-placeholder-image"
+      src="IMG_7733.jpeg"
+      alt="Nameless MythS Music Video"
+    >
+
+    <div class="mv-top-info">
+
+      <div class="mv-song-title">
+        Nameless MythS
+      </div>
+
+      <div class="mv-release-badge">
+        2026.9.28<br>
+        8:00PM（JST）
+      </div>
+
+      <div
+        class="mv-countdown"
+        id="mvCountdown"
+      >
+        公開まで計算中...
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="mv-stats">
+
+    <div class="mv-stat-column">
+
+      <div class="mv-stat-label">
+        ▶ 再生回数
+      </div>
+
+      <div class="mv-stat-number">
+        —
+      </div>
+
+      <div class="mv-stat-row">
+        <span class="mv-stat-row-label">1時間比</span>
+        <span>—</span>
+      </div>
+
+      <div class="mv-stat-box">
+        トータル —
+      </div>
+
+      <div class="mv-stat-row">
+        <span class="mv-stat-row-label">前日比</span>
+        <span>—</span>
+      </div>
+
+      <div class="mv-stat-box">
+        9/28 —
+      </div>
+
+    </div>
+
+
+    <div class="mv-stat-column">
+
+      <div class="mv-stat-label">
+        👍 高評価
+      </div>
+
+      <div class="mv-stat-number">
+        —
+      </div>
+
+      <div class="mv-stat-row">
+        <span class="mv-stat-row-label">1時間比</span>
+        <span>—</span>
+      </div>
+
+      <div class="mv-stat-box">
+        トータル —
+      </div>
+
+      <div class="mv-stat-row">
+        <span class="mv-stat-row-label">前日比</span>
+        <span>—</span>
+      </div>
+
+      <div class="mv-stat-box">
+        9/28 —
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="mv-goal">
+
+    <div class="mv-goal-text">
+      10万回再生まで あと —
+    </div>
+
+    <div class="mv-pace">
+      ペース —　｜　達成予測：—
+    </div>
+
+    <div class="mv-progress">
+      <div class="mv-progress-fill"></div>
+    </div>
+
+    <div class="mv-progress-percent">
+      —%
+    </div>
 
   </div>
 
 </div>
 
 
-<!-- ==============================
-     MUSIC VIDEO COUNTER
-============================== -->
+<!-- So Strawberry / WISHES -->
 
-<div
-  class="mv-area"
-  id="mvArea"
->
+<div class="related-mvs">
 
-  <div class="mv-counter-card">
+  <div class="related-mv">
 
-    <div class="mv-top">
+    <a
+      class="related-mv-link"
+      href="https://youtu.be/76lNhpUKrEc?si=TSiAilz1MT0JfQy3"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
 
       <img
-        class="mv-placeholder-image"
-        src="IMG_7733.jpeg"
-        alt="Nameless MythS Music Video"
+        class="related-mv-thumb"
+        src="https://i.ytimg.com/vi/76lNhpUKrEc/hqdefault.jpg"
+        alt="MAZZEL So Strawberry"
       >
 
-      <div class="mv-top-info">
+      <div class="related-mv-info">
 
-        <div class="mv-song-title">
-          Nameless MythS
+        <div class="related-mv-group">
+          MAZZEL
         </div>
 
-        <div class="mv-release-badge">
-          2026.9.28<br>
-          8:00PM（JST）
-        </div>
-
-        <div
-          class="mv-countdown"
-          id="mvCountdown"
-        >
-          公開まで計算中...
+        <div class="related-mv-title">
+          So Strawberry
         </div>
 
       </div>
 
-    </div>
-
-
-    <div class="mv-stats">
-
-      <div class="mv-stat-column">
-
-        <div class="mv-stat-label">
-          ▶ 再生回数
-        </div>
-
-        <div
-          class="mv-stat-number"
-          id="mvViews"
-        >
-          —
-        </div>
-
-        <div class="mv-stat-row">
-
-          <span class="mv-stat-row-label">
-            1時間比
-          </span>
-
-          <span
-            class="mv-stat-row-value"
-            id="mvHourlyViews"
-          >
-            —
-          </span>
-
-        </div>
-
-        <div
-          class="mv-stat-box"
-          id="mvTotalViews"
-        >
-          トータル —
-        </div>
-
-        <div class="mv-stat-row">
-
-          <span class="mv-stat-row-label">
-            前日比
-          </span>
-
-          <span
-            class="mv-stat-row-value"
-            id="mvDailyViews"
-          >
-            —
-          </span>
-
-        </div>
-
-        <div
-          class="mv-stat-box"
-          id="mvDateViews"
-        >
-          9/28 —
-        </div>
-
-      </div>
-
-
-      <div class="mv-stat-column">
-
-        <div class="mv-stat-label">
-          👍 高評価
-        </div>
-
-        <div
-          class="mv-stat-number"
-          id="mvLikes"
-        >
-          —
-        </div>
-
-        <div class="mv-stat-row">
-
-          <span class="mv-stat-row-label">
-            1時間比
-          </span>
-
-          <span
-            class="mv-stat-row-value"
-            id="mvHourlyLikes"
-          >
-            —
-          </span>
-
-        </div>
-
-        <div
-          class="mv-stat-box"
-          id="mvTotalLikes"
-        >
-          トータル —
-        </div>
-
-        <div class="mv-stat-row">
-
-          <span class="mv-stat-row-label">
-            前日比
-          </span>
-
-          <span
-            class="mv-stat-row-value"
-            id="mvDailyLikes"
-          >
-            —
-          </span>
-
-        </div>
-
-        <div
-          class="mv-stat-box"
-          id="mvDateLikes"
-        >
-          9/28 —
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="mv-goal">
-
-      <div
-        class="mv-goal-text"
-        id="mvGoalText"
-      >
-        10万回再生まで あと —
-      </div>
-
-      <div
-        class="mv-pace"
-        id="mvPace"
-      >
-        ペース —　｜　達成予測：—
-      </div>
-
-      <div class="mv-progress">
-
-        <div
-          class="mv-progress-fill"
-          id="mvProgressFill"
-        ></div>
-
-      </div>
-
-      <div
-        class="mv-progress-percent"
-        id="mvProgressPercent"
-      >
-        —%
-      </div>
-
-    </div>
+    </a>
 
   </div>
 
 
-  <!-- ==============================
-       MAZZEL / STARGLOW MV
-  ============================== -->
+  <div class="related-mv">
 
-  <div class="related-mvs">
+    <a
+      class="related-mv-link"
+      href="https://youtu.be/3gsVVVndUKM?si=OuJ1lZK1oHOADuid"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
 
-
-    <!-- MAZZEL -->
-
-    <div class="related-mv">
-
-      <a
-        class="related-mv-link"
-        href="https://youtu.be/76lNhpUKrEc?si=TSiAilz1MT0JfQy3"
-        target="_blank"
-        rel="noopener noreferrer"
+      <img
+        class="related-mv-thumb"
+        src="https://i.ytimg.com/vi/3gsVVVndUKM/hqdefault.jpg"
+        alt="STARGLOW WISHES"
       >
 
-        <img
-          class="related-mv-thumb"
-          src="https://i.ytimg.com/vi/76lNhpUKrEc/hqdefault.jpg"
-          alt="MAZZEL So Strawberry"
-          loading="lazy"
-        >
+      <div class="related-mv-info">
 
-        <div class="related-mv-info">
-
-          <div class="related-mv-group">
-            MAZZEL
-          </div>
-
-          <div class="related-mv-title">
-            So Strawberry
-          </div>
-
+        <div class="related-mv-group">
+          STARGLOW
         </div>
 
-      </a>
-
-    </div>
-
-
-    <!-- STARGLOW -->
-
-    <div class="related-mv">
-
-      <a
-        class="related-mv-link"
-        href="https://youtu.be/3gsVVVndUKM?si=OuJ1lZK1oHOADuid"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <img
-          class="related-mv-thumb"
-          src="https://i.ytimg.com/vi/3gsVVVndUKM/hqdefault.jpg"
-          alt="STARGLOW WISHES"
-          loading="lazy"
-        >
-
-        <div class="related-mv-info">
-
-          <div class="related-mv-group">
-            STARGLOW
-          </div>
-
-          <div class="related-mv-title">
-            WISHES
-          </div>
-
+        <div class="related-mv-title">
+          WISHES
         </div>
 
-      </a>
+      </div>
 
-    </div>
-
+    </a>
 
   </div>
+
+</div>
+
+
+<!-- OFFICIAL YOUTUBE -->
+
+<div class="official-youtube">
+
+  <div class="official-youtube-title">
+    Official YouTube Channel
+  </div>
+
+  <div class="official-youtube-buttons">
+
+    <a
+      class="official-youtube-btn"
+      href="https://youtube.com/@mazzel_official?si=mHObSHUFBMvSlKyo"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      MAZZEL
+      <span class="youtube-play">▶</span>
+    </a>
+
+    <a
+      class="official-youtube-btn"
+      href="https://youtube.com/@starglow_bmsg?si=_Q1ZAvwjMoMXDGSo"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      STARGLOW
+      <span class="youtube-play">▶</span>
+    </a>
+
+    <a
+      class="official-youtube-btn"
+      href="https://youtube.com/@bmsg_official?si=eBkefHrERor5ncml"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      BMSG
+      <span class="youtube-play">▶</span>
+    </a>
+
+  </div>
+
+</div>
+
 
 </div>
 
@@ -1582,7 +1431,6 @@ body::before {
 <footer class="footer">
   非公式ファンサイト
 </footer>
-
 
 </div>
 
@@ -1644,31 +1492,18 @@ body::before {
 
 <script>
 
-
 const RELEASE_TIME =
-  new Date(
-    "2026-09-28T00:00:00+09:00"
-  );
+  new Date("2026-09-28T00:00:00+09:00");
 
 const MV_RELEASE_TIME =
-  new Date(
-    "2026-09-28T20:00:00+09:00"
-  );
+  new Date("2026-09-28T20:00:00+09:00");
 
 const CAMPAIGN_END_TIME =
-  new Date(
-    "2026-09-27T23:59:59+09:00"
-  );
+  new Date("2026-09-27T23:59:59+09:00");
 
 const FINAL_DAY_START =
-  new Date(
-    "2026-09-27T00:00:00+09:00"
-  );
+  new Date("2026-09-27T00:00:00+09:00");
 
-
-/* ==============================
-   SCHEDULE
-============================== */
 
 const SCHEDULE_ITEMS = [
 
@@ -1676,28 +1511,23 @@ const SCHEDULE_ITEMS = [
     date: "9/24",
     time: "20:00",
     title: "MV Teaser #1",
-    release:
-      "2026-09-24T20:00:00+09:00",
-    url:
-      "https://youtu.be/ZIlaGs3yfP8?si=Hd1MhypqE6TntGKd"
+    release: "2026-09-24T20:00:00+09:00",
+    url: "https://youtu.be/ZIlaGs3yfP8?si=Hd1MhypqE6TntGKd"
   },
 
   {
     date: "9/25",
     time: "20:00",
     title: "MV Teaser #2",
-    release:
-      "2026-09-25T20:00:00+09:00",
-    url:
-      "https://youtu.be/bxDeMvS_RSU?si=1cMhQDCnkGkpKN4C"
+    release: "2026-09-25T20:00:00+09:00",
+    url: "https://youtu.be/bxDeMvS_RSU?si=1cMhQDCnkGkpKN4C"
   },
 
   {
     date: "9/26",
     time: "17:00",
     title: "MV Teaser #3",
-    release:
-      "2026-09-26T17:00:00+09:00",
+    release: "2026-09-26T17:00:00+09:00",
     url: ""
   },
 
@@ -1705,18 +1535,15 @@ const SCHEDULE_ITEMS = [
     date: "9/27",
     time: "20:00",
     title: "MV Teaser #4",
-    release:
-      "2026-09-27T20:00:00+09:00",
+    release: "2026-09-27T20:00:00+09:00",
     url: ""
   },
 
   {
     date: "9/28",
     time: "0:00",
-    title:
-      "“Nameless MythS” Digital Release",
-    release:
-      "2026-09-28T00:00:00+09:00",
+    title: "“Nameless MythS” Digital Release",
+    release: "2026-09-28T00:00:00+09:00",
     url: ""
   },
 
@@ -1724,27 +1551,20 @@ const SCHEDULE_ITEMS = [
     date: "9/28",
     time: "20:00",
     title: "Music Video",
-    release:
-      "2026-09-28T20:00:00+09:00",
+    release: "2026-09-28T20:00:00+09:00",
     url: ""
   },
 
   {
     date: "9/29",
     time: "17:00",
-    title:
-      "Music Video Behind The Scenes",
-    release:
-      "2026-09-29T17:00:00+09:00",
+    title: "Music Video Behind The Scenes",
+    release: "2026-09-29T17:00:00+09:00",
     url: ""
   }
 
 ];
 
-
-/* ==============================
-   UTIL
-============================== */
 
 function getRemainingParts(target) {
 
@@ -1757,42 +1577,20 @@ function getRemainingParts(target) {
   }
 
   const totalSeconds =
-    Math.floor(
-      difference / 1000
-    );
+    Math.floor(difference / 1000);
 
   return {
-
-    days:
-      Math.floor(
-        totalSeconds / 86400
-      ),
-
-    hours:
-      Math.floor(
-        (totalSeconds % 86400) /
-        3600
-      ),
-
-    minutes:
-      Math.floor(
-        (totalSeconds % 3600) /
-        60
-      ),
-
-    seconds:
-      totalSeconds % 60
-
+    days: Math.floor(totalSeconds / 86400),
+    hours: Math.floor((totalSeconds % 86400) / 3600),
+    minutes: Math.floor((totalSeconds % 3600) / 60),
+    seconds: totalSeconds % 60
   };
 
 }
 
 
 function twoDigits(number) {
-
-  return String(number)
-    .padStart(2,"0");
-
+  return String(number).padStart(2,"0");
 }
 
 
@@ -1802,24 +1600,13 @@ function getYouTubeVideoId(url) {
 
   try {
 
-    const parsed =
-      new URL(url);
+    const parsed = new URL(url);
 
-    if (
-      parsed.hostname.includes(
-        "youtu.be"
-      )
-    ) {
-
-      return parsed.pathname
-        .replace("/","")
-        .split("?")[0];
-
+    if (parsed.hostname.includes("youtu.be")) {
+      return parsed.pathname.replace("/","").split("?")[0];
     }
 
-    return parsed.searchParams.get(
-      "v"
-    );
+    return parsed.searchParams.get("v");
 
   } catch {
 
@@ -1830,26 +1617,16 @@ function getYouTubeVideoId(url) {
 }
 
 
-/* ==============================
-   RELEASE COUNTDOWN
-============================== */
-
 function updateReleaseCountdown() {
 
   const label =
-    document.getElementById(
-      "releaseCountdownLabel"
-    );
+    document.getElementById("releaseCountdownLabel");
 
   const target =
-    document.getElementById(
-      "countdown"
-    );
+    document.getElementById("countdown");
 
   const remaining =
-    getRemainingParts(
-      RELEASE_TIME
-    );
+    getRemainingParts(RELEASE_TIME);
 
   if (!remaining) {
 
@@ -1873,38 +1650,24 @@ function updateReleaseCountdown() {
 
     target.textContent =
       "あと " +
-      twoDigits(
-        remaining.hours
-      ) +
+      twoDigits(remaining.hours) +
       ":" +
-      twoDigits(
-        remaining.minutes
-      ) +
+      twoDigits(remaining.minutes) +
       ":" +
-      twoDigits(
-        remaining.seconds
-      );
+      twoDigits(remaining.seconds);
 
   }
 
 }
 
 
-/* ==============================
-   MV COUNTDOWN
-============================== */
-
 function updateMvCountdown() {
 
   const target =
-    document.getElementById(
-      "mvCountdown"
-    );
+    document.getElementById("mvCountdown");
 
   const remaining =
-    getRemainingParts(
-      MV_RELEASE_TIME
-    );
+    getRemainingParts(MV_RELEASE_TIME);
 
   if (!remaining) {
 
@@ -1928,26 +1691,16 @@ function updateMvCountdown() {
 
     target.textContent =
       "公開まで あと " +
-      twoDigits(
-        remaining.hours
-      ) +
+      twoDigits(remaining.hours) +
       ":" +
-      twoDigits(
-        remaining.minutes
-      ) +
+      twoDigits(remaining.minutes) +
       ":" +
-      twoDigits(
-        remaining.seconds
-      );
+      twoDigits(remaining.seconds);
 
   }
 
 }
 
-
-/* ==============================
-   CAMPAIGN
-============================== */
 
 function completeCampaign(
   elementId,
@@ -1955,9 +1708,7 @@ function completeCampaign(
 ) {
 
   const campaign =
-    document.getElementById(
-      elementId
-    );
+    document.getElementById(elementId);
 
   if (!campaign) return;
 
@@ -1966,50 +1717,29 @@ function completeCampaign(
     "completed"
   );
 
-  applyCompletedState(
-    campaign
-  );
+  applyCompletedState(campaign);
 
 }
 
 
-function applyCompletedState(
-  campaign
-) {
+function applyCompletedState(campaign) {
 
-  campaign.classList.add(
-    "completed"
-  );
+  campaign.classList.add("completed");
 
   campaign
     .querySelectorAll(".btn")
-    .forEach(
-      button => {
+    .forEach(button => {
 
-        if (
-          button.tagName ===
-          "BUTTON"
-        ) {
-
-          button.disabled = true;
-
-        }
-
-        if (
-          button.tagName ===
-          "A"
-        ) {
-
-          button.style.pointerEvents =
-            "none";
-
-          button.style.opacity =
-            ".42";
-
-        }
-
+      if (button.tagName === "BUTTON") {
+        button.disabled = true;
       }
-    );
+
+      if (button.tagName === "A") {
+        button.style.pointerEvents = "none";
+        button.style.opacity = ".42";
+      }
+
+    });
 
 }
 
@@ -2020,20 +1750,15 @@ function restoreCampaignState(
 ) {
 
   if (
-    localStorage.getItem(
-      storageKey
-    ) !== "completed"
+    localStorage.getItem(storageKey)
+    !== "completed"
   ) return;
 
   const campaign =
-    document.getElementById(
-      elementId
-    );
+    document.getElementById(elementId);
 
   if (campaign) {
-    applyCompletedState(
-      campaign
-    );
+    applyCompletedState(campaign);
   }
 
 }
@@ -2041,122 +1766,77 @@ function restoreCampaignState(
 
 function updateCampaignStatus() {
 
-  const now =
-    new Date();
+  const now = new Date();
 
   const isFinalDay =
     now >= FINAL_DAY_START &&
     now <= CAMPAIGN_END_TIME;
 
   const remaining =
-    getRemainingParts(
-      CAMPAIGN_END_TIME
-    );
+    getRemainingParts(CAMPAIGN_END_TIME);
 
-  const finalTargets = [
-
-    document.getElementById(
-      "preSaveFinal"
-    ),
-
-    document.getElementById(
-      "preOrderFinal"
-    )
-
+  const targets = [
+    document.getElementById("preSaveFinal"),
+    document.getElementById("preOrderFinal")
   ];
 
-  if (
-    isFinalDay &&
-    remaining
-  ) {
+  if (isFinalDay && remaining) {
 
     const text =
       "🔥 本日最終日　締切まであと " +
-      twoDigits(
-        remaining.hours
-      ) +
+      twoDigits(remaining.hours) +
       ":" +
-      twoDigits(
-        remaining.minutes
-      ) +
+      twoDigits(remaining.minutes) +
       ":" +
-      twoDigits(
-        remaining.seconds
-      );
+      twoDigits(remaining.seconds);
 
-    finalTargets.forEach(
-      target => {
+    targets.forEach(target => {
 
-        target.style.display =
-          "block";
+      target.style.display = "block";
+      target.textContent = text;
 
-        target.textContent =
-          text;
-
-      }
-    );
+    });
 
   } else {
 
-    finalTargets.forEach(
-      target => {
-
-        target.style.display =
-          "none";
-
-      }
-    );
+    targets.forEach(target => {
+      target.style.display = "none";
+    });
 
   }
 
 }
 
 
-/* ==============================
-   MODAL
-============================== */
-
 function openPreOrderModal() {
 
   document
-    .getElementById(
-      "preOrderModal"
-    )
+    .getElementById("preOrderModal")
     .classList.add("show");
 
 }
 
+
 function closePreOrderModal() {
 
   document
-    .getElementById(
-      "preOrderModal"
-    )
+    .getElementById("preOrderModal")
     .classList.remove("show");
 
 }
 
 
-/* ==============================
-   SCHEDULE DRAW
-============================== */
-
 function drawSchedule() {
 
-  const now =
-    new Date();
+  const now = new Date();
 
   const target =
-    document.getElementById(
-      "scheduleList"
-    );
+    document.getElementById("scheduleList");
 
   const nextIndex =
     SCHEDULE_ITEMS.findIndex(
       item =>
-        new Date(
-          item.release
-        ) > now
+        new Date(item.release) > now
     );
 
   target.innerHTML =
@@ -2164,19 +1844,14 @@ function drawSchedule() {
       (item,index) => {
 
         const past =
-          now >=
-          new Date(
-            item.release
-          );
+          now >= new Date(item.release);
 
         return `
           <div
             class="
               schedule-row
               ${past ? "past" : ""}
-              ${index === nextIndex
-                ? "active"
-                : ""}
+              ${index === nextIndex ? "active" : ""}
             "
           >
 
@@ -2205,91 +1880,71 @@ function drawSchedule() {
 }
 
 
-/* ==============================
-   RELEASED CONTENT
-============================== */
-
 function drawReleasedContents() {
 
   const target =
-    document.getElementById(
-      "releasedContents"
-    );
+    document.getElementById("releasedContents");
 
-  const now =
-    new Date();
+  const now = new Date();
 
   const released =
     SCHEDULE_ITEMS.filter(
       item =>
         item.url &&
-        now >=
-        new Date(
-          item.release
-        )
+        now >= new Date(item.release)
     );
 
   if (!released.length) {
 
     target.innerHTML = "";
-
     return;
 
   }
 
   target.innerHTML =
-    released.map(
-      item => {
+    released.map(item => {
 
-        const videoId =
-          getYouTubeVideoId(
-            item.url
-          );
+      const videoId =
+        getYouTubeVideoId(item.url);
 
-        const title =
-          item.title.replace(
-            /^MV\s+/i,
-            ""
-          );
+      const title =
+        item.title.replace(/^MV\s+/i,"");
 
-        return `
-          <div class="video-card">
+      return `
+        <div class="video-card">
 
-            <img
-              class="thumb"
-              src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg"
-              alt="${title}"
-            >
+          <img
+            class="thumb"
+            src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg"
+            alt="${title}"
+          >
 
-            <div class="video-info">
+          <div class="video-info">
 
-              <div class="video-title">
-                ${title}
-              </div>
-
-              <a
-                class="play"
-                href="${item.url}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ 再生
-              </a>
-
+            <div class="video-title">
+              ${title}
             </div>
 
-          </div>
-        `;
+            <a
+              class="play"
+              href="${item.url}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ▶ 再生
+            </a>
 
-      }
-    ).join("");
+          </div>
+
+        </div>
+      `;
+
+    }).join("");
 
 }
 
 
-/* ==============================
-   INITIALIZE
-============================== */
+/* 初期表示 */
 
 restoreCampaignState(
   "preSaveCampaign",
@@ -2302,41 +1957,27 @@ restoreCampaignState(
 );
 
 updateReleaseCountdown();
-
 updateMvCountdown();
-
 updateCampaignStatus();
-
 drawSchedule();
-
 drawReleasedContents();
 
 
-setInterval(
-  () => {
+setInterval(() => {
 
-    updateReleaseCountdown();
+  updateReleaseCountdown();
+  updateMvCountdown();
+  updateCampaignStatus();
 
-    updateMvCountdown();
-
-    updateCampaignStatus();
-
-  },
-  1000
-);
+},1000);
 
 
-setInterval(
-  () => {
+setInterval(() => {
 
-    drawSchedule();
+  drawSchedule();
+  drawReleasedContents();
 
-    drawReleasedContents();
-
-  },
-  60000
-);
-
+},60000);
 
 </script>
 
