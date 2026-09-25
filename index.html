@@ -25,7 +25,6 @@ body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
-
   color: #252525;
 
   font-family:
@@ -78,7 +77,6 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-
   opacity: .65;
 
   background:
@@ -137,11 +135,8 @@ body::before {
 
   font-size: clamp(42px, 10.5vw, 70px);
   line-height: 1.05;
-
   font-weight: 400;
-
   letter-spacing: -1.5px;
-
   color: #171717;
 
   text-shadow:
@@ -161,18 +156,14 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 13px;
-
   margin: 29px 0;
 }
 
 .myth-divider::before,
 .myth-divider::after {
   content: "";
-
   flex: 1;
-
   height: 1px;
 
   background:
@@ -186,11 +177,8 @@ body::before {
 
 .myth-symbol {
   padding-left: 6px;
-
   color: #555;
-
   font-size: 13px;
-
   letter-spacing: 6px;
 }
 
@@ -205,13 +193,9 @@ body::before {
 
 .release-date {
   font-size: clamp(16px,4.5vw,20px);
-
   font-weight: 600;
-
   letter-spacing: 2px;
 }
-
-/* カウントダウンを1行表示 */
 
 .countdown-row {
   display: flex;
@@ -224,21 +208,15 @@ body::before {
 
 .countdown-label {
   margin-top: 0;
-
   color: #666;
-
   font-size: 11px;
-
   letter-spacing: 2px;
 }
 
 #countdown {
   margin-top: 0;
-
   font-size: clamp(26px,7vw,36px);
-
   font-weight: 500;
-
   letter-spacing: 1px;
 }
 
@@ -249,13 +227,9 @@ body::before {
 
 .section-title {
   margin: 0 0 17px;
-
   text-align: center;
-
   font-size: 18px;
-
   font-weight: 500;
-
   letter-spacing: 4px;
 }
 
@@ -272,20 +246,17 @@ body::before {
 
   gap: 11px;
 
-  align-items: start;
+  align-items: stretch;
 }
 
 .campaign {
   display: flex;
-
   flex-direction: column;
-
   min-width: 0;
 
   padding: 16px 14px;
 
   border: 2px solid #b92d2d;
-
   border-radius: 11px;
 
   background:
@@ -320,21 +291,15 @@ body::before {
 
 .campaign-title {
   font-size: 18px;
-
   font-weight: 900;
-
   line-height: 1.35;
 }
 
 .period {
   margin-top: 6px;
-
   color: #c72c2c;
-
   font-size: 12px;
-
   font-weight: 900;
-
   line-height: 1.45;
 }
 
@@ -375,22 +340,13 @@ body::before {
 
 .campaign-final {
   display: none;
-
   margin-top: 7px;
-
   padding: 6px 8px;
-
   border-radius: 7px;
-
-  background:
-    rgba(190,35,35,.10);
-
+  background: rgba(190,35,35,.10);
   color: #b51f1f;
-
   text-align: center;
-
   font-size: 10px;
-
   font-weight: 900;
 }
 
@@ -399,21 +355,15 @@ body::before {
 
 .description {
   margin-top: 8px;
-
   font-size: 11px;
-
   line-height: 1.55;
 }
 
 .warning {
   margin-top: 7px;
-
   color: #c72c2c;
-
   font-size: 10.5px;
-
   font-weight: 900;
-
   line-height: 1.45;
 }
 
@@ -422,31 +372,23 @@ body::before {
 
 .buttons {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 6px;
-
   margin-top: 10px;
 }
 
 .btn {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   min-height: 31px;
-
   padding: 6px 12px;
 
   border: 0;
-
   border-radius: 7px;
 
   background: #292929;
-
   color: #fff;
 
   text-decoration: none;
@@ -459,7 +401,6 @@ body::before {
     sans-serif;
 
   font-size: 10px;
-
   font-weight: 800;
 
   cursor: pointer;
@@ -470,7 +411,6 @@ body::before {
 
 .btn.red {
   background: #b92d2d;
-
   color: #fff;
 }
 
@@ -480,19 +420,14 @@ body::before {
 
 .btn:disabled {
   opacity: .40;
-
   cursor: default;
-
   transform: none;
 }
 
 .done {
   display: none;
-
   margin-top: 8px;
-
   font-size: 11px;
-
   font-weight: 800;
 }
 
@@ -513,13 +448,11 @@ body::before {
     minmax(0,1.35fr);
 
   gap: 10px;
-
   align-items: start;
 }
 
 .schedule-list {
   display: grid;
-
   gap: 7px;
 }
 
@@ -554,33 +487,25 @@ body::before {
 
 .schedule-date-time {
   display: flex;
-
   align-items: baseline;
-
   gap: 6px;
-
   margin-bottom: 4px;
 }
 
 .schedule-date {
   font-size: 13px;
-
   font-weight: 700;
 }
 
 .schedule-time {
   color: #555;
-
   font-size: 10px;
-
   font-weight: 600;
 }
 
 .schedule-name {
   font-size: 10px;
-
   font-weight: 600;
-
   line-height: 1.4;
 }
 
@@ -595,7 +520,6 @@ body::before {
 
 .contents {
   display: grid;
-
   gap: 9px;
 }
 
@@ -618,39 +542,26 @@ body::before {
 
 .thumb {
   display: block;
-
   width: 100%;
-
   aspect-ratio: 16 / 9;
-
   object-fit: cover;
-
   border-radius: 7px;
 
   background:
     rgba(80,80,80,.08);
 }
 
-
-/* Teaserタイトル ＋ 再生ボタン */
-
 .video-info {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 7px;
-
   margin-top: 7px;
 }
 
 .video-title {
   margin: 0;
-
   min-width: 0;
-
   color: #222;
 
   font-family:
@@ -663,25 +574,18 @@ body::before {
     sans-serif;
 
   font-size: 11px;
-
   font-weight: 700;
-
   line-height: 1.3;
 
   white-space: nowrap;
-
   overflow: hidden;
-
   text-overflow: ellipsis;
 }
 
 .play {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   flex-shrink: 0;
 
   padding: 6px 11px;
@@ -689,7 +593,6 @@ body::before {
   border-radius: 6px;
 
   background: #292929;
-
   color: #fff;
 
   text-decoration: none;
@@ -702,7 +605,6 @@ body::before {
     sans-serif;
 
   font-size: 9px;
-
   font-weight: 800;
 }
 
@@ -719,11 +621,8 @@ body::before {
     rgba(255,255,255,.20);
 
   color: #666;
-
   text-align: center;
-
   font-size: 10px;
-
   line-height: 1.6;
 }
 
@@ -753,27 +652,20 @@ body::before {
 
 .mv-coming-title {
   font-size: 17px;
-
   font-weight: 600;
-
   letter-spacing: 3px;
 }
 
 .mv-coming-time {
   margin-top: 6px;
-
   color: #555;
-
   font-size: 12px;
-
   font-weight: 600;
 }
 
 #mvCountdown {
   margin-top: 7px;
-
   font-size: 13px;
-
   font-weight: 600;
 }
 
@@ -784,15 +676,11 @@ body::before {
 
 .modal {
   position: fixed;
-
   inset: 0;
-
   z-index: 1000;
 
   display: none;
-
   align-items: center;
-
   justify-content: center;
 
   padding: 20px;
@@ -821,7 +709,6 @@ body::before {
     );
 
   color: #222;
-
   text-align: center;
 
   font-family:
@@ -840,7 +727,6 @@ body::before {
 
 .modal-title {
   font-size: 16px;
-
   font-weight: 700;
 }
 
@@ -849,13 +735,11 @@ body::before {
     13px 0 19px;
 
   font-size: 13px;
-
   line-height: 1.7;
 }
 
 .modal-buttons {
   display: flex;
-
   gap: 8px;
 }
 
@@ -864,15 +748,12 @@ body::before {
   flex: 1;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   min-height: 40px;
 
   border: 0;
-
   border-radius: 8px;
 
   font-family:
@@ -885,7 +766,6 @@ body::before {
   text-decoration: none;
 
   font-size: 11px;
-
   font-weight: 800;
 
   cursor: pointer;
@@ -893,13 +773,11 @@ body::before {
 
 .cancel {
   background: #d4d4d4;
-
   color: #333;
 }
 
 .go {
   background: #292929;
-
   color: #fff;
 }
 
@@ -910,18 +788,14 @@ body::before {
 
 .footer {
   margin-top: 45px;
-
   padding-bottom: 6px;
 
   color:
     rgba(30,30,30,.48);
 
   text-align: center;
-
   font-size: 10px;
-
   font-weight: 500;
-
   letter-spacing: .5px;
 }
 
@@ -934,7 +808,6 @@ body::before {
 
   .container {
     width: 94%;
-
     padding-top: 27px;
   }
 
@@ -957,6 +830,8 @@ body::before {
       repeat(2, minmax(0, 1fr));
 
     gap: 8px;
+
+    align-items: stretch;
   }
 
   .campaign {
@@ -1009,9 +884,7 @@ body::before {
 
   .btn {
     min-height: 29px;
-
     padding: 5px 8px;
-
     font-size: 8.5px;
   }
 
@@ -1021,7 +894,6 @@ body::before {
 
   .play {
     padding: 6px 9px;
-
     font-size: 8.5px;
   }
 
@@ -2259,8 +2131,6 @@ function drawReleasedContents() {
             videoId +
             "/hqdefault.jpg";
 
-
-          /* MV Teaser #1 → Teaser #1 */
 
           const displayTitle =
             item.title.replace(
