@@ -240,12 +240,9 @@ body::before {
 
 .campaigns {
   display: grid;
-
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
-
   gap: 11px;
-
   align-items: stretch;
 }
 
@@ -282,11 +279,6 @@ body::before {
     "Yu Gothic",
     Arial,
     sans-serif;
-
-  transition:
-    background .25s,
-    border-color .25s,
-    color .25s;
 }
 
 .campaign-title {
@@ -303,12 +295,8 @@ body::before {
   line-height: 1.45;
 }
 
-
-/* 完了後 */
-
 .campaign.completed {
-  border-color:
-    rgba(70,70,70,.28);
+  border-color: rgba(70,70,70,.28);
 
   background:
     linear-gradient(
@@ -325,18 +313,10 @@ body::before {
   color: #666;
 }
 
-
-/* 終了後 */
-
 .campaign.expired {
-  border-color:
-    rgba(70,70,70,.18);
-
+  border-color: rgba(70,70,70,.18);
   opacity: .62;
 }
-
-
-/* 最終日 */
 
 .campaign-final {
   display: none;
@@ -349,9 +329,6 @@ body::before {
   font-size: 10px;
   font-weight: 900;
 }
-
-
-/* 説明 */
 
 .description {
   margin-top: 8px;
@@ -366,9 +343,6 @@ body::before {
   font-weight: 900;
   line-height: 1.45;
 }
-
-
-/* ボタン */
 
 .buttons {
   display: flex;
@@ -404,24 +378,15 @@ body::before {
   font-weight: 800;
 
   cursor: pointer;
-
-  -webkit-tap-highlight-color:
-    transparent;
 }
 
 .btn.red {
   background: #b92d2d;
-  color: #fff;
-}
-
-.btn:active {
-  transform: scale(.97);
 }
 
 .btn:disabled {
   opacity: .40;
   cursor: default;
-  transform: none;
 }
 
 .done {
@@ -442,11 +407,9 @@ body::before {
 
 .schedule-layout {
   display: grid;
-
   grid-template-columns:
     minmax(0,.9fr)
     minmax(0,1.35fr);
-
   gap: 10px;
   align-items: start;
 }
@@ -458,27 +421,15 @@ body::before {
 
 .schedule-row {
   padding: 9px 8px;
-
-  border:
-    1px solid
-    rgba(55,55,55,.25);
-
+  border: 1px solid rgba(55,55,55,.25);
   border-radius: 9px;
-
-  background:
-    rgba(255,255,255,.28);
+  background: rgba(255,255,255,.28);
 }
 
 .schedule-row.active {
-  border-color:
-    rgba(35,35,35,.72);
-
-  background:
-    rgba(255,255,255,.55);
-
-  box-shadow:
-    0 3px 13px
-    rgba(0,0,0,.07);
+  border-color: rgba(35,35,35,.72);
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 3px 13px rgba(0,0,0,.07);
 }
 
 .schedule-row.past {
@@ -511,7 +462,7 @@ body::before {
 
 
 /* ==============================
-   公開コンテンツ
+   公開済みコンテンツ
 ============================== */
 
 .released-content {
@@ -525,19 +476,10 @@ body::before {
 
 .video-card {
   padding: 7px;
-
-  border:
-    1px solid
-    rgba(50,50,50,.20);
-
+  border: 1px solid rgba(50,50,50,.20);
   border-radius: 10px;
-
-  background:
-    rgba(255,255,255,.40);
-
-  box-shadow:
-    0 3px 12px
-    rgba(0,0,0,.05);
+  background: rgba(255,255,255,.40);
+  box-shadow: 0 3px 12px rgba(0,0,0,.05);
 }
 
 .thumb {
@@ -546,9 +488,7 @@ body::before {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 7px;
-
-  background:
-    rgba(80,80,80,.08);
+  background: rgba(80,80,80,.08);
 }
 
 .video-info {
@@ -568,15 +508,11 @@ body::before {
     -apple-system,
     BlinkMacSystemFont,
     "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
     Arial,
     sans-serif;
 
   font-size: 11px;
   font-weight: 700;
-  line-height: 1.3;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -589,7 +525,6 @@ body::before {
   flex-shrink: 0;
 
   padding: 6px 11px;
-
   border-radius: 6px;
 
   background: #292929;
@@ -608,65 +543,275 @@ body::before {
   font-weight: 800;
 }
 
-.waiting-card {
-  padding: 14px 10px;
-
-  border:
-    1px dashed
-    rgba(50,50,50,.25);
-
-  border-radius: 11px;
-
-  background:
-    rgba(255,255,255,.20);
-
-  color: #666;
-  text-align: center;
-  font-size: 10px;
-  line-height: 1.6;
-}
-
 
 /* ==============================
-   MV公開待機
+   MUSIC VIDEO COUNTER
 ============================== */
 
 .mv-area {
   margin-top: 25px;
 }
 
-.mv-coming {
-  padding: 18px 14px;
+.mv-counter-card {
+  overflow: hidden;
 
-  border:
-    1px solid
-    rgba(50,50,50,.25);
+  padding: 14px;
 
-  border-radius: 13px;
+  border: 1px solid rgba(50,50,50,.25);
+  border-radius: 14px;
 
-  background:
-    rgba(255,255,255,.28);
+  background: rgba(255,255,255,.45);
 
+  box-shadow:
+    0 5px 18px rgba(0,0,0,.07);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    Arial,
+    sans-serif;
+}
+
+.mv-top {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0,1.25fr)
+    minmax(0,.85fr);
+
+  gap: 12px;
+
+  align-items: center;
+}
+
+.mv-placeholder-image {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+
+  border-radius: 9px;
+
+  background: #000;
+}
+
+.mv-top-info {
+  min-width: 0;
   text-align: center;
 }
 
-.mv-coming-title {
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 3px;
+.mv-song-title {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.3;
 }
 
-.mv-coming-time {
-  margin-top: 6px;
+.mv-release-badge {
+  margin-top: 11px;
+
+  padding: 9px 7px;
+
+  border: 1.5px solid #333;
+  border-radius: 8px;
+
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.mv-countdown {
+  margin-top: 9px;
+
   color: #555;
-  font-size: 12px;
-  font-weight: 600;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 1.4;
 }
 
-#mvCountdown {
-  margin-top: 7px;
-  font-size: 13px;
-  font-weight: 600;
+
+/* 再生・高評価 */
+
+.mv-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  margin-top: 17px;
+
+  border-top:
+    1px solid rgba(70,70,70,.12);
+
+  padding-top: 16px;
+}
+
+.mv-stat-column {
+  min-width: 0;
+
+  padding:
+    0 12px;
+}
+
+.mv-stat-column + .mv-stat-column {
+  border-left:
+    1px solid rgba(70,70,70,.13);
+}
+
+.mv-stat-label {
+  color: #777;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.mv-stat-number {
+  margin-top: 5px;
+
+  text-align: center;
+
+  color: #111;
+
+  font-size: clamp(29px,7vw,43px);
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+.mv-stat-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 7px;
+
+  margin-top: 12px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.mv-stat-row-label {
+  color: #888;
+}
+
+.mv-stat-row-value {
+  color: #151515;
+
+  text-align: right;
+}
+
+.mv-stat-box {
+  margin-top: 10px;
+
+  padding: 8px 5px;
+
+  border:
+    1px solid
+    rgba(80,80,80,.22);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255,255,255,.34);
+
+  text-align: center;
+
+  color: #555;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+/* 目標 */
+
+.mv-goal {
+  margin-top: 18px;
+
+  padding-top: 17px;
+
+  border-top:
+    1px solid
+    rgba(70,70,70,.12);
+}
+
+.mv-goal-text {
+  text-align: center;
+
+  font-size: 15px;
+
+  font-weight: 900;
+}
+
+.mv-pace {
+  margin-top: 12px;
+
+  padding: 9px;
+
+  border:
+    1px solid
+    rgba(80,80,80,.22);
+
+  border-radius: 9px;
+
+  text-align: center;
+
+  color: #555;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.mv-progress {
+  margin-top: 14px;
+
+  height: 10px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(50,50,50,.08);
+}
+
+.mv-progress-fill {
+  width: 0%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #222;
+}
+
+.mv-progress-percent {
+  margin-top: 6px;
+
+  text-align: right;
+
+  color: #777;
+
+  font-size: 12px;
+
+  font-weight: 800;
 }
 
 
@@ -684,9 +829,7 @@ body::before {
   justify-content: center;
 
   padding: 20px;
-
-  background:
-    rgba(0,0,0,.72);
+  background: rgba(0,0,0,.72);
 }
 
 .modal.show {
@@ -694,11 +837,8 @@ body::before {
 }
 
 .modal-box {
-  width:
-    min(100%,420px);
-
+  width: min(100%,420px);
   padding: 22px;
-
   border-radius: 15px;
 
   background:
@@ -715,14 +855,8 @@ body::before {
     -apple-system,
     BlinkMacSystemFont,
     "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
     Arial,
     sans-serif;
-
-  box-shadow:
-    0 15px 50px
-    rgba(0,0,0,.28);
 }
 
 .modal-title {
@@ -731,9 +865,7 @@ body::before {
 }
 
 .modal-text {
-  margin:
-    13px 0 19px;
-
+  margin: 13px 0 19px;
   font-size: 13px;
   line-height: 1.7;
 }
@@ -756,18 +888,10 @@ body::before {
   border: 0;
   border-radius: 8px;
 
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-
   text-decoration: none;
 
   font-size: 11px;
   font-weight: 800;
-
   cursor: pointer;
 }
 
@@ -789,14 +913,9 @@ body::before {
 .footer {
   margin-top: 45px;
   padding-bottom: 6px;
-
-  color:
-    rgba(30,30,30,.48);
-
+  color: rgba(30,30,30,.48);
   text-align: center;
   font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .5px;
 }
 
 
@@ -826,12 +945,7 @@ body::before {
   }
 
   .campaigns {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
     gap: 8px;
-
-    align-items: stretch;
   }
 
   .campaign {
@@ -856,8 +970,7 @@ body::before {
 
   .schedule-layout {
     grid-template-columns:
-      .82fr
-      1.18fr;
+      .82fr 1.18fr;
 
     gap: 7px;
   }
@@ -870,16 +983,9 @@ body::before {
     font-size: 12px;
   }
 
-  .schedule-time {
-    font-size: 9px;
-  }
-
+  .schedule-time,
   .schedule-name {
     font-size: 9px;
-  }
-
-  .buttons {
-    gap: 5px;
   }
 
   .btn {
@@ -888,13 +994,62 @@ body::before {
     font-size: 8.5px;
   }
 
-  .video-title {
+
+  /* MV */
+
+  .mv-counter-card {
+    padding: 10px;
+  }
+
+  .mv-top {
+    grid-template-columns:
+      1.2fr .8fr;
+
+    gap: 8px;
+  }
+
+  .mv-song-title {
+    font-size: 14px;
+  }
+
+  .mv-release-badge {
+    margin-top: 7px;
+    padding: 7px 4px;
+    font-size: 8px;
+  }
+
+  .mv-countdown {
+    margin-top: 6px;
+    font-size: 8px;
+  }
+
+  .mv-stats {
+    margin-top: 13px;
+    padding-top: 13px;
+  }
+
+  .mv-stat-column {
+    padding: 0 7px;
+  }
+
+  .mv-stat-label {
     font-size: 10px;
   }
 
-  .play {
-    padding: 6px 9px;
+  .mv-stat-number {
+    font-size: 29px;
+  }
+
+  .mv-stat-row {
     font-size: 8.5px;
+  }
+
+  .mv-stat-box {
+    font-size: 8.5px;
+  }
+
+  .mv-goal-text {
+    font-size: 13px;
   }
 
 }
@@ -907,10 +1062,6 @@ body::before {
 
 <div class="container">
 
-
-<!-- ==============================
-     TOP
-============================== -->
 
 <header class="hero">
 
@@ -935,10 +1086,6 @@ body::before {
   </span>
 </div>
 
-
-<!-- ==============================
-     RELEASE
-============================== -->
 
 <section class="release">
 
@@ -971,10 +1118,6 @@ body::before {
 </div>
 
 
-<!-- ==============================
-     DIGITAL CAMPAIGN
-============================== -->
-
 <section>
 
 <h2 class="section-title">
@@ -984,8 +1127,6 @@ body::before {
 
 <div class="campaigns">
 
-
-<!-- Pre-Add / Pre-Save -->
 
 <div
   class="campaign"
@@ -1016,7 +1157,6 @@ body::before {
 
     <a
       class="btn"
-      id="preSaveLink"
       href="https://ffm.to/namelessmyths"
       target="_blank"
       rel="noopener noreferrer"
@@ -1026,7 +1166,6 @@ body::before {
 
     <button
       class="btn red"
-      id="preSaveDoneButton"
       type="button"
       onclick="
         completeCampaign(
@@ -1046,8 +1185,6 @@ body::before {
 
 </div>
 
-
-<!-- Pre-Order -->
 
 <div
   class="campaign"
@@ -1084,7 +1221,6 @@ body::before {
 
     <button
       class="btn"
-      id="preOrderLink"
       type="button"
       onclick="openPreOrderModal()"
     >
@@ -1093,7 +1229,6 @@ body::before {
 
     <a
       class="btn"
-      id="applicationLink"
       href="https://docs.google.com/forms/d/e/1FAIpQLSdzA0ZT5h53ZFo0bMFYMC4-UeigZDJe60JegavdsXZep-RsBQ/viewform"
       target="_blank"
       rel="noopener noreferrer"
@@ -1103,7 +1238,6 @@ body::before {
 
     <button
       class="btn red"
-      id="preOrderDoneButton"
       type="button"
       onclick="
         completeCampaign(
@@ -1136,10 +1270,6 @@ body::before {
 </div>
 
 
-<!-- ==============================
-     RELEASE SCHEDULE
-============================== -->
-
 <section>
 
 <h2 class="section-title">
@@ -1154,7 +1284,6 @@ body::before {
     id="scheduleList"
   ></div>
 
-
   <div class="released-content">
 
     <div
@@ -1168,7 +1297,7 @@ body::before {
 
 
 <!-- ==============================
-     MV公開待機
+     MUSIC VIDEO COUNTER
 ============================== -->
 
 <div
@@ -1176,19 +1305,209 @@ body::before {
   id="mvArea"
 >
 
-  <div class="mv-coming">
+  <div class="mv-counter-card">
 
-    <div class="mv-coming-title">
-      MUSIC VIDEO
+
+    <!-- 上段 -->
+
+    <div class="mv-top">
+
+      <img
+        class="mv-placeholder-image"
+        src="IMG_7733.jpeg"
+        alt="Nameless MythS Music Video"
+      >
+
+      <div class="mv-top-info">
+
+        <div class="mv-song-title">
+          Nameless MythS
+        </div>
+
+        <div class="mv-release-badge">
+          2026.9.28<br>
+          8:00PM（JST）
+        </div>
+
+        <div
+          class="mv-countdown"
+          id="mvCountdown"
+        >
+          公開まで計算中...
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="mv-coming-time">
-      2026.09.28 20:00
+
+    <!-- 再生数・高評価 -->
+
+    <div class="mv-stats">
+
+
+      <div class="mv-stat-column">
+
+        <div class="mv-stat-label">
+          ▶ 再生回数
+        </div>
+
+        <div
+          class="mv-stat-number"
+          id="mvViews"
+        >
+          —
+        </div>
+
+        <div class="mv-stat-row">
+
+          <span class="mv-stat-row-label">
+            1時間比
+          </span>
+
+          <span
+            class="mv-stat-row-value"
+            id="mvHourlyViews"
+          >
+            —
+          </span>
+
+        </div>
+
+        <div
+          class="mv-stat-box"
+          id="mvTotalViews"
+        >
+          トータル —
+        </div>
+
+        <div class="mv-stat-row">
+
+          <span class="mv-stat-row-label">
+            前日比
+          </span>
+
+          <span
+            class="mv-stat-row-value"
+            id="mvDailyViews"
+          >
+            —
+          </span>
+
+        </div>
+
+        <div
+          class="mv-stat-box"
+          id="mvDateViews"
+        >
+          9/28 —
+        </div>
+
+      </div>
+
+
+      <div class="mv-stat-column">
+
+        <div class="mv-stat-label">
+          👍 高評価
+        </div>
+
+        <div
+          class="mv-stat-number"
+          id="mvLikes"
+        >
+          —
+        </div>
+
+        <div class="mv-stat-row">
+
+          <span class="mv-stat-row-label">
+            1時間比
+          </span>
+
+          <span
+            class="mv-stat-row-value"
+            id="mvHourlyLikes"
+          >
+            —
+          </span>
+
+        </div>
+
+        <div
+          class="mv-stat-box"
+          id="mvTotalLikes"
+        >
+          トータル —
+        </div>
+
+        <div class="mv-stat-row">
+
+          <span class="mv-stat-row-label">
+            前日比
+          </span>
+
+          <span
+            class="mv-stat-row-value"
+            id="mvDailyLikes"
+          >
+            —
+          </span>
+
+        </div>
+
+        <div
+          class="mv-stat-box"
+          id="mvDateLikes"
+        >
+          9/28 —
+        </div>
+
+      </div>
+
+
     </div>
 
-    <div id="mvCountdown">
-      公開まで計算中...
+
+    <!-- 目標 -->
+
+    <div class="mv-goal">
+
+      <div
+        class="mv-goal-text"
+        id="mvGoalText"
+      >
+        10万回再生まで あと —
+      </div>
+
+
+      <div
+        class="mv-pace"
+        id="mvPace"
+      >
+        ペース —　｜　達成予測：—
+      </div>
+
+
+      <div class="mv-progress">
+
+        <div
+          class="mv-progress-fill"
+          id="mvProgressFill"
+        ></div>
+
+      </div>
+
+
+      <div
+        class="mv-progress-percent"
+        id="mvProgressPercent"
+      >
+        —%
+      </div>
+
     </div>
+
 
   </div>
 
@@ -1205,24 +1524,16 @@ body::before {
 </div>
 
 
-<!-- ==============================
-     PRE-ORDER POPUP
-============================== -->
+<!-- PRE-ORDER MODAL -->
 
 <div
   class="modal"
   id="preOrderModal"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="modalTitle"
 >
 
 <div class="modal-box">
 
-  <div
-    class="modal-title"
-    id="modalTitle"
-  >
+  <div class="modal-title">
     予約購入前にご確認ください
   </div>
 
@@ -1246,7 +1557,6 @@ body::before {
 
     <button
       class="cancel"
-      type="button"
       onclick="closePreOrderModal()"
     >
       戻る
@@ -1272,10 +1582,6 @@ body::before {
 <script>
 
 
-/* ==============================
-   基本日時
-============================== */
-
 const RELEASE_TIME =
   new Date(
     "2026-09-28T00:00:00+09:00"
@@ -1298,7 +1604,7 @@ const FINAL_DAY_START =
 
 
 /* ==============================
-   RELEASE SCHEDULE
+   SCHEDULE
 ============================== */
 
 const SCHEDULE_ITEMS = [
@@ -1306,99 +1612,67 @@ const SCHEDULE_ITEMS = [
   {
     date: "9/24",
     time: "20:00",
-
-    title:
-      "MV Teaser #1",
-
+    title: "MV Teaser #1",
     release:
       "2026-09-24T20:00:00+09:00",
-
     url:
       "https://youtu.be/ZIlaGs3yfP8?si=Hd1MhypqE6TntGKd"
   },
 
-
   {
     date: "9/25",
     time: "20:00",
-
-    title:
-      "MV Teaser #2",
-
+    title: "MV Teaser #2",
     release:
       "2026-09-25T20:00:00+09:00",
-
     url:
       "https://youtu.be/bxDeMvS_RSU?si=1cMhQDCnkGkpKN4C"
   },
 
-
   {
     date: "9/26",
     time: "17:00",
-
-    title:
-      "MV Teaser #3",
-
+    title: "MV Teaser #3",
     release:
       "2026-09-26T17:00:00+09:00",
-
     url: ""
   },
-
 
   {
     date: "9/27",
     time: "20:00",
-
-    title:
-      "MV Teaser #4",
-
+    title: "MV Teaser #4",
     release:
       "2026-09-27T20:00:00+09:00",
-
     url: ""
   },
-
 
   {
     date: "9/28",
     time: "0:00",
-
     title:
       "“Nameless MythS” Digital Release",
-
     release:
       "2026-09-28T00:00:00+09:00",
-
     url: ""
   },
-
 
   {
     date: "9/28",
     time: "20:00",
-
-    title:
-      "Music Video",
-
+    title: "Music Video",
     release:
       "2026-09-28T20:00:00+09:00",
-
     url: ""
   },
-
 
   {
     date: "9/29",
     time: "17:00",
-
     title:
       "Music Video Behind The Scenes",
-
     release:
       "2026-09-29T17:00:00+09:00",
-
     url: ""
   }
 
@@ -1406,14 +1680,62 @@ const SCHEDULE_ITEMS = [
 
 
 /* ==============================
-   YouTube Video ID
+   UTIL
 ============================== */
+
+function getRemainingParts(target) {
+
+  const difference =
+    target.getTime() -
+    new Date().getTime();
+
+  if (difference <= 0) {
+    return null;
+  }
+
+  const totalSeconds =
+    Math.floor(
+      difference / 1000
+    );
+
+  return {
+
+    days:
+      Math.floor(
+        totalSeconds / 86400
+      ),
+
+    hours:
+      Math.floor(
+        (totalSeconds % 86400) /
+        3600
+      ),
+
+    minutes:
+      Math.floor(
+        (totalSeconds % 3600) /
+        60
+      ),
+
+    seconds:
+      totalSeconds % 60
+
+  };
+
+}
+
+
+function twoDigits(number) {
+
+  return String(number)
+    .padStart(2,"0");
+
+}
+
 
 function getYouTubeVideoId(url) {
 
-  if (!url) {
-    return null;
-  }
+  if (!url) return null;
 
   try {
 
@@ -1427,122 +1749,20 @@ function getYouTubeVideoId(url) {
     ) {
 
       return parsed.pathname
-        .replace("/", "")
+        .replace("/","")
         .split("?")[0];
 
     }
 
-    if (
-      parsed.hostname.includes(
-        "youtube.com"
-      )
-    ) {
-
-      if (
-        parsed.pathname.startsWith(
-          "/shorts/"
-        )
-      ) {
-
-        return parsed.pathname
-          .split("/")[2];
-
-      }
-
-      if (
-        parsed.pathname.startsWith(
-          "/embed/"
-        )
-      ) {
-
-        return parsed.pathname
-          .split("/")[2];
-
-      }
-
-      return parsed.searchParams.get(
-        "v"
-      );
-
-    }
-
-  } catch (error) {
-
-    console.error(
-      "YouTube URL error:",
-      error
+    return parsed.searchParams.get(
+      "v"
     );
 
-  }
-
-  return null;
-
-}
-
-
-/* ==============================
-   COUNTDOWN
-============================== */
-
-function getRemainingParts(target) {
-
-  const now =
-    new Date();
-
-  const difference =
-    target.getTime() -
-    now.getTime();
-
-  if (
-    difference <= 0
-  ) {
+  } catch {
 
     return null;
 
   }
-
-  const totalSeconds =
-    Math.floor(
-      difference / 1000
-    );
-
-  const days =
-    Math.floor(
-      totalSeconds / 86400
-    );
-
-  const hours =
-    Math.floor(
-      (totalSeconds % 86400) /
-      3600
-    );
-
-  const minutes =
-    Math.floor(
-      (totalSeconds % 3600) /
-      60
-    );
-
-  const seconds =
-    totalSeconds % 60;
-
-  return {
-    days,
-    hours,
-    minutes,
-    seconds
-  };
-
-}
-
-
-function twoDigits(number) {
-
-  return String(number)
-    .padStart(
-      2,
-      "0"
-    );
 
 }
 
@@ -1570,8 +1790,7 @@ function updateReleaseCountdown() {
 
   if (!remaining) {
 
-    label.textContent =
-      "";
+    label.textContent = "";
 
     target.textContent =
       "NOW RELEASED";
@@ -1580,9 +1799,7 @@ function updateReleaseCountdown() {
 
   }
 
-  if (
-    remaining.days >= 1
-  ) {
+  if (remaining.days >= 1) {
 
     target.textContent =
       "あと" +
@@ -1629,15 +1846,13 @@ function updateMvCountdown() {
   if (!remaining) {
 
     target.textContent =
-      "公開予定時刻になりました";
+      "MUSIC VIDEO OUT";
 
     return;
 
   }
 
-  if (
-    remaining.days > 0
-  ) {
+  if (remaining.days > 0) {
 
     target.textContent =
       "公開まで あと" +
@@ -1646,29 +1861,29 @@ function updateMvCountdown() {
       remaining.hours +
       "時間";
 
-    return;
+  } else {
+
+    target.textContent =
+      "公開まで あと " +
+      twoDigits(
+        remaining.hours
+      ) +
+      ":" +
+      twoDigits(
+        remaining.minutes
+      ) +
+      ":" +
+      twoDigits(
+        remaining.seconds
+      );
 
   }
-
-  target.textContent =
-    "公開まで あと " +
-    twoDigits(
-      remaining.hours
-    ) +
-    ":" +
-    twoDigits(
-      remaining.minutes
-    ) +
-    ":" +
-    twoDigits(
-      remaining.seconds
-    );
 
 }
 
 
 /* ==============================
-   CAMPAIGN 完了
+   CAMPAIGN
 ============================== */
 
 function completeCampaign(
@@ -1681,9 +1896,7 @@ function completeCampaign(
       elementId
     );
 
-  if (!campaign) {
-    return;
-  }
+  if (!campaign) return;
 
   localStorage.setItem(
     storageKey,
@@ -1706,9 +1919,7 @@ function applyCompletedState(
   );
 
   campaign
-    .querySelectorAll(
-      ".btn"
-    )
+    .querySelectorAll(".btn")
     .forEach(
       button => {
 
@@ -1717,8 +1928,7 @@ function applyCompletedState(
           "BUTTON"
         ) {
 
-          button.disabled =
-            true;
+          button.disabled = true;
 
         }
 
@@ -1731,7 +1941,7 @@ function applyCompletedState(
             "none";
 
           button.style.opacity =
-            "0.42";
+            ".42";
 
         }
 
@@ -1749,33 +1959,22 @@ function restoreCampaignState(
   if (
     localStorage.getItem(
       storageKey
-    ) !==
-    "completed"
-  ) {
-
-    return;
-
-  }
+    ) !== "completed"
+  ) return;
 
   const campaign =
     document.getElementById(
       elementId
     );
 
-  if (!campaign) {
-    return;
+  if (campaign) {
+    applyCompletedState(
+      campaign
+    );
   }
-
-  applyCompletedState(
-    campaign
-  );
 
 }
 
-
-/* ==============================
-   CAMPAIGN 締切
-============================== */
 
 function updateCampaignStatus() {
 
@@ -1785,10 +1984,6 @@ function updateCampaignStatus() {
   const isFinalDay =
     now >= FINAL_DAY_START &&
     now <= CAMPAIGN_END_TIME;
-
-  const isExpired =
-    now >
-    CAMPAIGN_END_TIME;
 
   const remaining =
     getRemainingParts(
@@ -1806,7 +2001,6 @@ function updateCampaignStatus() {
     )
 
   ];
-
 
   if (
     isFinalDay &&
@@ -1852,91 +2046,11 @@ function updateCampaignStatus() {
 
   }
 
-
-  if (!isExpired) {
-    return;
-  }
-
-
-  [
-    "preSaveCampaign",
-    "preOrderCampaign"
-  ].forEach(
-    id => {
-
-      const campaign =
-        document.getElementById(
-          id
-        );
-
-      if (
-        !campaign ||
-        campaign.classList.contains(
-          "completed"
-        )
-      ) {
-
-        return;
-
-      }
-
-      campaign.classList.add(
-        "expired"
-      );
-
-      campaign
-        .querySelectorAll(
-          ".btn"
-        )
-        .forEach(
-          button => {
-
-            if (
-              button.tagName ===
-              "BUTTON"
-            ) {
-
-              button.disabled =
-                true;
-
-            }
-
-            if (
-              button.tagName ===
-              "A"
-            ) {
-
-              button.style.pointerEvents =
-                "none";
-
-              button.style.opacity =
-                "0.42";
-
-            }
-
-          }
-        );
-
-      const period =
-        campaign.querySelector(
-          ".period"
-        );
-
-      if (period) {
-
-        period.textContent =
-          "受付終了";
-
-      }
-
-    }
-  );
-
 }
 
 
 /* ==============================
-   PRE-ORDER POPUP
+   MODAL
 ============================== */
 
 function openPreOrderModal() {
@@ -1945,12 +2059,9 @@ function openPreOrderModal() {
     .getElementById(
       "preOrderModal"
     )
-    .classList.add(
-      "show"
-    );
+    .classList.add("show");
 
 }
-
 
 function closePreOrderModal() {
 
@@ -1958,36 +2069,13 @@ function closePreOrderModal() {
     .getElementById(
       "preOrderModal"
     )
-    .classList.remove(
-      "show"
-    );
+    .classList.remove("show");
 
 }
 
 
-document
-  .getElementById(
-    "preOrderModal"
-  )
-  .addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target.id ===
-        "preOrderModal"
-      ) {
-
-        closePreOrderModal();
-
-      }
-
-    }
-  );
-
-
 /* ==============================
-   RELEASE SCHEDULE描画
+   SCHEDULE DRAW
 ============================== */
 
 function drawSchedule() {
@@ -1995,7 +2083,7 @@ function drawSchedule() {
   const now =
     new Date();
 
-  const scheduleList =
+  const target =
     document.getElementById(
       "scheduleList"
     );
@@ -2008,64 +2096,54 @@ function drawSchedule() {
         ) > now
     );
 
-  scheduleList.innerHTML =
-    SCHEDULE_ITEMS
-      .map(
-        (
-          item,
-          index
-        ) => {
+  target.innerHTML =
+    SCHEDULE_ITEMS.map(
+      (item,index) => {
 
-          const releaseTime =
-            new Date(
-              item.release
-            );
+        const past =
+          now >=
+          new Date(
+            item.release
+          );
 
-          const isPast =
-            now >=
-            releaseTime;
+        return `
+          <div
+            class="
+              schedule-row
+              ${past ? "past" : ""}
+              ${index === nextIndex
+                ? "active"
+                : ""}
+            "
+          >
 
-          const isNext =
-            index ===
-            nextIndex;
+            <div class="schedule-date-time">
 
-          return `
-            <div
-              class="
-                schedule-row
-                ${isPast ? "past" : ""}
-                ${isNext ? "active" : ""}
-              "
-            >
+              <span class="schedule-date">
+                ${item.date}
+              </span>
 
-              <div class="schedule-date-time">
-
-                <span class="schedule-date">
-                  ${item.date}
-                </span>
-
-                <span class="schedule-time">
-                  ${item.time}
-                </span>
-
-              </div>
-
-              <div class="schedule-name">
-                ${item.title}
-              </div>
+              <span class="schedule-time">
+                ${item.time}
+              </span>
 
             </div>
-          `;
 
-        }
-      )
-      .join("");
+            <div class="schedule-name">
+              ${item.title}
+            </div>
+
+          </div>
+        `;
+
+      }
+    ).join("");
 
 }
 
 
 /* ==============================
-   公開済みコンテンツ
+   RELEASED CONTENT
 ============================== */
 
 function drawReleasedContents() {
@@ -2080,105 +2158,74 @@ function drawReleasedContents() {
 
   const released =
     SCHEDULE_ITEMS.filter(
-      item => {
-
-        if (!item.url) {
-          return false;
-        }
-
-        return (
-          now >=
-          new Date(
-            item.release
-          )
-        );
-
-      }
+      item =>
+        item.url &&
+        now >=
+        new Date(
+          item.release
+        )
     );
 
+  if (!released.length) {
 
-  if (
-    released.length === 0
-  ) {
-
-    target.innerHTML = `
-      <div class="waiting-card">
-        公開されたコンテンツを<br>
-        ここに表示します
-      </div>
-    `;
+    target.innerHTML = "";
 
     return;
 
   }
 
-
   target.innerHTML =
-    released
-      .map(
-        item => {
+    released.map(
+      item => {
 
-          const videoId =
-            getYouTubeVideoId(
-              item.url
-            );
+        const videoId =
+          getYouTubeVideoId(
+            item.url
+          );
 
-          if (!videoId) {
-            return "";
-          }
+        const title =
+          item.title.replace(
+            /^MV\s+/i,
+            ""
+          );
 
-          const thumbnail =
-            "https://i.ytimg.com/vi/" +
-            videoId +
-            "/hqdefault.jpg";
+        return `
+          <div class="video-card">
 
+            <img
+              class="thumb"
+              src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg"
+              alt="${title}"
+            >
 
-          const displayTitle =
-            item.title.replace(
-              /^MV\s+/i,
-              ""
-            );
+            <div class="video-info">
 
-
-          return `
-            <div class="video-card">
-
-              <img
-                class="thumb"
-                src="${thumbnail}"
-                alt="${displayTitle}"
-                loading="lazy"
-              >
-
-              <div class="video-info">
-
-                <div class="video-title">
-                  ${displayTitle}
-                </div>
-
-                <a
-                  class="play"
-                  href="${item.url}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ▶ 再生
-                </a>
-
+              <div class="video-title">
+                ${title}
               </div>
 
-            </div>
-          `;
+              <a
+                class="play"
+                href="${item.url}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ▶ 再生
+              </a>
 
-        }
-      )
-      .join("");
+            </div>
+
+          </div>
+        `;
+
+      }
+    ).join("");
 
 }
 
 
 /* ==============================
-   初期化
+   INITIALIZE
 ============================== */
 
 restoreCampaignState(
@@ -2191,7 +2238,6 @@ restoreCampaignState(
   "nameless_preorder"
 );
 
-
 updateReleaseCountdown();
 
 updateMvCountdown();
@@ -2202,8 +2248,6 @@ drawSchedule();
 
 drawReleasedContents();
 
-
-/* 1秒更新 */
 
 setInterval(
   () => {
@@ -2218,8 +2262,6 @@ setInterval(
   1000
 );
 
-
-/* 1分更新 */
 
 setInterval(
   () => {
