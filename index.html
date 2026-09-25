@@ -211,8 +211,17 @@ body::before {
   letter-spacing: 2px;
 }
 
-.countdown-label {
+.countdown-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
   margin-top: 13px;
+  white-space: nowrap;
+}
+
+.countdown-label {
+  margin-top: 0;
 
   color: #666;
 
@@ -222,7 +231,7 @@ body::before {
 }
 
 #countdown {
-  margin-top: 5px;
+  margin-top: 0;
 
   font-size: clamp(26px,7vw,36px);
 
@@ -255,12 +264,17 @@ body::before {
 
 .campaigns {
   display: grid;
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 11px;
+  align-items: stretch;
 }
 
 .campaign {
-  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 260px;
+  padding: 18px 14px;
 
   border: 2px solid #b92d2d;
 
@@ -297,11 +311,11 @@ body::before {
 }
 
 .campaign-title {
-  font-size: 13px;
+  font-size: 18px;
 
-  font-weight: 700;
+  font-weight: 900;
 
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 .period {
@@ -405,7 +419,8 @@ body::before {
 
   gap: 6px;
 
-  margin-top: 9px;
+  margin-top: auto;
+  padding-top: 14px;
 }
 
 .btn {
@@ -930,12 +945,18 @@ body::before {
       clamp(39px,11vw,53px);
   }
 
+  .campaigns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
   .campaign {
-    padding: 10px 11px;
+    min-height: 275px;
+    padding: 14px 9px;
   }
 
   .campaign-title {
-    font-size: 11px;
+    font-size: 15px;
   }
 
   .period {
@@ -981,9 +1002,9 @@ body::before {
   .btn {
     min-height: 29px;
 
-    padding: 5px 10px;
+    padding: 5px 8px;
 
-    font-size: 9px;
+    font-size: 8.5px;
   }
 
   .video-title {
@@ -1045,15 +1066,17 @@ body::before {
     2026.09.28 Digital Release
   </div>
 
-  <div
-    class="countdown-label"
-    id="releaseCountdownLabel"
-  >
-    配信開始まで
-  </div>
+  <div class="countdown-row">
+    <div
+      class="countdown-label"
+      id="releaseCountdownLabel"
+    >
+      配信開始まで
+    </div>
 
-  <div id="countdown">
-    計算中...
+    <div id="countdown">
+      計算中...
+    </div>
   </div>
 
 </section>
@@ -1088,7 +1111,7 @@ body::before {
 >
 
   <div class="campaign-title">
-    デジタルキャンペーン「Pre-Add / Pre-Save」
+    Pre-Add / Pre-Save
   </div>
 
   <div
@@ -1104,7 +1127,7 @@ body::before {
   ></div>
 
   <div class="description">
-    配信リリース当日にライブラリに追加されます。
+    配信当日にライブラリに追加されます。
   </div>
 
   <div class="buttons">
@@ -1150,7 +1173,7 @@ body::before {
 >
 
   <div class="campaign-title">
-    デジタルキャンペーン「Pre-Order」
+    Pre-Order
   </div>
 
   <div
@@ -1170,8 +1193,8 @@ body::before {
   </div>
 
   <div class="description">
-    iTunesにて「Nameless MythS」を予約購入し、
-    フォームから応募すると特典スマホ壁紙画像GET（全員対象）
+    iTunesにて予約購入後、フォームから応募で<br>
+    特典スマホ壁紙画像GET（全員対象）
   </div>
 
   <div class="buttons">
