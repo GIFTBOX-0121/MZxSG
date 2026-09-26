@@ -1227,25 +1227,25 @@ body::before {
         ▶ 再生回数
       </div>
 
-      <div class="mv-stat-number">
+      <div class="mv-stat-number" id="mvViews">
         —
       </div>
 
       <div class="mv-stat-row">
         <span class="mv-stat-row-label">1時間比</span>
-        <span>—</span>
+        <span id="mvViewsHourly">—</span>
       </div>
 
-      <div class="mv-stat-box">
+      <div class="mv-stat-box" id="mvViewsTotal">
         トータル —
       </div>
 
       <div class="mv-stat-row">
         <span class="mv-stat-row-label">前日比</span>
-        <span>—</span>
+        <span id="mvViewsDailyComparison">—</span>
       </div>
 
-      <div class="mv-stat-box">
+      <div class="mv-stat-box" id="mvViewsPreviousDay">
         9/28 —
       </div>
 
@@ -1258,25 +1258,25 @@ body::before {
         👍 高評価
       </div>
 
-      <div class="mv-stat-number">
+      <div class="mv-stat-number" id="mvLikes">
         —
       </div>
 
       <div class="mv-stat-row">
         <span class="mv-stat-row-label">1時間比</span>
-        <span>—</span>
+        <span id="mvLikesHourly">—</span>
       </div>
 
-      <div class="mv-stat-box">
+      <div class="mv-stat-box" id="mvLikesTotal">
         トータル —
       </div>
 
       <div class="mv-stat-row">
         <span class="mv-stat-row-label">前日比</span>
-        <span>—</span>
+        <span id="mvLikesDailyComparison">—</span>
       </div>
 
-      <div class="mv-stat-box">
+      <div class="mv-stat-box" id="mvLikesPreviousDay">
         9/28 —
       </div>
 
@@ -1287,19 +1287,19 @@ body::before {
 
   <div class="mv-goal">
 
-    <div class="mv-goal-text">
+    <div class="mv-goal-text" id="mvGoalText">
       10万回再生まで あと —
     </div>
 
-    <div class="mv-pace">
-      ペース —　｜　達成予測：—
+    <div class="mv-pace" id="mvPace">
+      6時間ペース —　｜　達成予測：—
     </div>
 
     <div class="mv-progress">
-      <div class="mv-progress-fill"></div>
+      <div class="mv-progress-fill" id="mvProgressFill"></div>
     </div>
 
-    <div class="mv-progress-percent">
+    <div class="mv-progress-percent" id="mvProgressPercent">
       —%
     </div>
 
@@ -1978,6 +1978,404 @@ setInterval(() => {
   drawReleasedContents();
 
 },60000);
+
+
+/* ==============================
+   NAMELESS MYTHS MV COUNTER
+============================== */
+
+const MV_COUNTER_API =
+  "https://namelessmyths-mv.starsx0601.workers.dev";
+
+
+function formatMvNumber(value) {
+
+  const number = Number(value);
+
+  if (!Number.isFinite(number)) {
+    return "—";
+  }
+
+  return number.toLocaleString("ja-JP");
+
+}
+
+
+function formatMvSignedNumber(value) {
+
+  const number = Number(value);
+
+  if (!Number.isFinite(number)) {
+    return "—";
+  }
+
+  if (number > 0) {
+    return "+" + number.toLocaleString("ja-JP");
+  }
+
+  if (number < 0) {
+    return number.toLocaleString("ja-JP");
+  }
+
+  return "±0";
+
+}
+
+
+function formatMvPreviousDate(dateString) {
+
+  if (!dateString) {
+    return "—";
+  }
+
+  const parts = dateString.split("-");
+
+  if (parts.length !== 3) {
+    return dateString;
+  }
+
+  return Number(parts[1]) + "/" + Number(parts[2]);
+
+}
+
+
+function formatMvGoal(value) {
+
+  const number = Number(value);
+
+  if (!Number.isFinite(number)) {
+    return "—";
+  }
+
+  if (number >= 10000 && number % 10000 === 0) {
+    return (number / 10000).toLocaleString("ja-JP") + "万回";
+  }
+
+  return number.toLocaleString("ja-JP") + "回";
+
+}
+
+
+function formatMvEstimatedTime(isoString) {
+
+  if (!isoString) {
+    return "—";
+  }
+
+  const date = new Date(isoString);
+
+  if (Number.isNaN(date.getTime())) {
+    return "—";
+  }
+
+  const parts =
+    new Intl.DateTimeFormat(
+      "ja-JP",
+      {
+        timeZone: "Asia/Tokyo",
+        month: "numeric",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+      }
+    ).formatToParts(date);
+
+  const get = type =>
+    parts.find(part => part.type === type)?.value || "";
+
+  return (
+    get("month") +
+    "/" +
+    get("day") +
+    " " +
+    get("hour") +
+    ":" +
+    get("minute")
+  );
+
+}
+
+
+function resetMvCounter() {
+
+  const simpleIds = [
+    "mvViews",
+    "mvViewsHourly",
+    "mvLikes",
+    "mvLikesHourly",
+    "mvViewsDailyComparison",
+    "mvLikesDailyComparison"
+  ];
+
+  simpleIds.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) element.textContent = "—";
+  });
+
+  const viewsTotal = document.getElementById("mvViewsTotal");
+  const likesTotal = document.getElementById("mvLikesTotal");
+  const viewsPrevious = document.getElementById("mvViewsPreviousDay");
+  const likesPrevious = document.getElementById("mvLikesPreviousDay");
+  const goalText = document.getElementById("mvGoalText");
+  const pace = document.getElementById("mvPace");
+  const progressFill = document.getElementById("mvProgressFill");
+  const progressPercent = document.getElementById("mvProgressPercent");
+
+  if (viewsTotal) viewsTotal.textContent = "トータル —";
+  if (likesTotal) likesTotal.textContent = "トータル —";
+  if (viewsPrevious) viewsPrevious.textContent = "9/28 —";
+  if (likesPrevious) likesPrevious.textContent = "9/28 —";
+  if (goalText) goalText.textContent = "10万回再生まで あと —";
+  if (pace) pace.textContent = "6時間ペース —　｜　達成予測：—";
+  if (progressFill) progressFill.style.width = "0%";
+  if (progressPercent) progressPercent.textContent = "—%";
+
+}
+
+
+function updateMvCounterDisplay(data) {
+
+  if (!data || data.status !== "live" || !data.video) {
+    resetMvCounter();
+    return;
+  }
+
+  const video = data.video;
+
+  const viewsElement = document.getElementById("mvViews");
+  const likesElement = document.getElementById("mvLikes");
+
+  if (viewsElement) {
+    viewsElement.textContent = formatMvNumber(video.views);
+  }
+
+  if (likesElement) {
+    likesElement.textContent = formatMvNumber(video.likes);
+  }
+
+
+  // 直前に完了した1時間（例：13:00〜13:59）の増加
+  const viewsHourly = document.getElementById("mvViewsHourly");
+  const likesHourly = document.getElementById("mvLikesHourly");
+
+  if (viewsHourly) {
+    viewsHourly.textContent =
+      video.hourly_change
+        ? formatMvSignedNumber(video.hourly_change.views)
+        : "—";
+  }
+
+  if (likesHourly) {
+    likesHourly.textContent =
+      video.hourly_change
+        ? formatMvSignedNumber(video.hourly_change.likes)
+        : "—";
+  }
+
+
+  // 当日0:00〜現在の増加（9/28は取得開始〜現在）
+  const viewsTotal = document.getElementById("mvViewsTotal");
+  const likesTotal = document.getElementById("mvLikesTotal");
+
+  if (viewsTotal) {
+    viewsTotal.textContent =
+      "トータル " +
+      (
+        video.today_total
+          ? formatMvSignedNumber(video.today_total.views)
+          : "—"
+      );
+  }
+
+  if (likesTotal) {
+    likesTotal.textContent =
+      "トータル " +
+      (
+        video.today_total
+          ? formatMvSignedNumber(video.today_total.likes)
+          : "—"
+      );
+  }
+
+
+  // 今日のトータル − 前日の1日総増加
+  const viewsDailyComparison =
+    document.getElementById("mvViewsDailyComparison");
+
+  const likesDailyComparison =
+    document.getElementById("mvLikesDailyComparison");
+
+  if (viewsDailyComparison) {
+    viewsDailyComparison.textContent =
+      video.daily_comparison
+        ? formatMvSignedNumber(video.daily_comparison.views)
+        : "—";
+  }
+
+  if (likesDailyComparison) {
+    likesDailyComparison.textContent =
+      video.daily_comparison
+        ? formatMvSignedNumber(video.daily_comparison.likes)
+        : "—";
+  }
+
+
+  // 比較対象となる前日の1日総増加
+  const viewsPrevious =
+    document.getElementById("mvViewsPreviousDay");
+
+  const likesPrevious =
+    document.getElementById("mvLikesPreviousDay");
+
+  if (video.previous_day) {
+
+    const dateLabel =
+      formatMvPreviousDate(video.previous_day.date);
+
+    if (viewsPrevious) {
+      viewsPrevious.textContent =
+        dateLabel + " " +
+        formatMvSignedNumber(video.previous_day.views);
+    }
+
+    if (likesPrevious) {
+      likesPrevious.textContent =
+        dateLabel + " " +
+        formatMvSignedNumber(video.previous_day.likes);
+    }
+
+  } else {
+
+    if (viewsPrevious) viewsPrevious.textContent = "9/28 —";
+    if (likesPrevious) likesPrevious.textContent = "9/28 —";
+
+  }
+
+
+  // 目標・進捗
+  const goal = video.goal;
+
+  if (goal) {
+
+    const goalText = document.getElementById("mvGoalText");
+
+    if (goalText) {
+      goalText.textContent =
+        formatMvGoal(goal.target) +
+        "再生まで あと " +
+        formatMvNumber(goal.remaining) +
+        "回";
+    }
+
+    const percent =
+      Math.max(
+        0,
+        Math.min(
+          Number(goal.progress_percent) || 0,
+          100
+        )
+      );
+
+    const progressFill =
+      document.getElementById("mvProgressFill");
+
+    const progressPercent =
+      document.getElementById("mvProgressPercent");
+
+    if (progressFill) {
+      progressFill.style.width = percent + "%";
+    }
+
+    if (progressPercent) {
+      progressPercent.textContent =
+        percent.toLocaleString(
+          "ja-JP",
+          { maximumFractionDigits: 2 }
+        ) + "%";
+    }
+
+  }
+
+
+  // 直近約6時間のペース
+  const paceElement = document.getElementById("mvPace");
+
+  if (paceElement) {
+
+    if (video.six_hour_pace) {
+
+      const pace = video.six_hour_pace;
+
+      paceElement.textContent =
+        "6時間ペース " +
+        formatMvSignedNumber(pace.views_change) +
+        "回" +
+        "（平均 " +
+        formatMvSignedNumber(pace.views_per_hour) +
+        "回/時）" +
+        "　｜　達成予測：" +
+        formatMvEstimatedTime(video.goal?.estimated_at);
+
+    } else {
+
+      paceElement.textContent =
+        "6時間ペース —　｜　達成予測：—";
+
+    }
+
+  }
+
+}
+
+
+async function loadMvCounter() {
+
+  try {
+
+    const response =
+      await fetch(
+        MV_COUNTER_API,
+        {
+          method: "GET",
+          cache: "no-store"
+        }
+      );
+
+    if (!response.ok) {
+      throw new Error("MV Counter API Error");
+    }
+
+    const data = await response.json();
+
+    updateMvCounterDisplay(data);
+
+  } catch (error) {
+
+    console.error(
+      "MV Counter:",
+      error
+    );
+
+    // 取得失敗時は、すでに表示中の値をそのまま残す
+  }
+
+}
+
+
+/* 初回読み込み */
+loadMvCounter();
+
+
+/*
+  ページを開きっぱなしでもWorkerの更新を拾う。
+  YouTube APIではなく、Workerに保存済みの値を読むだけ。
+*/
+setInterval(
+  loadMvCounter,
+  5 * 60 * 1000
+);
+
 
 </script>
 
