@@ -291,6 +291,113 @@ body::before {
 
 
 /* ==============================
+   SPECIAL VIDEO
+============================== */
+
+.special-video-area {
+  margin: 0;
+}
+
+.special-video-card {
+  display: grid;
+  grid-template-columns:
+    minmax(0,1.45fr)
+    minmax(0,.75fr);
+
+  gap: 12px;
+  align-items: center;
+
+  padding: 10px;
+
+  border: 1px solid rgba(50,50,50,.22);
+  border-radius: 12px;
+
+  background: rgba(255,255,255,.42);
+  box-shadow: 0 4px 15px rgba(0,0,0,.055);
+
+  color: #222;
+  text-decoration: none;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+.special-video-thumb-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.special-video-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.special-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: rgba(20,20,20,.82);
+  color: #fff;
+
+  font-size: 13px;
+
+  transform: translate(-50%,-50%);
+}
+
+.special-video-info {
+  text-align: center;
+}
+
+.special-video-label {
+  color: #777;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.special-video-title {
+  margin-top: 6px;
+
+  font-family:
+    "Yu Mincho",
+    "YuMincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.special-video-link {
+  margin-top: 9px;
+  padding: 7px 5px;
+
+  border: 1px solid rgba(40,40,40,.35);
+  border-radius: 7px;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+/* ==============================
    SECTION TITLE
 ============================== */
 
@@ -754,12 +861,48 @@ body::before {
     font-size: 8px;
   }
 
+
+  /* SPECIAL VIDEO */
+
+  .special-video-card {
+    grid-template-columns:
+      minmax(0,1.4fr)
+      minmax(0,.7fr);
+
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .special-video-play {
+    width: 31px;
+    height: 31px;
+    font-size: 10px;
+  }
+
+  .special-video-title {
+    font-size: 13px;
+  }
+
+  .special-video-label {
+    font-size: 7px;
+  }
+
+  .special-video-link {
+    margin-top: 6px;
+    padding: 6px 3px;
+    font-size: 7px;
+  }
+
+
+  /* MV */
+
   .mv-counter-card {
     padding: 10px;
   }
 
   .mv-top {
-    grid-template-columns: 1.2fr .8fr;
+    grid-template-columns:
+      1.2fr .8fr;
     gap: 8px;
   }
 
@@ -823,6 +966,9 @@ body::before {
     padding: 7px 2px;
     font-size: 9px;
   }
+
+
+  /* SCHEDULE */
 
   .schedule-layout {
     grid-template-columns:
@@ -975,6 +1121,60 @@ body::before {
 
 <div class="myth-divider">
   <span class="myth-symbol">◇ ✧ ◇</span>
+</div>
+
+
+<!-- ==============================
+     NEW VIDEO
+============================== -->
+
+<section class="special-video-area">
+
+  <a
+    class="special-video-card"
+    href="https://youtu.be/js9FxM6EOpM?si=xoI2oRYxjpfUXOsm"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <div class="special-video-thumb-wrap">
+
+      <img
+        class="special-video-thumb"
+        src="https://i.ytimg.com/vi/js9FxM6EOpM/maxresdefault.jpg"
+        alt="Nameless MythS"
+      >
+
+      <div class="special-video-play">
+        ▶
+      </div>
+
+    </div>
+
+
+    <div class="special-video-info">
+
+      <div class="special-video-label">
+        NEW VIDEO
+      </div>
+
+      <div class="special-video-title">
+        Nameless MythS
+      </div>
+
+      <div class="special-video-link">
+        YouTubeで再生 ▶
+      </div>
+
+    </div>
+
+  </a>
+
+</section>
+
+
+<div class="myth-divider">
+  <span class="myth-symbol">◇ ✦ ◇</span>
 </div>
 
 
@@ -1887,18 +2087,14 @@ function updateMvCounterDisplay(data) {
 
 
   if (viewsElement) {
-
     viewsElement.textContent =
       formatMvNumber(video.views);
-
   }
 
 
   if (likesElement) {
-
     likesElement.textContent =
       formatMvNumber(video.likes);
-
   }
 
 
@@ -1914,26 +2110,22 @@ function updateMvCounterDisplay(data) {
 
 
   if (viewsHourly) {
-
     viewsHourly.textContent =
       video.hourly_change
         ? formatMvSignedNumber(
             video.hourly_change.views
           )
         : "—";
-
   }
 
 
   if (likesHourly) {
-
     likesHourly.textContent =
       video.hourly_change
         ? formatMvSignedNumber(
             video.hourly_change.likes
           )
         : "—";
-
   }
 
 
@@ -1949,7 +2141,6 @@ function updateMvCounterDisplay(data) {
 
 
   if (viewsTotal) {
-
     viewsTotal.textContent =
       "トータル " +
       (
@@ -1959,12 +2150,10 @@ function updateMvCounterDisplay(data) {
             )
           : "—"
       );
-
   }
 
 
   if (likesTotal) {
-
     likesTotal.textContent =
       "トータル " +
       (
@@ -1974,7 +2163,6 @@ function updateMvCounterDisplay(data) {
             )
           : "—"
       );
-
   }
 
 
@@ -1990,26 +2178,22 @@ function updateMvCounterDisplay(data) {
 
 
   if (viewsDailyComparison) {
-
     viewsDailyComparison.textContent =
       video.daily_comparison
         ? formatMvSignedNumber(
             video.daily_comparison.views
           )
         : "—";
-
   }
 
 
   if (likesDailyComparison) {
-
     likesDailyComparison.textContent =
       video.daily_comparison
         ? formatMvSignedNumber(
             video.daily_comparison.likes
           )
         : "—";
-
   }
 
 
@@ -2033,26 +2217,22 @@ function updateMvCounterDisplay(data) {
 
 
     if (viewsPrevious) {
-
       viewsPrevious.textContent =
         dateLabel +
         " " +
         formatMvSignedNumber(
           video.previous_day.views
         );
-
     }
 
 
     if (likesPrevious) {
-
       likesPrevious.textContent =
         dateLabel +
         " " +
         formatMvSignedNumber(
           video.previous_day.likes
         );
-
     }
 
   } else {
@@ -2118,10 +2298,8 @@ function updateMvCounterDisplay(data) {
 
 
     if (progressFill) {
-
       progressFill.style.width =
         percent + "%";
-
     }
 
 
@@ -2198,11 +2376,9 @@ async function loadMvCounter() {
 
 
     if (!response.ok) {
-
       throw new Error(
         "MV Counter API Error"
       );
-
     }
 
 
@@ -2236,17 +2412,13 @@ loadMvCounter();
 
 
 setInterval(() => {
-
   updateMvCountdown();
-
 },1000);
 
 
 setInterval(() => {
-
   drawSchedule();
   drawReleasedContents();
-
 },60000);
 
 
