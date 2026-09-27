@@ -184,7 +184,7 @@ body::before {
 
 
 /* ==============================
-   RELEASE
+   RELEASE / DOWNLOAD
 ============================== */
 
 .release {
@@ -197,27 +197,95 @@ body::before {
   letter-spacing: 2px;
 }
 
-.countdown-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 13px;
-  white-space: nowrap;
+.download-area {
+  margin-top: 19px;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    Arial,
+    sans-serif;
 }
 
-.countdown-label {
-  margin-top: 0;
-  color: #666;
+.download-title {
+  margin-bottom: 9px;
+  color: #555;
   font-size: 11px;
-  letter-spacing: 2px;
+  font-weight: 900;
+  letter-spacing: 3px;
 }
 
-#countdown {
-  margin-top: 0;
-  font-size: clamp(26px,7vw,36px);
-  font-weight: 500;
-  letter-spacing: 1px;
+.amazon-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 47px;
+  padding: 7px 10px;
+
+  border: 1px solid rgba(40,40,40,.55);
+  border-radius: 9px;
+
+  background: rgba(255,255,255,.48);
+  color: #222;
+
+  text-decoration: none;
+}
+
+.amazon-name {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.amazon-note {
+  margin-top: 2px;
+  color: #777;
+  font-size: 8.5px;
+  font-weight: 700;
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 39px;
+  padding: 6px 3px;
+
+  border: 1px solid rgba(40,40,40,.38);
+  border-radius: 8px;
+
+  background: rgba(255,255,255,.38);
+  color: #222;
+
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1.25;
+
+  transition:
+    background .15s ease,
+    transform .15s ease;
+}
+
+.download-btn:active,
+.amazon-download:active {
+  transform: scale(.98);
+  background: rgba(255,255,255,.75);
 }
 
 
@@ -235,147 +303,291 @@ body::before {
 
 
 /* ==============================
-   DIGITAL CAMPAIGN
+   MUSIC VIDEO COUNTER
 ============================== */
 
-.campaigns {
-  display: grid;
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-  gap: 11px;
-  align-items: stretch;
+.mv-area {
+  margin-top: 0;
 }
 
-.campaign {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 16px 14px;
-  border: 2px solid #b92d2d;
-  border-radius: 11px;
-
-  background:
-    linear-gradient(
-      118deg,
-      rgba(255,255,255,.92) 0%,
-      rgba(215,215,212,.88) 25%,
-      rgba(248,248,246,.94) 48%,
-      rgba(205,205,202,.86) 70%,
-      rgba(242,242,239,.92) 100%
-    );
-
-  color: #222;
-  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+.mv-counter-card {
+  padding: 14px;
+  border: 1px solid rgba(50,50,50,.25);
+  border-radius: 14px;
+  background: rgba(255,255,255,.45);
+  box-shadow: 0 5px 18px rgba(0,0,0,.07);
 
   font-family:
     -apple-system,
     BlinkMacSystemFont,
     "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
     Arial,
     sans-serif;
 }
 
-.campaign-title {
+.mv-top {
+  display: grid;
+  grid-template-columns:
+    minmax(0,1.25fr)
+    minmax(0,.85fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.mv-placeholder-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 9px;
+  background: #000;
+}
+
+.mv-top-info {
+  text-align: center;
+}
+
+.mv-song-title {
   font-size: 18px;
   font-weight: 900;
-  line-height: 1.35;
 }
 
-.period {
+.mv-release-badge {
+  margin-top: 11px;
+  padding: 9px 7px;
+  border: 1.5px solid #333;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mv-countdown {
+  margin-top: 9px;
+  color: #555;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mv-stats {
+  display: grid;
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  margin-top: 17px;
+  padding-top: 16px;
+
+  border-top:
+    1px solid rgba(70,70,70,.12);
+}
+
+.mv-stat-column {
+  padding: 0 12px;
+}
+
+.mv-stat-column + .mv-stat-column {
+  border-left:
+    1px solid rgba(70,70,70,.13);
+}
+
+.mv-stat-label {
+  color: #777;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mv-stat-number {
+  margin-top: 5px;
+  text-align: center;
+  font-size: clamp(29px,7vw,43px);
+  font-weight: 900;
+}
+
+.mv-stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+  margin-top: 12px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mv-stat-row-label {
+  color: #888;
+}
+
+.mv-stat-box {
+  margin-top: 10px;
+  padding: 8px 5px;
+  border: 1px solid rgba(80,80,80,.22);
+  border-radius: 8px;
+  text-align: center;
+  color: #555;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mv-goal {
+  margin-top: 18px;
+  padding-top: 17px;
+  border-top:
+    1px solid rgba(70,70,70,.12);
+}
+
+.mv-goal-text {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.mv-pace {
+  margin-top: 12px;
+  padding: 9px;
+  border: 1px solid rgba(80,80,80,.22);
+  border-radius: 9px;
+  text-align: center;
+  color: #555;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mv-progress {
+  margin-top: 14px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(50,50,50,.08);
+  overflow: hidden;
+}
+
+.mv-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #222;
+}
+
+.mv-progress-percent {
   margin-top: 6px;
-  color: #c72c2c;
+  text-align: right;
+  color: #777;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* ==============================
+   RELATED MVs
+============================== */
+
+.related-mvs {
+  display: grid;
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+  gap: 10px;
+  margin-top: 12px;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+.related-mv {
+  overflow: hidden;
+  border: 1px solid rgba(50,50,50,.20);
+  border-radius: 11px;
+  background: rgba(255,255,255,.40);
+}
+
+.related-mv-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.related-mv-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.related-mv-info {
+  padding: 9px 10px 10px;
+  text-align: center;
+}
+
+.related-mv-group {
+  color: #777;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.related-mv-title {
+  margin-top: 3px;
   font-size: 12px;
   font-weight: 900;
-  line-height: 1.45;
 }
 
-.campaign.completed {
-  border-color: rgba(70,70,70,.28);
 
-  background:
-    linear-gradient(
-      118deg,
-      rgba(255,255,255,.90),
-      rgba(215,215,212,.85),
-      rgba(245,245,242,.90)
-    );
+/* ==============================
+   OFFICIAL YOUTUBE
+============================== */
 
-  color: #303030;
+.official-youtube {
+  margin-top: 25px;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
-.campaign.completed .period {
-  color: #666;
-}
-
-.campaign-final {
-  display: none;
-  margin-top: 7px;
-  padding: 6px 8px;
-  border-radius: 7px;
-  background: rgba(190,35,35,.10);
-  color: #b51f1f;
+.official-youtube-title {
+  margin-bottom: 11px;
   text-align: center;
-  font-size: 10px;
-  font-weight: 900;
+  color: #444;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.description {
-  margin-top: 8px;
-  font-size: 11px;
-  line-height: 1.55;
+.official-youtube-buttons {
+  display: grid;
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+  gap: 7px;
 }
 
-.warning {
-  margin-top: 7px;
-  color: #c72c2c;
-  font-size: 10.5px;
-  font-weight: 900;
-  line-height: 1.45;
-}
-
-.buttons {
+.official-youtube-btn {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.btn {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 31px;
-  padding: 6px 12px;
-  border: 0;
-  border-radius: 7px;
-  background: #292929;
-  color: #fff;
+  gap: 4px;
+
+  min-width: 0;
+  min-height: 42px;
+  padding: 8px 4px;
+
+  border: 1px solid rgba(40,40,40,.45);
+  border-radius: 8px;
+
+  background: rgba(255,255,255,.42);
+  color: #222;
+
+  text-align: center;
   text-decoration: none;
+
   font-size: 10px;
-  font-weight: 800;
-  cursor: pointer;
+  font-weight: 900;
 }
 
-.btn.red {
-  background: #b92d2d;
-}
-
-.btn:disabled {
-  opacity: .40;
-  cursor: default;
-}
-
-.done {
-  display: none;
-  margin-top: 8px;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.campaign.completed .done {
-  display: block;
+.youtube-play {
+  font-size: 9px;
 }
 
 
@@ -394,7 +606,8 @@ body::before {
 
 .schedule-list {
   display: grid;
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows:
+    repeat(7,1fr);
   gap: 7px;
   align-self: stretch;
 }
@@ -403,9 +616,12 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   padding: 9px 8px;
+
   border: 1px solid rgba(55,55,55,.25);
   border-radius: 9px;
+
   background: rgba(255,255,255,.28);
 }
 
@@ -493,350 +709,6 @@ body::before {
 
 
 /* ==============================
-   MUSIC VIDEO COUNTER
-============================== */
-
-.mv-area {
-  margin-top: 25px;
-}
-
-.mv-counter-card {
-  padding: 14px;
-  border: 1px solid rgba(50,50,50,.25);
-  border-radius: 14px;
-  background: rgba(255,255,255,.45);
-  box-shadow: 0 5px 18px rgba(0,0,0,.07);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-}
-
-.mv-top {
-  display: grid;
-  grid-template-columns: minmax(0,1.25fr) minmax(0,.85fr);
-  gap: 12px;
-  align-items: center;
-}
-
-.mv-placeholder-image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 9px;
-  background: #000;
-}
-
-.mv-top-info {
-  text-align: center;
-}
-
-.mv-song-title {
-  font-size: 18px;
-  font-weight: 900;
-}
-
-.mv-release-badge {
-  margin-top: 11px;
-  padding: 9px 7px;
-  border: 1.5px solid #333;
-  border-radius: 8px;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.mv-countdown {
-  margin-top: 9px;
-  color: #555;
-  font-size: 10px;
-  font-weight: 700;
-}
-
-.mv-stats {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  margin-top: 17px;
-  border-top: 1px solid rgba(70,70,70,.12);
-  padding-top: 16px;
-}
-
-.mv-stat-column {
-  padding: 0 12px;
-}
-
-.mv-stat-column + .mv-stat-column {
-  border-left: 1px solid rgba(70,70,70,.13);
-}
-
-.mv-stat-label {
-  color: #777;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.mv-stat-number {
-  margin-top: 5px;
-  text-align: center;
-  font-size: clamp(29px,7vw,43px);
-  font-weight: 900;
-}
-
-.mv-stat-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 7px;
-  margin-top: 12px;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.mv-stat-row-label {
-  color: #888;
-}
-
-.mv-stat-box {
-  margin-top: 10px;
-  padding: 8px 5px;
-  border: 1px solid rgba(80,80,80,.22);
-  border-radius: 8px;
-  text-align: center;
-  color: #555;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.mv-goal {
-  margin-top: 18px;
-  padding-top: 17px;
-  border-top: 1px solid rgba(70,70,70,.12);
-}
-
-.mv-goal-text {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 900;
-}
-
-.mv-pace {
-  margin-top: 12px;
-  padding: 9px;
-  border: 1px solid rgba(80,80,80,.22);
-  border-radius: 9px;
-  text-align: center;
-  color: #555;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.mv-progress {
-  margin-top: 14px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(50,50,50,.08);
-  overflow: hidden;
-}
-
-.mv-progress-fill {
-  width: 0%;
-  height: 100%;
-  background: #222;
-}
-
-.mv-progress-percent {
-  margin-top: 6px;
-  text-align: right;
-  color: #777;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-
-/* ==============================
-   RELATED MVs
-============================== */
-
-.related-mvs {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 10px;
-  margin-top: 12px;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-}
-
-.related-mv {
-  overflow: hidden;
-  border: 1px solid rgba(50,50,50,.20);
-  border-radius: 11px;
-  background: rgba(255,255,255,.40);
-}
-
-.related-mv-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.related-mv-thumb {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.related-mv-info {
-  padding: 9px 10px 10px;
-  text-align: center;
-}
-
-.related-mv-group {
-  color: #777;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.related-mv-title {
-  margin-top: 3px;
-  font-size: 12px;
-  font-weight: 900;
-}
-
-
-/* ==============================
-   OFFICIAL YOUTUBE
-============================== */
-
-.official-youtube {
-  margin-top: 25px;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-}
-
-.official-youtube-title {
-  margin-bottom: 11px;
-  text-align: center;
-  color: #444;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.official-youtube-buttons {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 7px;
-}
-
-.official-youtube-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-
-  min-width: 0;
-  min-height: 42px;
-  padding: 8px 4px;
-
-  border: 1px solid rgba(40,40,40,.45);
-  border-radius: 8px;
-
-  background: rgba(255,255,255,.42);
-  color: #222;
-
-  text-align: center;
-  text-decoration: none;
-
-  font-size: 10px;
-  font-weight: 900;
-
-  transition:
-    background .15s ease,
-    transform .15s ease;
-}
-
-.official-youtube-btn:active {
-  transform: scale(.97);
-  background: rgba(255,255,255,.72);
-}
-
-.youtube-play {
-  font-size: 9px;
-}
-
-
-/* ==============================
-   MODAL
-============================== */
-
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(0,0,0,.72);
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-box {
-  width: min(100%,420px);
-  padding: 22px;
-  border-radius: 15px;
-  background: linear-gradient(145deg,#f8f8f5,#deded9);
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-}
-
-.modal-title {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.modal-text {
-  margin: 13px 0 19px;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-.modal-buttons {
-  display: flex;
-  gap: 8px;
-}
-
-.modal-buttons button,
-.modal-buttons a {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  border: 0;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.cancel {
-  background: #d4d4d4;
-  color: #333;
-}
-
-.go {
-  background: #292929;
-  color: #fff;
-}
-
-
-/* ==============================
    FOOTER
 ============================== */
 
@@ -859,46 +731,26 @@ body::before {
     padding-top: 27px;
   }
 
-  .campaigns {
-    gap: 8px;
+  .download-area {
+    margin-top: 15px;
   }
 
-  .campaign {
-    padding: 13px 9px;
+  .amazon-download {
+    min-height: 43px;
   }
 
-  .campaign-title {
-    font-size: 15px;
+  .amazon-name {
+    font-size: 11px;
   }
 
-  .period {
-    font-size: 10.5px;
+  .download-grid {
+    gap: 5px;
   }
 
-  .description {
-    font-size: 9.5px;
-  }
-
-  .warning {
-    font-size: 9px;
-  }
-
-  .schedule-layout {
-    grid-template-columns: .82fr 1.18fr;
-    gap: 7px;
-  }
-
-  .schedule-row {
-    padding: 8px 7px;
-  }
-
-  .schedule-date {
-    font-size: 12px;
-  }
-
-  .schedule-time,
-  .schedule-name {
-    font-size: 9px;
+  .download-btn {
+    min-height: 38px;
+    padding: 5px 2px;
+    font-size: 8px;
   }
 
   .mv-counter-card {
@@ -971,6 +823,25 @@ body::before {
     font-size: 9px;
   }
 
+  .schedule-layout {
+    grid-template-columns:
+      .82fr 1.18fr;
+    gap: 7px;
+  }
+
+  .schedule-row {
+    padding: 8px 7px;
+  }
+
+  .schedule-date {
+    font-size: 12px;
+  }
+
+  .schedule-time,
+  .schedule-name {
+    font-size: 9px;
+  }
+
 }
 
 </style>
@@ -1002,23 +873,98 @@ body::before {
 </div>
 
 
+<!-- ==============================
+     DIGITAL RELEASE / DOWNLOAD
+============================== -->
+
 <section class="release">
 
   <div class="release-date">
     2026.09.28 Digital Release
   </div>
 
-  <div class="countdown-row">
 
-    <div
-      class="countdown-label"
-      id="releaseCountdownLabel"
-    >
-      配信開始まで
+  <div class="download-area">
+
+    <div class="download-title">
+      DOWNLOAD
     </div>
 
-    <div id="countdown">
-      計算中...
+
+    <a
+      class="amazon-download"
+      href="https://www.amazon.co.jp/dp/B0HJWSH834/ref=mp_s_a_1_1?crid=3NZBUSG8L9B7H&dib=eyJ2IjoiMSJ9.UqGElh_vFBP_WlrpUqz0FHfhoEwGwYB0qnZ7hSCKILzGjHj071QN20LucGBJIEps.-o1c5dree_H5oTcHAG8YykQhzHmqkq67MpJFN2yHT48&dib_tag=se&keywords=Nameless+MythS&marketplaceId=A1VC38T7YXB528&musicTerritory=JP&qid=1790524624&sprefix=nameless+myths%2Caps%2C220&sr=8-1&trackAsin=B0HJWSH834"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="amazon-name">
+        Amazon Music
+      </span>
+
+      <span class="amazon-note">
+        1日1人1回購入可能
+      </span>
+    </a>
+
+
+    <div class="download-grid">
+
+      <a
+        class="download-btn"
+        href="https://music.apple.com/jp/album/nameless-myths-single/6812651631"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        iTunes
+      </a>
+
+      <a
+        class="download-btn"
+        href="https://recochoku.jp/song/S1031553739/single"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        レコチョク
+      </a>
+
+      <a
+        class="download-btn"
+        href="https://recochoku.jp/song/S1031553738/hires_single"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        レコチョク<br>
+        (ハイレゾ)
+      </a>
+
+      <a
+        class="download-btn"
+        href="https://sp-m.mu-mo.net/music/13148287/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        mu-mo
+      </a>
+
+      <a
+        class="download-btn"
+        href="https://mora.jp/package/43000002/ANTCD-75861/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        mora
+      </a>
+
+      <a
+        class="download-btn"
+        href="https://mora.jp/package/43000002/ANTCD-75862_F/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        mora<br>
+        (ハイレゾ)
+      </a>
+
     </div>
 
   </div>
@@ -1031,163 +977,11 @@ body::before {
 </div>
 
 
-<section>
-
-<h2 class="section-title">
-  DIGITAL CAMPAIGN
-</h2>
-
-
-<div class="campaigns">
-
-<div
-  class="campaign"
-  id="preSaveCampaign"
->
-
-  <div class="campaign-title">
-    Pre-Add / Pre-Save
-  </div>
-
-  <div class="period">
-    【期間：9/24〜9/27 23:59】
-  </div>
-
-  <div
-    class="campaign-final"
-    id="preSaveFinal"
-  ></div>
-
-  <div class="description">
-    配信当日にライブラリに追加されます。
-  </div>
-
-  <div class="buttons">
-
-    <a
-      class="btn"
-      href="https://ffm.to/namelessmyths"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      参加
-    </a>
-
-    <button
-      class="btn red"
-      type="button"
-      onclick="completeCampaign('preSaveCampaign','nameless_presave')"
-    >
-      完了
-    </button>
-
-  </div>
-
-  <div class="done">
-    ✓ 完了しました
-  </div>
-
-</div>
-
-
-<div
-  class="campaign"
-  id="preOrderCampaign"
->
-
-  <div class="campaign-title">
-    Pre-Order
-  </div>
-
-  <div class="period">
-    【期間：9/24〜9/27 23:59】
-  </div>
-
-  <div
-    class="campaign-final"
-    id="preOrderFinal"
-  ></div>
-
-  <div class="warning">
-    ⚠️応募の締切も9月27日23:59まで⚠️
-  </div>
-
-  <div class="description">
-    iTunesから予約購入後、<br>
-    フォームからの応募すると<br>
-    特典スマホ壁紙画像GET（全員）
-  </div>
-
-  <div class="buttons">
-
-    <button
-      class="btn"
-      type="button"
-      onclick="openPreOrderModal()"
-    >
-      予約
-    </button>
-
-    <a
-      class="btn"
-      href="https://docs.google.com/forms/d/e/1FAIpQLSdzA0ZT5h53ZFo0bMFYMC4-UeigZDJe60JegavdsXZep-RsBQ/viewform"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      応募フォーム
-    </a>
-
-    <button
-      class="btn red"
-      type="button"
-      onclick="completeCampaign('preOrderCampaign','nameless_preorder')"
-    >
-      全て完了
-    </button>
-
-  </div>
-
-  <div class="done">
-    ✓ 全て完了しました
-  </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<div class="myth-divider">
-  <span class="myth-symbol">◇ ✦ ◇</span>
-</div>
-
+<!-- ==============================
+     NAMELESS MYTHS MV
+============================== -->
 
 <section>
-
-<h2 class="section-title">
-  RELEASE SCHEDULE
-</h2>
-
-
-<div class="schedule-layout">
-
-  <div
-    class="schedule-list"
-    id="scheduleList"
-  ></div>
-
-  <div class="released-content">
-    <div
-      class="contents"
-      id="releasedContents"
-    ></div>
-  </div>
-
-</div>
-
-
-<!-- NAMELESS MYTHS MV -->
 
 <div class="mv-area">
 
@@ -1232,25 +1026,40 @@ body::before {
         ▶ 再生回数
       </div>
 
-      <div class="mv-stat-number" id="mvViews">
+      <div
+        class="mv-stat-number"
+        id="mvViews"
+      >
         —
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">1時間比</span>
+        <span class="mv-stat-row-label">
+          1時間比
+        </span>
         <span id="mvViewsHourly">—</span>
       </div>
 
-      <div class="mv-stat-box" id="mvViewsTotal">
+      <div
+        class="mv-stat-box"
+        id="mvViewsTotal"
+      >
         トータル —
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">前日比</span>
-        <span id="mvViewsDailyComparison">—</span>
+        <span class="mv-stat-row-label">
+          前日比
+        </span>
+        <span id="mvViewsDailyComparison">
+          —
+        </span>
       </div>
 
-      <div class="mv-stat-box" id="mvViewsPreviousDay">
+      <div
+        class="mv-stat-box"
+        id="mvViewsPreviousDay"
+      >
         9/28 —
       </div>
 
@@ -1263,25 +1072,40 @@ body::before {
         👍 高評価
       </div>
 
-      <div class="mv-stat-number" id="mvLikes">
+      <div
+        class="mv-stat-number"
+        id="mvLikes"
+      >
         —
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">1時間比</span>
+        <span class="mv-stat-row-label">
+          1時間比
+        </span>
         <span id="mvLikesHourly">—</span>
       </div>
 
-      <div class="mv-stat-box" id="mvLikesTotal">
+      <div
+        class="mv-stat-box"
+        id="mvLikesTotal"
+      >
         トータル —
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">前日比</span>
-        <span id="mvLikesDailyComparison">—</span>
+        <span class="mv-stat-row-label">
+          前日比
+        </span>
+        <span id="mvLikesDailyComparison">
+          —
+        </span>
       </div>
 
-      <div class="mv-stat-box" id="mvLikesPreviousDay">
+      <div
+        class="mv-stat-box"
+        id="mvLikesPreviousDay"
+      >
         9/28 —
       </div>
 
@@ -1292,19 +1116,31 @@ body::before {
 
   <div class="mv-goal">
 
-    <div class="mv-goal-text" id="mvGoalText">
+    <div
+      class="mv-goal-text"
+      id="mvGoalText"
+    >
       10万回再生まで あと —
     </div>
 
-    <div class="mv-pace" id="mvPace">
+    <div
+      class="mv-pace"
+      id="mvPace"
+    >
       6時間ペース —　｜　達成予測：—
     </div>
 
     <div class="mv-progress">
-      <div class="mv-progress-fill" id="mvProgressFill"></div>
+      <div
+        class="mv-progress-fill"
+        id="mvProgressFill"
+      ></div>
     </div>
 
-    <div class="mv-progress-percent" id="mvProgressPercent">
+    <div
+      class="mv-progress-percent"
+      id="mvProgressPercent"
+    >
       —%
     </div>
 
@@ -1427,6 +1263,42 @@ body::before {
 
 </div>
 
+</div>
+
+</section>
+
+
+<div class="myth-divider">
+  <span class="myth-symbol">◇ ✦ ◇</span>
+</div>
+
+
+<!-- ==============================
+     RELEASE SCHEDULE
+============================== -->
+
+<section>
+
+<h2 class="section-title">
+  RELEASE SCHEDULE
+</h2>
+
+
+<div class="schedule-layout">
+
+  <div
+    class="schedule-list"
+    id="scheduleList"
+  ></div>
+
+  <div class="released-content">
+
+    <div
+      class="contents"
+      id="releasedContents"
+    ></div>
+
+  </div>
 
 </div>
 
@@ -1440,74 +1312,10 @@ body::before {
 </div>
 
 
-<!-- PRE-ORDER MODAL -->
-
-<div
-  class="modal"
-  id="preOrderModal"
->
-
-<div class="modal-box">
-
-  <div class="modal-title">
-    予約購入前にご確認ください
-  </div>
-
-  <div class="modal-text">
-
-    キャンペーンへの応募には、<br>
-
-    <strong>
-      予約購入が完了していることがわかる
-      スクリーンショット
-    </strong>
-
-    が必要です。<br><br>
-
-    購入完了画面を忘れずに
-    スクリーンショットしてください。
-
-  </div>
-
-  <div class="modal-buttons">
-
-    <button
-      class="cancel"
-      onclick="closePreOrderModal()"
-    >
-      戻る
-    </button>
-
-    <a
-      class="go"
-      href="https://itunes.apple.com/jp/album/id6812651631?app=itunes&ls=1"
-      target="_blank"
-      rel="noopener noreferrer"
-      onclick="closePreOrderModal()"
-    >
-      確認して予約へ
-    </a>
-
-  </div>
-
-</div>
-
-</div>
-
-
 <script>
-
-const RELEASE_TIME =
-  new Date("2026-09-28T00:00:00+09:00");
 
 const MV_RELEASE_TIME =
   new Date("2026-09-28T20:00:00+09:00");
-
-const CAMPAIGN_END_TIME =
-  new Date("2026-09-27T23:59:59+09:00");
-
-const FINAL_DAY_START =
-  new Date("2026-09-27T00:00:00+09:00");
 
 
 const SCHEDULE_ITEMS = [
@@ -1557,7 +1365,7 @@ const SCHEDULE_ITEMS = [
     time: "20:00",
     title: "Music Video",
     release: "2026-09-28T20:00:00+09:00",
-    url: ""
+    url: "https://youtu.be/nn2V3mptPLg?si=MSaWc3TrRSQSbStS"
   },
 
   {
@@ -1585,10 +1393,21 @@ function getRemainingParts(target) {
     Math.floor(difference / 1000);
 
   return {
-    days: Math.floor(totalSeconds / 86400),
-    hours: Math.floor((totalSeconds % 86400) / 3600),
-    minutes: Math.floor((totalSeconds % 3600) / 60),
-    seconds: totalSeconds % 60
+    days:
+      Math.floor(totalSeconds / 86400),
+
+    hours:
+      Math.floor(
+        (totalSeconds % 86400) / 3600
+      ),
+
+    minutes:
+      Math.floor(
+        (totalSeconds % 3600) / 60
+      ),
+
+    seconds:
+      totalSeconds % 60
   };
 
 }
@@ -1607,8 +1426,14 @@ function getYouTubeVideoId(url) {
 
     const parsed = new URL(url);
 
-    if (parsed.hostname.includes("youtu.be")) {
-      return parsed.pathname.replace("/","").split("?")[0];
+    if (
+      parsed.hostname.includes("youtu.be")
+    ) {
+
+      return parsed.pathname
+        .replace("/","")
+        .split("?")[0];
+
     }
 
     return parsed.searchParams.get("v");
@@ -1616,50 +1441,6 @@ function getYouTubeVideoId(url) {
   } catch {
 
     return null;
-
-  }
-
-}
-
-
-function updateReleaseCountdown() {
-
-  const label =
-    document.getElementById("releaseCountdownLabel");
-
-  const target =
-    document.getElementById("countdown");
-
-  const remaining =
-    getRemainingParts(RELEASE_TIME);
-
-  if (!remaining) {
-
-    label.textContent = "";
-
-    target.textContent =
-      "NOW RELEASED";
-
-    return;
-
-  }
-
-  if (remaining.days >= 1) {
-
-    target.textContent =
-      "あと" +
-      remaining.days +
-      "日";
-
-  } else {
-
-    target.textContent =
-      "あと " +
-      twoDigits(remaining.hours) +
-      ":" +
-      twoDigits(remaining.minutes) +
-      ":" +
-      twoDigits(remaining.seconds);
 
   }
 
@@ -1703,130 +1484,6 @@ function updateMvCountdown() {
       twoDigits(remaining.seconds);
 
   }
-
-}
-
-
-function completeCampaign(
-  elementId,
-  storageKey
-) {
-
-  const campaign =
-    document.getElementById(elementId);
-
-  if (!campaign) return;
-
-  localStorage.setItem(
-    storageKey,
-    "completed"
-  );
-
-  applyCompletedState(campaign);
-
-}
-
-
-function applyCompletedState(campaign) {
-
-  campaign.classList.add("completed");
-
-  campaign
-    .querySelectorAll(".btn")
-    .forEach(button => {
-
-      if (button.tagName === "BUTTON") {
-        button.disabled = true;
-      }
-
-      if (button.tagName === "A") {
-        button.style.pointerEvents = "none";
-        button.style.opacity = ".42";
-      }
-
-    });
-
-}
-
-
-function restoreCampaignState(
-  elementId,
-  storageKey
-) {
-
-  if (
-    localStorage.getItem(storageKey)
-    !== "completed"
-  ) return;
-
-  const campaign =
-    document.getElementById(elementId);
-
-  if (campaign) {
-    applyCompletedState(campaign);
-  }
-
-}
-
-
-function updateCampaignStatus() {
-
-  const now = new Date();
-
-  const isFinalDay =
-    now >= FINAL_DAY_START &&
-    now <= CAMPAIGN_END_TIME;
-
-  const remaining =
-    getRemainingParts(CAMPAIGN_END_TIME);
-
-  const targets = [
-    document.getElementById("preSaveFinal"),
-    document.getElementById("preOrderFinal")
-  ];
-
-  if (isFinalDay && remaining) {
-
-    const text =
-      "🔥 本日最終日　締切まであと " +
-      twoDigits(remaining.hours) +
-      ":" +
-      twoDigits(remaining.minutes) +
-      ":" +
-      twoDigits(remaining.seconds);
-
-    targets.forEach(target => {
-
-      target.style.display = "block";
-      target.textContent = text;
-
-    });
-
-  } else {
-
-    targets.forEach(target => {
-      target.style.display = "none";
-    });
-
-  }
-
-}
-
-
-function openPreOrderModal() {
-
-  document
-    .getElementById("preOrderModal")
-    .classList.add("show");
-
-}
-
-
-function closePreOrderModal() {
-
-  document
-    .getElementById("preOrderModal")
-    .classList.remove("show");
 
 }
 
@@ -1888,7 +1545,9 @@ function drawSchedule() {
 function drawReleasedContents() {
 
   const target =
-    document.getElementById("releasedContents");
+    document.getElementById(
+      "releasedContents"
+    );
 
   const now = new Date();
 
@@ -1949,44 +1608,8 @@ function drawReleasedContents() {
 }
 
 
-/* 初期表示 */
-
-restoreCampaignState(
-  "preSaveCampaign",
-  "nameless_presave"
-);
-
-restoreCampaignState(
-  "preOrderCampaign",
-  "nameless_preorder"
-);
-
-updateReleaseCountdown();
-updateMvCountdown();
-updateCampaignStatus();
-drawSchedule();
-drawReleasedContents();
-
-
-setInterval(() => {
-
-  updateReleaseCountdown();
-  updateMvCountdown();
-  updateCampaignStatus();
-
-},1000);
-
-
-setInterval(() => {
-
-  drawSchedule();
-  drawReleasedContents();
-
-},60000);
-
-
 /* ==============================
-   NAMELESS MYTHS MV COUNTER
+   MV COUNTER
 ============================== */
 
 const MV_COUNTER_API =
@@ -2015,7 +1638,8 @@ function formatMvSignedNumber(value) {
   }
 
   if (number > 0) {
-    return "+" + number.toLocaleString("ja-JP");
+    return "+" +
+      number.toLocaleString("ja-JP");
   }
 
   if (number < 0) {
@@ -2033,13 +1657,18 @@ function formatMvPreviousDate(dateString) {
     return "—";
   }
 
-  const parts = dateString.split("-");
+  const parts =
+    dateString.split("-");
 
   if (parts.length !== 3) {
     return dateString;
   }
 
-  return Number(parts[1]) + "/" + Number(parts[2]);
+  return (
+    Number(parts[1]) +
+    "/" +
+    Number(parts[2])
+  );
 
 }
 
@@ -2052,24 +1681,41 @@ function formatMvGoal(value) {
     return "—";
   }
 
-  if (number >= 10000 && number % 10000 === 0) {
-    return (number / 10000).toLocaleString("ja-JP") + "万回";
+  if (
+    number >= 10000 &&
+    number % 10000 === 0
+  ) {
+
+    return (
+      (number / 10000)
+        .toLocaleString("ja-JP") +
+      "万回"
+    );
+
   }
 
-  return number.toLocaleString("ja-JP") + "回";
+  return (
+    number.toLocaleString("ja-JP") +
+    "回"
+  );
 
 }
 
 
-function formatMvEstimatedTime(isoString) {
+function formatMvEstimatedTime(
+  isoString
+) {
 
   if (!isoString) {
     return "—";
   }
 
-  const date = new Date(isoString);
+  const date =
+    new Date(isoString);
 
-  if (Number.isNaN(date.getTime())) {
+  if (
+    Number.isNaN(date.getTime())
+  ) {
     return "—";
   }
 
@@ -2087,7 +1733,9 @@ function formatMvEstimatedTime(isoString) {
     ).formatToParts(date);
 
   const get = type =>
-    parts.find(part => part.type === type)?.value || "";
+    parts.find(
+      part => part.type === type
+    )?.value || "";
 
   return (
     get("month") +
@@ -2114,207 +1762,413 @@ function resetMvCounter() {
   ];
 
   simpleIds.forEach(id => {
-    const element = document.getElementById(id);
-    if (element) element.textContent = "—";
+
+    const element =
+      document.getElementById(id);
+
+    if (element) {
+      element.textContent = "—";
+    }
+
   });
 
-  const viewsTotal = document.getElementById("mvViewsTotal");
-  const likesTotal = document.getElementById("mvLikesTotal");
-  const viewsPrevious = document.getElementById("mvViewsPreviousDay");
-  const likesPrevious = document.getElementById("mvLikesPreviousDay");
-  const goalText = document.getElementById("mvGoalText");
-  const pace = document.getElementById("mvPace");
-  const progressFill = document.getElementById("mvProgressFill");
-  const progressPercent = document.getElementById("mvProgressPercent");
 
-  if (viewsTotal) viewsTotal.textContent = "トータル —";
-  if (likesTotal) likesTotal.textContent = "トータル —";
-  if (viewsPrevious) viewsPrevious.textContent = "9/28 —";
-  if (likesPrevious) likesPrevious.textContent = "9/28 —";
-  if (goalText) goalText.textContent = "10万回再生まで あと —";
-  if (pace) pace.textContent = "6時間ペース —　｜　達成予測：—";
-  if (progressFill) progressFill.style.width = "0%";
-  if (progressPercent) progressPercent.textContent = "—%";
+  const viewsTotal =
+    document.getElementById(
+      "mvViewsTotal"
+    );
+
+  const likesTotal =
+    document.getElementById(
+      "mvLikesTotal"
+    );
+
+  const viewsPrevious =
+    document.getElementById(
+      "mvViewsPreviousDay"
+    );
+
+  const likesPrevious =
+    document.getElementById(
+      "mvLikesPreviousDay"
+    );
+
+  const goalText =
+    document.getElementById(
+      "mvGoalText"
+    );
+
+  const pace =
+    document.getElementById(
+      "mvPace"
+    );
+
+  const progressFill =
+    document.getElementById(
+      "mvProgressFill"
+    );
+
+  const progressPercent =
+    document.getElementById(
+      "mvProgressPercent"
+    );
+
+
+  if (viewsTotal) {
+    viewsTotal.textContent =
+      "トータル —";
+  }
+
+  if (likesTotal) {
+    likesTotal.textContent =
+      "トータル —";
+  }
+
+  if (viewsPrevious) {
+    viewsPrevious.textContent =
+      "9/28 —";
+  }
+
+  if (likesPrevious) {
+    likesPrevious.textContent =
+      "9/28 —";
+  }
+
+  if (goalText) {
+    goalText.textContent =
+      "10万回再生まで あと —";
+  }
+
+  if (pace) {
+    pace.textContent =
+      "6時間ペース —　｜　達成予測：—";
+  }
+
+  if (progressFill) {
+    progressFill.style.width =
+      "0%";
+  }
+
+  if (progressPercent) {
+    progressPercent.textContent =
+      "—%";
+  }
 
 }
 
 
 function updateMvCounterDisplay(data) {
 
-  if (!data || data.status !== "live" || !data.video) {
+  if (
+    !data ||
+    data.status !== "live" ||
+    !data.video
+  ) {
+
     resetMvCounter();
     return;
+
   }
+
 
   const video = data.video;
 
-  const viewsElement = document.getElementById("mvViews");
-  const likesElement = document.getElementById("mvLikes");
+
+  const viewsElement =
+    document.getElementById(
+      "mvViews"
+    );
+
+  const likesElement =
+    document.getElementById(
+      "mvLikes"
+    );
+
 
   if (viewsElement) {
-    viewsElement.textContent = formatMvNumber(video.views);
+
+    viewsElement.textContent =
+      formatMvNumber(video.views);
+
   }
+
 
   if (likesElement) {
-    likesElement.textContent = formatMvNumber(video.likes);
+
+    likesElement.textContent =
+      formatMvNumber(video.likes);
+
   }
 
 
-  const viewsHourly = document.getElementById("mvViewsHourly");
-  const likesHourly = document.getElementById("mvLikesHourly");
+  const viewsHourly =
+    document.getElementById(
+      "mvViewsHourly"
+    );
+
+  const likesHourly =
+    document.getElementById(
+      "mvLikesHourly"
+    );
+
 
   if (viewsHourly) {
+
     viewsHourly.textContent =
       video.hourly_change
-        ? formatMvSignedNumber(video.hourly_change.views)
+        ? formatMvSignedNumber(
+            video.hourly_change.views
+          )
         : "—";
+
   }
+
 
   if (likesHourly) {
+
     likesHourly.textContent =
       video.hourly_change
-        ? formatMvSignedNumber(video.hourly_change.likes)
+        ? formatMvSignedNumber(
+            video.hourly_change.likes
+          )
         : "—";
+
   }
 
 
-  const viewsTotal = document.getElementById("mvViewsTotal");
-  const likesTotal = document.getElementById("mvLikesTotal");
+  const viewsTotal =
+    document.getElementById(
+      "mvViewsTotal"
+    );
+
+  const likesTotal =
+    document.getElementById(
+      "mvLikesTotal"
+    );
+
 
   if (viewsTotal) {
+
     viewsTotal.textContent =
       "トータル " +
       (
         video.today_total
-          ? formatMvSignedNumber(video.today_total.views)
+          ? formatMvSignedNumber(
+              video.today_total.views
+            )
           : "—"
       );
+
   }
 
+
   if (likesTotal) {
+
     likesTotal.textContent =
       "トータル " +
       (
         video.today_total
-          ? formatMvSignedNumber(video.today_total.likes)
+          ? formatMvSignedNumber(
+              video.today_total.likes
+            )
           : "—"
       );
+
   }
 
 
   const viewsDailyComparison =
-    document.getElementById("mvViewsDailyComparison");
+    document.getElementById(
+      "mvViewsDailyComparison"
+    );
 
   const likesDailyComparison =
-    document.getElementById("mvLikesDailyComparison");
+    document.getElementById(
+      "mvLikesDailyComparison"
+    );
+
 
   if (viewsDailyComparison) {
+
     viewsDailyComparison.textContent =
       video.daily_comparison
-        ? formatMvSignedNumber(video.daily_comparison.views)
+        ? formatMvSignedNumber(
+            video.daily_comparison.views
+          )
         : "—";
+
   }
 
+
   if (likesDailyComparison) {
+
     likesDailyComparison.textContent =
       video.daily_comparison
-        ? formatMvSignedNumber(video.daily_comparison.likes)
+        ? formatMvSignedNumber(
+            video.daily_comparison.likes
+          )
         : "—";
+
   }
 
 
   const viewsPrevious =
-    document.getElementById("mvViewsPreviousDay");
+    document.getElementById(
+      "mvViewsPreviousDay"
+    );
 
   const likesPrevious =
-    document.getElementById("mvLikesPreviousDay");
+    document.getElementById(
+      "mvLikesPreviousDay"
+    );
+
 
   if (video.previous_day) {
 
     const dateLabel =
-      formatMvPreviousDate(video.previous_day.date);
+      formatMvPreviousDate(
+        video.previous_day.date
+      );
+
 
     if (viewsPrevious) {
+
       viewsPrevious.textContent =
-        dateLabel + " " +
-        formatMvSignedNumber(video.previous_day.views);
+        dateLabel +
+        " " +
+        formatMvSignedNumber(
+          video.previous_day.views
+        );
+
     }
 
+
     if (likesPrevious) {
+
       likesPrevious.textContent =
-        dateLabel + " " +
-        formatMvSignedNumber(video.previous_day.likes);
+        dateLabel +
+        " " +
+        formatMvSignedNumber(
+          video.previous_day.likes
+        );
+
     }
 
   } else {
 
-    if (viewsPrevious) viewsPrevious.textContent = "9/28 —";
-    if (likesPrevious) likesPrevious.textContent = "9/28 —";
+    if (viewsPrevious) {
+      viewsPrevious.textContent =
+        "9/28 —";
+    }
+
+    if (likesPrevious) {
+      likesPrevious.textContent =
+        "9/28 —";
+    }
 
   }
 
 
   const goal = video.goal;
 
+
   if (goal) {
 
-    const goalText = document.getElementById("mvGoalText");
+    const goalText =
+      document.getElementById(
+        "mvGoalText"
+      );
+
 
     if (goalText) {
+
       goalText.textContent =
         formatMvGoal(goal.target) +
         "再生まで あと " +
-        formatMvNumber(goal.remaining) +
+        formatMvNumber(
+          goal.remaining
+        ) +
         "回";
+
     }
+
 
     const percent =
       Math.max(
         0,
         Math.min(
-          Number(goal.progress_percent) || 0,
+          Number(
+            goal.progress_percent
+          ) || 0,
           100
         )
       );
 
+
     const progressFill =
-      document.getElementById("mvProgressFill");
+      document.getElementById(
+        "mvProgressFill"
+      );
 
     const progressPercent =
-      document.getElementById("mvProgressPercent");
+      document.getElementById(
+        "mvProgressPercent"
+      );
+
 
     if (progressFill) {
-      progressFill.style.width = percent + "%";
+
+      progressFill.style.width =
+        percent + "%";
+
     }
 
+
     if (progressPercent) {
+
       progressPercent.textContent =
         percent.toLocaleString(
           "ja-JP",
-          { maximumFractionDigits: 2 }
-        ) + "%";
+          {
+            maximumFractionDigits: 2
+          }
+        ) +
+        "%";
+
     }
 
   }
 
 
-  const paceElement = document.getElementById("mvPace");
+  const paceElement =
+    document.getElementById(
+      "mvPace"
+    );
+
 
   if (paceElement) {
 
     if (video.six_hour_pace) {
 
-      const pace = video.six_hour_pace;
+      const pace =
+        video.six_hour_pace;
+
 
       paceElement.textContent =
         "6時間ペース " +
-        formatMvSignedNumber(pace.views_change) +
+        formatMvSignedNumber(
+          pace.views_change
+        ) +
         "回" +
         "（平均 " +
-        formatMvSignedNumber(pace.views_per_hour) +
+        formatMvSignedNumber(
+          pace.views_per_hour
+        ) +
         "回/時）" +
         "　｜　達成予測：" +
-        formatMvEstimatedTime(video.goal?.estimated_at);
+        formatMvEstimatedTime(
+          video.goal?.estimated_at
+        );
 
     } else {
 
@@ -2341,13 +2195,22 @@ async function loadMvCounter() {
         }
       );
 
+
     if (!response.ok) {
-      throw new Error("MV Counter API Error");
+
+      throw new Error(
+        "MV Counter API Error"
+      );
+
     }
 
-    const data = await response.json();
+
+    const data =
+      await response.json();
+
 
     updateMvCounterDisplay(data);
+
 
   } catch (error) {
 
@@ -2361,14 +2224,40 @@ async function loadMvCounter() {
 }
 
 
+/* ==============================
+   INITIAL
+============================== */
+
+updateMvCountdown();
+drawSchedule();
+drawReleasedContents();
 loadMvCounter();
 
 
+setInterval(() => {
+
+  updateMvCountdown();
+
+},1000);
+
+
+setInterval(() => {
+
+  drawSchedule();
+  drawReleasedContents();
+
+},60000);
+
+
+/*
+  Worker側は10分間隔更新。
+  ページ側は5分間隔で読み直して、
+  新しい保存値があれば反映。
+*/
 setInterval(
   loadMvCounter,
   5 * 60 * 1000
 );
-
 
 </script>
 
