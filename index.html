@@ -291,32 +291,11 @@ body::before {
 
 
 /* ==============================
-   SPECIAL VIDEO
+   OFFICIAL AUDIO
 ============================== */
 
-.special-video-area {
-  margin: 0;
-}
-
-.special-video-card {
-  display: grid;
-  grid-template-columns:
-    minmax(0,1.45fr)
-    minmax(0,.75fr);
-
-  gap: 12px;
-  align-items: center;
-
-  padding: 10px;
-
-  border: 1px solid rgba(50,50,50,.22);
-  border-radius: 12px;
-
-  background: rgba(255,255,255,.42);
-  box-shadow: 0 4px 15px rgba(0,0,0,.055);
-
-  color: #222;
-  text-decoration: none;
+.special-video {
+  margin-top: 18px;
 
   font-family:
     -apple-system,
@@ -326,10 +305,27 @@ body::before {
     sans-serif;
 }
 
-.special-video-thumb-wrap {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
+.special-video-link {
+  display: grid;
+  grid-template-columns:
+    minmax(0,1.35fr)
+    minmax(0,.75fr);
+
+  align-items: center;
+  gap: 12px;
+
+  padding: 9px;
+
+  border: 1px solid rgba(50,50,50,.24);
+  border-radius: 12px;
+
+  background: rgba(255,255,255,.42);
+  color: #222;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,.05);
 }
 
 .special-video-thumb {
@@ -337,63 +333,45 @@ body::before {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-}
-
-.special-video-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 38px;
-  height: 38px;
-
-  border-radius: 50%;
-
-  background: rgba(20,20,20,.82);
-  color: #fff;
-
-  font-size: 13px;
-
-  transform: translate(-50%,-50%);
+  border-radius: 8px;
 }
 
 .special-video-info {
+  min-width: 0;
   text-align: center;
 }
 
-.special-video-label {
-  color: #777;
-  font-size: 8px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
 .special-video-title {
-  margin-top: 6px;
-
-  font-family:
-    "Yu Mincho",
-    "YuMincho",
-    "Hiragino Mincho ProN",
-    serif;
-
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.35;
 }
 
-.special-video-link {
-  margin-top: 9px;
-  padding: 7px 5px;
+.special-video-subtitle {
+  margin-top: 3px;
+  color: #666;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
 
-  border: 1px solid rgba(40,40,40,.35);
+.special-video-play {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 10px;
+
   border-radius: 7px;
 
-  font-size: 8px;
-  font-weight: 800;
+  background: #292929;
+  color: #fff;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.special-video-link:active {
+  transform: scale(.99);
+  background: rgba(255,255,255,.70);
 }
 
 
@@ -861,48 +839,37 @@ body::before {
     font-size: 8px;
   }
 
-
-  /* SPECIAL VIDEO */
-
-  .special-video-card {
-    grid-template-columns:
-      minmax(0,1.4fr)
-      minmax(0,.7fr);
-
-    gap: 8px;
-    padding: 8px;
-  }
-
-  .special-video-play {
-    width: 31px;
-    height: 31px;
-    font-size: 10px;
-  }
-
-  .special-video-title {
-    font-size: 13px;
-  }
-
-  .special-video-label {
-    font-size: 7px;
+  .special-video {
+    margin-top: 15px;
   }
 
   .special-video-link {
-    margin-top: 6px;
-    padding: 6px 3px;
-    font-size: 7px;
+    grid-template-columns:
+      1.35fr .75fr;
+    gap: 8px;
+    padding: 7px;
   }
 
+  .special-video-title {
+    font-size: 11px;
+  }
 
-  /* MV */
+  .special-video-subtitle {
+    font-size: 8.5px;
+  }
+
+  .special-video-play {
+    margin-top: 7px;
+    padding: 6px 7px;
+    font-size: 8px;
+  }
 
   .mv-counter-card {
     padding: 10px;
   }
 
   .mv-top {
-    grid-template-columns:
-      1.2fr .8fr;
+    grid-template-columns: 1.2fr .8fr;
     gap: 8px;
   }
 
@@ -966,9 +933,6 @@ body::before {
     padding: 7px 2px;
     font-size: 9px;
   }
-
-
-  /* SCHEDULE */
 
   .schedule-layout {
     grid-template-columns:
@@ -1119,50 +1083,36 @@ body::before {
 </section>
 
 
-<div class="myth-divider">
-  <span class="myth-symbol">◇ ✧ ◇</span>
-</div>
-
-
 <!-- ==============================
-     NEW VIDEO
+     OFFICIAL AUDIO
 ============================== -->
 
-<section class="special-video-area">
+<div class="special-video">
 
   <a
-    class="special-video-card"
+    class="special-video-link"
     href="https://youtu.be/js9FxM6EOpM?si=xoI2oRYxjpfUXOsm"
     target="_blank"
     rel="noopener noreferrer"
   >
 
-    <div class="special-video-thumb-wrap">
-
-      <img
-        class="special-video-thumb"
-        src="https://i.ytimg.com/vi/js9FxM6EOpM/maxresdefault.jpg"
-        alt="Nameless MythS"
-      >
-
-      <div class="special-video-play">
-        ▶
-      </div>
-
-    </div>
-
+    <img
+      class="special-video-thumb"
+      src="https://i.ytimg.com/vi/js9FxM6EOpM/hqdefault.jpg"
+      alt="Nameless MythS Official Audio"
+    >
 
     <div class="special-video-info">
-
-      <div class="special-video-label">
-        NEW VIDEO
-      </div>
 
       <div class="special-video-title">
         Nameless MythS
       </div>
 
-      <div class="special-video-link">
+      <div class="special-video-subtitle">
+        - Official Audio -
+      </div>
+
+      <div class="special-video-play">
         YouTubeで再生 ▶
       </div>
 
@@ -1170,11 +1120,11 @@ body::before {
 
   </a>
 
-</section>
+</div>
 
 
 <div class="myth-divider">
-  <span class="myth-symbol">◇ ✦ ◇</span>
+  <span class="myth-symbol">◇ ✧ ◇</span>
 </div>
 
 
@@ -1235,32 +1185,20 @@ body::before {
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">
-          1時間比
-        </span>
+        <span class="mv-stat-row-label">1時間比</span>
         <span id="mvViewsHourly">—</span>
       </div>
 
-      <div
-        class="mv-stat-box"
-        id="mvViewsTotal"
-      >
+      <div class="mv-stat-box" id="mvViewsTotal">
         トータル —
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">
-          前日比
-        </span>
-        <span id="mvViewsDailyComparison">
-          —
-        </span>
+        <span class="mv-stat-row-label">前日比</span>
+        <span id="mvViewsDailyComparison">—</span>
       </div>
 
-      <div
-        class="mv-stat-box"
-        id="mvViewsPreviousDay"
-      >
+      <div class="mv-stat-box" id="mvViewsPreviousDay">
         9/28 —
       </div>
 
@@ -1281,32 +1219,20 @@ body::before {
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">
-          1時間比
-        </span>
+        <span class="mv-stat-row-label">1時間比</span>
         <span id="mvLikesHourly">—</span>
       </div>
 
-      <div
-        class="mv-stat-box"
-        id="mvLikesTotal"
-      >
+      <div class="mv-stat-box" id="mvLikesTotal">
         トータル —
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">
-          前日比
-        </span>
-        <span id="mvLikesDailyComparison">
-          —
-        </span>
+        <span class="mv-stat-row-label">前日比</span>
+        <span id="mvLikesDailyComparison">—</span>
       </div>
 
-      <div
-        class="mv-stat-box"
-        id="mvLikesPreviousDay"
-      >
+      <div class="mv-stat-box" id="mvLikesPreviousDay">
         9/28 —
       </div>
 
@@ -2087,14 +2013,18 @@ function updateMvCounterDisplay(data) {
 
 
   if (viewsElement) {
+
     viewsElement.textContent =
       formatMvNumber(video.views);
+
   }
 
 
   if (likesElement) {
+
     likesElement.textContent =
       formatMvNumber(video.likes);
+
   }
 
 
@@ -2110,22 +2040,26 @@ function updateMvCounterDisplay(data) {
 
 
   if (viewsHourly) {
+
     viewsHourly.textContent =
       video.hourly_change
         ? formatMvSignedNumber(
             video.hourly_change.views
           )
         : "—";
+
   }
 
 
   if (likesHourly) {
+
     likesHourly.textContent =
       video.hourly_change
         ? formatMvSignedNumber(
             video.hourly_change.likes
           )
         : "—";
+
   }
 
 
@@ -2141,6 +2075,7 @@ function updateMvCounterDisplay(data) {
 
 
   if (viewsTotal) {
+
     viewsTotal.textContent =
       "トータル " +
       (
@@ -2150,10 +2085,12 @@ function updateMvCounterDisplay(data) {
             )
           : "—"
       );
+
   }
 
 
   if (likesTotal) {
+
     likesTotal.textContent =
       "トータル " +
       (
@@ -2163,6 +2100,7 @@ function updateMvCounterDisplay(data) {
             )
           : "—"
       );
+
   }
 
 
@@ -2178,22 +2116,26 @@ function updateMvCounterDisplay(data) {
 
 
   if (viewsDailyComparison) {
+
     viewsDailyComparison.textContent =
       video.daily_comparison
         ? formatMvSignedNumber(
             video.daily_comparison.views
           )
         : "—";
+
   }
 
 
   if (likesDailyComparison) {
+
     likesDailyComparison.textContent =
       video.daily_comparison
         ? formatMvSignedNumber(
             video.daily_comparison.likes
           )
         : "—";
+
   }
 
 
@@ -2217,22 +2159,26 @@ function updateMvCounterDisplay(data) {
 
 
     if (viewsPrevious) {
+
       viewsPrevious.textContent =
         dateLabel +
         " " +
         formatMvSignedNumber(
           video.previous_day.views
         );
+
     }
 
 
     if (likesPrevious) {
+
       likesPrevious.textContent =
         dateLabel +
         " " +
         formatMvSignedNumber(
           video.previous_day.likes
         );
+
     }
 
   } else {
@@ -2298,8 +2244,10 @@ function updateMvCounterDisplay(data) {
 
 
     if (progressFill) {
+
       progressFill.style.width =
         percent + "%";
+
     }
 
 
@@ -2376,9 +2324,11 @@ async function loadMvCounter() {
 
 
     if (!response.ok) {
+
       throw new Error(
         "MV Counter API Error"
       );
+
     }
 
 
@@ -2412,13 +2362,17 @@ loadMvCounter();
 
 
 setInterval(() => {
+
   updateMvCountdown();
+
 },1000);
 
 
 setInterval(() => {
+
   drawSchedule();
   drawReleasedContents();
+
 },60000);
 
 
