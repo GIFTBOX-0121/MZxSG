@@ -1799,6 +1799,83 @@ function formatMvEstimatedTime(isoString) {
 }
 
 
+/* ==============================
+   キリ番区間の開始地点
+============================== */
+
+function getPreviousGoalTarget(target) {
+
+  const number =
+    Number(target);
+
+  if (!Number.isFinite(number)) {
+    return 0;
+  }
+
+  if (number <= 100000) {
+    return 0;
+  }
+
+  if (number <= 500000) {
+    return number - 100000;
+  }
+
+  if (number === 1000000) {
+    return 500000;
+  }
+
+  return number - 1000000;
+
+}
+
+
+/* ==============================
+   キリ番区間の進捗率
+============================== */
+
+function getGoalProgressPercent(
+  currentViews,
+  targetViews
+) {
+
+  const current =
+    Number(currentViews);
+
+  const target =
+    Number(targetViews);
+
+  if (
+    !Number.isFinite(current) ||
+    !Number.isFinite(target) ||
+    target <= 0
+  ) {
+    return 0;
+  }
+
+  const previousTarget =
+    getPreviousGoalTarget(target);
+
+  const range =
+    target - previousTarget;
+
+  if (range <= 0) {
+    return 0;
+  }
+
+  const progressed =
+    current - previousTarget;
+
+  return Math.max(
+    0,
+    Math.min(
+      (progressed / range) * 100,
+      100
+    )
+  );
+
+}
+
+
 function resetMvCounter() {
 
   const simpleIds = [
@@ -1941,17 +2018,32 @@ function updateMvCounterDisplay(data) {
       "回";
 
 
+    /*
+      Workerから返る progress_percent は使用せず、
+      現在のキリ番区間で進捗率を計算。
+
+      例：
+      115,766回 / 次目標200,000回
+
+      100,000 → 200,000 の区間なので
+
+      (115,766 - 100,000)
+      ÷
+      (200,000 - 100,000)
+
+      = 15.766%
+    */
+
     const percent =
-      Math.max(
-        0,
-        Math.min(
-          Number(goal.progress_percent) || 0,
-          100
-        )
+      getGoalProgressPercent(
+        video.views,
+        goal.target
       );
+
 
     document.getElementById("mvProgressFill").style.width =
       percent + "%";
+
 
     document.getElementById("mvProgressPercent").textContent =
       percent.toLocaleString(
