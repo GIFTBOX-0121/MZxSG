@@ -291,91 +291,6 @@ body::before {
 
 
 /* ==============================
-   OFFICIAL AUDIO
-============================== */
-
-.special-video {
-  margin-top: 18px;
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-}
-
-.special-video-link {
-  display: grid;
-  grid-template-columns:
-    minmax(0,1.35fr)
-    minmax(0,.75fr);
-
-  align-items: center;
-  gap: 12px;
-
-  padding: 9px;
-
-  border: 1px solid rgba(50,50,50,.24);
-  border-radius: 12px;
-
-  background: rgba(255,255,255,.42);
-  color: #222;
-
-  text-decoration: none;
-
-  box-shadow:
-    0 4px 14px rgba(0,0,0,.05);
-}
-
-.special-video-thumb {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.special-video-info {
-  min-width: 0;
-  text-align: center;
-}
-
-.special-video-title {
-  font-size: 14px;
-  font-weight: 900;
-  line-height: 1.35;
-}
-
-.special-video-subtitle {
-  margin-top: 3px;
-  color: #666;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .5px;
-}
-
-.special-video-play {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 7px 10px;
-
-  border-radius: 7px;
-
-  background: #292929;
-  color: #fff;
-
-  font-size: 9px;
-  font-weight: 900;
-}
-
-.special-video-link:active {
-  transform: scale(.99);
-  background: rgba(255,255,255,.70);
-}
-
-
-/* ==============================
    MUSIC VIDEO COUNTER
 ============================== */
 
@@ -422,6 +337,7 @@ body::before {
 }
 
 .mv-top-info {
+  min-width: 0;
   text-align: center;
 }
 
@@ -430,29 +346,72 @@ body::before {
   font-weight: 900;
 }
 
+
+/* 急上昇表示用
+   Workerから trending_rank が来た時だけ表示 */
+.mv-trending {
+  display: none;
+  margin-top: 9px;
+  padding: 7px 5px;
+
+  border: 1px solid rgba(170,35,35,.58);
+  border-radius: 7px;
+
+  background: rgba(255,255,255,.60);
+  color: #a51f1f;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+
+/* YouTubeボタン */
+
 .mv-release-badge {
-  display: block;
-  margin-top: 11px;
-  padding: 9px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 
-  border: 1.5px solid #333;
-  border-radius: 8px;
+  width: 100%;
+  min-height: 42px;
 
-  background: #292929;
+  margin-top: 10px;
+  padding: 10px 7px;
+
+  border: 2px solid #1f1f1f;
+  border-radius: 9px;
+
+  background: #202020;
   color: #fff;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.18);
 
   text-decoration: none;
 
-  font-size: 10px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .2px;
+
+  transition:
+    transform .15s ease,
+    background .15s ease,
+    box-shadow .15s ease;
+}
+
+.mv-release-badge:hover {
+  background: #000;
+  box-shadow:
+    0 5px 16px rgba(0,0,0,.24);
 }
 
 .mv-release-badge:active {
-  transform: scale(.98);
+  transform: scale(.97);
 }
 
 .mv-countdown {
-  margin-top: 9px;
+  margin-top: 8px;
   color: #555;
   font-size: 10px;
   font-weight: 700;
@@ -851,31 +810,6 @@ body::before {
     font-size: 8px;
   }
 
-  .special-video {
-    margin-top: 15px;
-  }
-
-  .special-video-link {
-    grid-template-columns:
-      1.35fr .75fr;
-    gap: 8px;
-    padding: 7px;
-  }
-
-  .special-video-title {
-    font-size: 11px;
-  }
-
-  .special-video-subtitle {
-    font-size: 8.5px;
-  }
-
-  .special-video-play {
-    margin-top: 7px;
-    padding: 6px 7px;
-    font-size: 8px;
-  }
-
   .mv-counter-card {
     padding: 10px;
   }
@@ -889,10 +823,17 @@ body::before {
     font-size: 14px;
   }
 
-  .mv-release-badge {
+  .mv-trending {
     margin-top: 7px;
-    padding: 7px 4px;
-    font-size: 8px;
+    padding: 6px 3px;
+    font-size: 8.5px;
+  }
+
+  .mv-release-badge {
+    min-height: 39px;
+    margin-top: 7px;
+    padding: 8px 4px;
+    font-size: 9px;
   }
 
   .mv-countdown {
@@ -1016,51 +957,69 @@ body::before {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span class="amazon-name">Amazon Music</span>
-      <span class="amazon-note">1日1人1回購入可能</span>
+      <span class="amazon-name">
+        Amazon Music
+      </span>
+
+      <span class="amazon-note">
+        1人、1日1回購入が可能
+      </span>
     </a>
+
 
     <div class="download-grid">
 
-      <a class="download-btn"
-         href="https://itunes.apple.com/jp/album/id6812651631?app=itunes&ls=1"
-         target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="download-btn"
+        href="https://itunes.apple.com/jp/album/id6812651631?app=itunes&ls=1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         iTunes
       </a>
 
-      <a class="download-btn"
-         href="https://recochoku.jp/song/S1031553739/single"
-         target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="download-btn"
+        href="https://recochoku.jp/song/S1031553739/single"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         レコチョク
       </a>
 
-      <a class="download-btn"
-         href="https://recochoku.jp/song/S1031553738/hires_single"
-         target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="download-btn"
+        href="https://recochoku.jp/song/S1031553738/hires_single"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         レコチョク<br>(ハイレゾ)
       </a>
 
-      <a class="download-btn"
-         href="https://sp-m.mu-mo.net/music/13148287/"
-         target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="download-btn"
+        href="https://sp-m.mu-mo.net/music/13148287/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         mu-mo
       </a>
 
-      <a class="download-btn"
-         href="https://mora.jp/package/43000002/ANTCD-75861/"
-         target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="download-btn"
+        href="https://mora.jp/package/43000002/ANTCD-75861/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         mora
       </a>
 
-      <a class="download-btn"
-         href="https://mora.jp/package/43000002/ANTCD-75862_F/"
-         target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="download-btn"
+        href="https://mora.jp/package/43000002/ANTCD-75862_F/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         mora<br>(ハイレゾ)
       </a>
 
@@ -1069,44 +1028,6 @@ body::before {
   </div>
 
 </section>
-
-
-<!-- OFFICIAL AUDIO -->
-
-<div class="special-video">
-
-  <a
-    class="special-video-link"
-    href="https://youtu.be/js9FxM6EOpM?si=xoI2oRYxjpfUXOsm"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-
-    <img
-      class="special-video-thumb"
-      src="https://i.ytimg.com/vi/js9FxM6EOpM/hqdefault.jpg"
-      alt="Nameless MythS Official Audio"
-    >
-
-    <div class="special-video-info">
-
-      <div class="special-video-title">
-        Nameless MythS
-      </div>
-
-      <div class="special-video-subtitle">
-        - Official Audio -
-      </div>
-
-      <div class="special-video-play">
-        YouTubeで再生 ▶
-      </div>
-
-    </div>
-
-  </a>
-
-</div>
 
 
 <div class="myth-divider">
@@ -1137,11 +1058,21 @@ body::before {
       >
     </a>
 
+
     <div class="mv-top-info">
 
       <div class="mv-song-title">
         Nameless MythS
       </div>
+
+
+      <!-- 急上昇は取得できた時だけここに表示 -->
+
+      <div
+        class="mv-trending"
+        id="mvTrending"
+      ></div>
+
 
       <a
         class="mv-release-badge"
@@ -1149,8 +1080,9 @@ body::before {
         target="_blank"
         rel="noopener noreferrer"
       >
-        YouTubeで再生 ▶
+        ▶ YouTubeで再生
       </a>
+
 
       <div
         class="mv-countdown"
@@ -1168,25 +1100,44 @@ body::before {
 
     <div class="mv-stat-column">
 
-      <div class="mv-stat-label">▶ 再生回数</div>
+      <div class="mv-stat-label">
+        ▶ 再生回数
+      </div>
 
-      <div class="mv-stat-number" id="mvViews">—</div>
+      <div
+        class="mv-stat-number"
+        id="mvViews"
+      >
+        —
+      </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">1時間比</span>
+        <span class="mv-stat-row-label">
+          1時間比
+        </span>
         <span id="mvViewsHourly">—</span>
       </div>
 
-      <div class="mv-stat-box" id="mvViewsTotal">
+      <div
+        class="mv-stat-box"
+        id="mvViewsTotal"
+      >
         トータル —
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">前日比</span>
-        <span id="mvViewsDailyComparison">—</span>
+        <span class="mv-stat-row-label">
+          前日比
+        </span>
+        <span id="mvViewsDailyComparison">
+          —
+        </span>
       </div>
 
-      <div class="mv-stat-box" id="mvViewsPreviousDay">
+      <div
+        class="mv-stat-box"
+        id="mvViewsPreviousDay"
+      >
         9/28 —
       </div>
 
@@ -1195,25 +1146,44 @@ body::before {
 
     <div class="mv-stat-column">
 
-      <div class="mv-stat-label">👍 高評価</div>
+      <div class="mv-stat-label">
+        👍 高評価
+      </div>
 
-      <div class="mv-stat-number" id="mvLikes">—</div>
+      <div
+        class="mv-stat-number"
+        id="mvLikes"
+      >
+        —
+      </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">1時間比</span>
+        <span class="mv-stat-row-label">
+          1時間比
+        </span>
         <span id="mvLikesHourly">—</span>
       </div>
 
-      <div class="mv-stat-box" id="mvLikesTotal">
+      <div
+        class="mv-stat-box"
+        id="mvLikesTotal"
+      >
         トータル —
       </div>
 
       <div class="mv-stat-row">
-        <span class="mv-stat-row-label">前日比</span>
-        <span id="mvLikesDailyComparison">—</span>
+        <span class="mv-stat-row-label">
+          前日比
+        </span>
+        <span id="mvLikesDailyComparison">
+          —
+        </span>
       </div>
 
-      <div class="mv-stat-box" id="mvLikesPreviousDay">
+      <div
+        class="mv-stat-box"
+        id="mvLikesPreviousDay"
+      >
         9/28 —
       </div>
 
@@ -1224,19 +1194,33 @@ body::before {
 
   <div class="mv-goal">
 
-    <div class="mv-goal-text" id="mvGoalText">
+    <div
+      class="mv-goal-text"
+      id="mvGoalText"
+    >
       10万回再生まで あと —
     </div>
 
-    <div class="mv-pace" id="mvPace">
+    <div
+      class="mv-pace"
+      id="mvPace"
+    >
       6時間ペース —　｜　達成予測：—
     </div>
 
     <div class="mv-progress">
-      <div class="mv-progress-fill" id="mvProgressFill"></div>
+
+      <div
+        class="mv-progress-fill"
+        id="mvProgressFill"
+      ></div>
+
     </div>
 
-    <div class="mv-progress-percent" id="mvProgressPercent">
+    <div
+      class="mv-progress-percent"
+      id="mvProgressPercent"
+    >
       —%
     </div>
 
@@ -1250,12 +1234,14 @@ body::before {
 <div class="related-mvs">
 
   <div class="related-mv">
+
     <a
       class="related-mv-link"
       href="https://youtu.be/76lNhpUKrEc?si=TSiAilz1MT0JfQy3"
       target="_blank"
       rel="noopener noreferrer"
     >
+
       <img
         class="related-mv-thumb"
         src="https://i.ytimg.com/vi/76lNhpUKrEc/hqdefault.jpg"
@@ -1263,20 +1249,31 @@ body::before {
       >
 
       <div class="related-mv-info">
-        <div class="related-mv-group">MAZZEL</div>
-        <div class="related-mv-title">So Strawberry</div>
+
+        <div class="related-mv-group">
+          MAZZEL
+        </div>
+
+        <div class="related-mv-title">
+          So Strawberry
+        </div>
+
       </div>
+
     </a>
+
   </div>
 
 
   <div class="related-mv">
+
     <a
       class="related-mv-link"
       href="https://youtu.be/3gsVVVndUKM?si=OuJ1lZK1oHOADuid"
       target="_blank"
       rel="noopener noreferrer"
     >
+
       <img
         class="related-mv-thumb"
         src="https://i.ytimg.com/vi/3gsVVVndUKM/hqdefault.jpg"
@@ -1284,10 +1281,19 @@ body::before {
       >
 
       <div class="related-mv-info">
-        <div class="related-mv-group">STARGLOW</div>
-        <div class="related-mv-title">WISHES</div>
+
+        <div class="related-mv-group">
+          STARGLOW
+        </div>
+
+        <div class="related-mv-title">
+          WISHES
+        </div>
+
       </div>
+
     </a>
+
   </div>
 
 </div>
@@ -1309,7 +1315,8 @@ body::before {
       target="_blank"
       rel="noopener noreferrer"
     >
-      MAZZEL <span class="youtube-play">▶</span>
+      MAZZEL
+      <span class="youtube-play">▶</span>
     </a>
 
     <a
@@ -1318,7 +1325,8 @@ body::before {
       target="_blank"
       rel="noopener noreferrer"
     >
-      STARGLOW <span class="youtube-play">▶</span>
+      STARGLOW
+      <span class="youtube-play">▶</span>
     </a>
 
     <a
@@ -1327,7 +1335,8 @@ body::before {
       target="_blank"
       rel="noopener noreferrer"
     >
-      BMSG <span class="youtube-play">▶</span>
+      BMSG
+      <span class="youtube-play">▶</span>
     </a>
 
   </div>
@@ -1335,6 +1344,7 @@ body::before {
 </div>
 
 </div>
+
 </section>
 
 
@@ -1359,10 +1369,12 @@ body::before {
   ></div>
 
   <div class="released-content">
+
     <div
       class="contents"
       id="releasedContents"
     ></div>
+
   </div>
 
 </div>
@@ -1489,12 +1501,17 @@ function getYouTubeVideoId(url) {
 
   try {
 
-    const parsed = new URL(url);
+    const parsed =
+      new URL(url);
 
-    if (parsed.hostname.includes("youtu.be")) {
+    if (
+      parsed.hostname.includes("youtu.be")
+    ) {
+
       return parsed.pathname
         .replace("/","")
         .split("?")[0];
+
     }
 
     return parsed.searchParams.get("v");
@@ -1511,14 +1528,22 @@ function getYouTubeVideoId(url) {
 function updateMvCountdown() {
 
   const target =
-    document.getElementById("mvCountdown");
+    document.getElementById(
+      "mvCountdown"
+    );
 
   const remaining =
-    getRemainingParts(MV_RELEASE_TIME);
+    getRemainingParts(
+      MV_RELEASE_TIME
+    );
 
   if (!remaining) {
-    target.textContent = "MUSIC VIDEO OUT";
+
+    target.textContent =
+      "MUSIC VIDEO OUT";
+
     return;
+
   }
 
   if (remaining.days > 0) {
@@ -1534,11 +1559,17 @@ function updateMvCountdown() {
 
     target.textContent =
       "公開まで あと " +
-      twoDigits(remaining.hours) +
+      twoDigits(
+        remaining.hours
+      ) +
       ":" +
-      twoDigits(remaining.minutes) +
+      twoDigits(
+        remaining.minutes
+      ) +
       ":" +
-      twoDigits(remaining.seconds);
+      twoDigits(
+        remaining.seconds
+      );
 
   }
 
@@ -1547,15 +1578,20 @@ function updateMvCountdown() {
 
 function drawSchedule() {
 
-  const now = new Date();
+  const now =
+    new Date();
 
   const target =
-    document.getElementById("scheduleList");
+    document.getElementById(
+      "scheduleList"
+    );
 
   const nextIndex =
     SCHEDULE_ITEMS.findIndex(
       item =>
-        new Date(item.release) > now
+        new Date(
+          item.release
+        ) > now
     );
 
   target.innerHTML =
@@ -1563,7 +1599,10 @@ function drawSchedule() {
       (item,index) => {
 
         const past =
-          now >= new Date(item.release);
+          now >=
+          new Date(
+            item.release
+          );
 
         return `
           <div
@@ -1602,61 +1641,76 @@ function drawSchedule() {
 function drawReleasedContents() {
 
   const target =
-    document.getElementById("releasedContents");
+    document.getElementById(
+      "releasedContents"
+    );
 
-  const now = new Date();
+  const now =
+    new Date();
 
   const released =
     SCHEDULE_ITEMS.filter(
       item =>
         item.url &&
-        now >= new Date(item.release)
+        now >=
+        new Date(
+          item.release
+        )
     );
 
   if (!released.length) {
+
     target.innerHTML = "";
     return;
+
   }
 
   target.innerHTML =
-    released.map(item => {
+    released.map(
+      item => {
 
-      const videoId =
-        getYouTubeVideoId(item.url);
+        const videoId =
+          getYouTubeVideoId(
+            item.url
+          );
 
-      const title =
-        item.title.replace(/^MV\s+/i,"");
+        const title =
+          item.title.replace(
+            /^MV\s+/i,
+            ""
+          );
 
-      return `
-        <div class="video-card">
+        return `
+          <div class="video-card">
 
-          <img
-            class="thumb"
-            src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg"
-            alt="${title}"
-          >
+            <img
+              class="thumb"
+              src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg"
+              alt="${title}"
+            >
 
-          <div class="video-info">
+            <div class="video-info">
 
-            <div class="video-title">
-              ${title}
+              <div class="video-title">
+                ${title}
+              </div>
+
+              <a
+                class="play"
+                href="${item.url}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ▶ 再生
+              </a>
+
             </div>
 
-            <a
-              class="play"
-              href="${item.url}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ▶ 再生
-            </a>
-
           </div>
+        `;
 
-        </div>
-      `;
-
-    }).join("");
+      }
+    ).join("");
 
 }
 
@@ -1671,32 +1725,50 @@ const MV_COUNTER_API =
 
 function formatMvNumber(value) {
 
-  const number = Number(value);
+  const number =
+    Number(value);
 
-  if (!Number.isFinite(number)) {
+  if (
+    !Number.isFinite(number)
+  ) {
     return "—";
   }
 
-  return number.toLocaleString("ja-JP");
+  return number.toLocaleString(
+    "ja-JP"
+  );
 
 }
 
 
-function formatMvSignedNumber(value) {
+function formatMvSignedNumber(
+  value
+) {
 
-  const number = Number(value);
+  const number =
+    Number(value);
 
-  if (!Number.isFinite(number)) {
+  if (
+    !Number.isFinite(number)
+  ) {
     return "—";
   }
 
   if (number > 0) {
+
     return "+" +
-      number.toLocaleString("ja-JP");
+      number.toLocaleString(
+        "ja-JP"
+      );
+
   }
 
   if (number < 0) {
-    return number.toLocaleString("ja-JP");
+
+    return number.toLocaleString(
+      "ja-JP"
+    );
+
   }
 
   return "±0";
@@ -1704,7 +1776,9 @@ function formatMvSignedNumber(value) {
 }
 
 
-function formatMvPreviousDate(dateString) {
+function formatMvPreviousDate(
+  dateString
+) {
 
   if (!dateString) {
     return "—";
@@ -1713,7 +1787,9 @@ function formatMvPreviousDate(dateString) {
   const parts =
     dateString.split("-");
 
-  if (parts.length !== 3) {
+  if (
+    parts.length !== 3
+  ) {
     return dateString;
   }
 
@@ -1728,9 +1804,12 @@ function formatMvPreviousDate(dateString) {
 
 function formatMvGoal(value) {
 
-  const number = Number(value);
+  const number =
+    Number(value);
 
-  if (!Number.isFinite(number)) {
+  if (
+    !Number.isFinite(number)
+  ) {
     return "—";
   }
 
@@ -1741,30 +1820,42 @@ function formatMvGoal(value) {
 
     return (
       (number / 10000)
-        .toLocaleString("ja-JP") +
+        .toLocaleString(
+          "ja-JP"
+        ) +
       "万回"
     );
 
   }
 
   return (
-    number.toLocaleString("ja-JP") +
+    number.toLocaleString(
+      "ja-JP"
+    ) +
     "回"
   );
 
 }
 
 
-function formatMvEstimatedTime(isoString) {
+function formatMvEstimatedTime(
+  isoString
+) {
 
   if (!isoString) {
     return "—";
   }
 
   const date =
-    new Date(isoString);
+    new Date(
+      isoString
+    );
 
-  if (Number.isNaN(date.getTime())) {
+  if (
+    Number.isNaN(
+      date.getTime()
+    )
+  ) {
     return "—";
   }
 
@@ -1772,19 +1863,29 @@ function formatMvEstimatedTime(isoString) {
     new Intl.DateTimeFormat(
       "ja-JP",
       {
-        timeZone: "Asia/Tokyo",
-        month: "numeric",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false
+        timeZone:
+          "Asia/Tokyo",
+        month:
+          "numeric",
+        day:
+          "numeric",
+        hour:
+          "2-digit",
+        minute:
+          "2-digit",
+        hour12:
+          false
       }
-    ).formatToParts(date);
+    ).formatToParts(
+      date
+    );
 
-  const get = type =>
-    parts.find(
-      part => part.type === type
-    )?.value || "";
+  const get =
+    type =>
+      parts.find(
+        part =>
+          part.type === type
+      )?.value || "";
 
   return (
     get("month") +
@@ -1800,27 +1901,37 @@ function formatMvEstimatedTime(isoString) {
 
 
 /* ==============================
-   キリ番区間の開始地点
+   キリ番区間
 ============================== */
 
-function getPreviousGoalTarget(target) {
+function getPreviousGoalTarget(
+  target
+) {
 
   const number =
     Number(target);
 
-  if (!Number.isFinite(number)) {
+  if (
+    !Number.isFinite(number)
+  ) {
     return 0;
   }
 
-  if (number <= 100000) {
+  if (
+    number <= 100000
+  ) {
     return 0;
   }
 
-  if (number <= 500000) {
+  if (
+    number <= 500000
+  ) {
     return number - 100000;
   }
 
-  if (number === 1000000) {
+  if (
+    number === 1000000
+  ) {
     return 500000;
   }
 
@@ -1829,20 +1940,20 @@ function getPreviousGoalTarget(target) {
 }
 
 
-/* ==============================
-   キリ番区間の進捗率
-============================== */
-
 function getGoalProgressPercent(
   currentViews,
   targetViews
 ) {
 
   const current =
-    Number(currentViews);
+    Number(
+      currentViews
+    );
 
   const target =
-    Number(targetViews);
+    Number(
+      targetViews
+    );
 
   if (
     !Number.isFinite(current) ||
@@ -1853,22 +1964,31 @@ function getGoalProgressPercent(
   }
 
   const previousTarget =
-    getPreviousGoalTarget(target);
+    getPreviousGoalTarget(
+      target
+    );
 
   const range =
-    target - previousTarget;
+    target -
+    previousTarget;
 
-  if (range <= 0) {
+  if (
+    range <= 0
+  ) {
     return 0;
   }
 
   const progressed =
-    current - previousTarget;
+    current -
+    previousTarget;
 
   return Math.max(
     0,
     Math.min(
-      (progressed / range) * 100,
+      (
+        progressed /
+        range
+      ) * 100,
       100
     )
   );
@@ -1887,46 +2007,85 @@ function resetMvCounter() {
     "mvLikesDailyComparison"
   ];
 
-  simpleIds.forEach(id => {
+  simpleIds.forEach(
+    id => {
 
-    const element =
-      document.getElementById(id);
+      const element =
+        document.getElementById(
+          id
+        );
 
-    if (element) {
-      element.textContent = "—";
+      if (element) {
+        element.textContent =
+          "—";
+      }
+
     }
+  );
 
-  });
 
-
-  document.getElementById("mvViewsTotal").textContent =
+  document.getElementById(
+    "mvViewsTotal"
+  ).textContent =
     "トータル —";
 
-  document.getElementById("mvLikesTotal").textContent =
+  document.getElementById(
+    "mvLikesTotal"
+  ).textContent =
     "トータル —";
 
-  document.getElementById("mvViewsPreviousDay").textContent =
+  document.getElementById(
+    "mvViewsPreviousDay"
+  ).textContent =
     "9/28 —";
 
-  document.getElementById("mvLikesPreviousDay").textContent =
+  document.getElementById(
+    "mvLikesPreviousDay"
+  ).textContent =
     "9/28 —";
 
-  document.getElementById("mvGoalText").textContent =
+  document.getElementById(
+    "mvGoalText"
+  ).textContent =
     "10万回再生まで あと —";
 
-  document.getElementById("mvPace").textContent =
+  document.getElementById(
+    "mvPace"
+  ).textContent =
     "6時間ペース —　｜　達成予測：—";
 
-  document.getElementById("mvProgressFill").style.width =
+  document.getElementById(
+    "mvProgressFill"
+  ).style.width =
     "0%";
 
-  document.getElementById("mvProgressPercent").textContent =
+  document.getElementById(
+    "mvProgressPercent"
+  ).textContent =
     "—%";
+
+
+  const trending =
+    document.getElementById(
+      "mvTrending"
+    );
+
+  if (trending) {
+
+    trending.style.display =
+      "none";
+
+    trending.textContent =
+      "";
+
+  }
 
 }
 
 
-function updateMvCounterDisplay(data) {
+function updateMvCounterDisplay(
+  data
+) {
 
   if (
     !data ||
@@ -1940,98 +2099,190 @@ function updateMvCounterDisplay(data) {
   }
 
 
-  const video = data.video;
+  const video =
+    data.video;
 
 
-  document.getElementById("mvViews").textContent =
-    formatMvNumber(video.views);
+  /* 急上昇 */
 
-  document.getElementById("mvLikes").textContent =
-    formatMvNumber(video.likes);
-
-
-  document.getElementById("mvViewsHourly").textContent =
-    video.hourly_change
-      ? formatMvSignedNumber(video.hourly_change.views)
-      : "—";
-
-  document.getElementById("mvLikesHourly").textContent =
-    video.hourly_change
-      ? formatMvSignedNumber(video.hourly_change.likes)
-      : "—";
-
-
-  document.getElementById("mvViewsTotal").textContent =
-    "トータル " +
-    (
-      video.today_total
-        ? formatMvSignedNumber(video.today_total.views)
-        : "—"
+  const trending =
+    document.getElementById(
+      "mvTrending"
     );
 
-  document.getElementById("mvLikesTotal").textContent =
-    "トータル " +
-    (
-      video.today_total
-        ? formatMvSignedNumber(video.today_total.likes)
-        : "—"
+  const trendingRank =
+    Number(
+      video.trending_rank
     );
 
+  if (
+    trending &&
+    Number.isFinite(
+      trendingRank
+    ) &&
+    trendingRank > 0
+  ) {
 
-  document.getElementById("mvViewsDailyComparison").textContent =
-    video.daily_comparison
-      ? formatMvSignedNumber(video.daily_comparison.views)
-      : "—";
+    trending.textContent =
+      "📢 急上昇 " +
+      trendingRank +
+      "位";
 
-  document.getElementById("mvLikesDailyComparison").textContent =
-    video.daily_comparison
-      ? formatMvSignedNumber(video.daily_comparison.likes)
-      : "—";
+    trending.style.display =
+      "block";
 
+  } else if (trending) {
 
-  if (video.previous_day) {
+    trending.style.display =
+      "none";
 
-    const dateLabel =
-      formatMvPreviousDate(video.previous_day.date);
-
-    document.getElementById("mvViewsPreviousDay").textContent =
-      dateLabel +
-      " " +
-      formatMvSignedNumber(video.previous_day.views);
-
-    document.getElementById("mvLikesPreviousDay").textContent =
-      dateLabel +
-      " " +
-      formatMvSignedNumber(video.previous_day.likes);
+    trending.textContent =
+      "";
 
   }
 
 
-  const goal = video.goal;
+  /* 再生回数 / 高評価 */
+
+  document.getElementById(
+    "mvViews"
+  ).textContent =
+    formatMvNumber(
+      video.views
+    );
+
+  document.getElementById(
+    "mvLikes"
+  ).textContent =
+    formatMvNumber(
+      video.likes
+    );
+
+
+  /* 1時間比 */
+
+  document.getElementById(
+    "mvViewsHourly"
+  ).textContent =
+    video.hourly_change
+      ? formatMvSignedNumber(
+          video.hourly_change.views
+        )
+      : "—";
+
+  document.getElementById(
+    "mvLikesHourly"
+  ).textContent =
+    video.hourly_change
+      ? formatMvSignedNumber(
+          video.hourly_change.likes
+        )
+      : "—";
+
+
+  /* トータル */
+
+  document.getElementById(
+    "mvViewsTotal"
+  ).textContent =
+    "トータル " +
+    (
+      video.today_total
+        ? formatMvSignedNumber(
+            video.today_total.views
+          )
+        : "—"
+    );
+
+  document.getElementById(
+    "mvLikesTotal"
+  ).textContent =
+    "トータル " +
+    (
+      video.today_total
+        ? formatMvSignedNumber(
+            video.today_total.likes
+          )
+        : "—"
+    );
+
+
+  /* 前日比 */
+
+  document.getElementById(
+    "mvViewsDailyComparison"
+  ).textContent =
+    video.daily_comparison
+      ? formatMvSignedNumber(
+          video.daily_comparison.views
+        )
+      : "—";
+
+  document.getElementById(
+    "mvLikesDailyComparison"
+  ).textContent =
+    video.daily_comparison
+      ? formatMvSignedNumber(
+          video.daily_comparison.likes
+        )
+      : "—";
+
+
+  /* 前日増加 */
+
+  if (
+    video.previous_day
+  ) {
+
+    const dateLabel =
+      formatMvPreviousDate(
+        video.previous_day.date
+      );
+
+    document.getElementById(
+      "mvViewsPreviousDay"
+    ).textContent =
+      dateLabel +
+      " " +
+      formatMvSignedNumber(
+        video.previous_day.views
+      );
+
+    document.getElementById(
+      "mvLikesPreviousDay"
+    ).textContent =
+      dateLabel +
+      " " +
+      formatMvSignedNumber(
+        video.previous_day.likes
+      );
+
+  }
+
+
+  /* 目標 */
+
+  const goal =
+    video.goal;
 
   if (goal) {
 
-    document.getElementById("mvGoalText").textContent =
-      formatMvGoal(goal.target) +
+    document.getElementById(
+      "mvGoalText"
+    ).textContent =
+      formatMvGoal(
+        goal.target
+      ) +
       "再生まで あと " +
-      formatMvNumber(goal.remaining) +
+      formatMvNumber(
+        goal.remaining
+      ) +
       "回";
 
 
     /*
-      Workerから返る progress_percent は使用せず、
-      現在のキリ番区間で進捗率を計算。
-
-      例：
-      115,766回 / 次目標200,000回
-
-      100,000 → 200,000 の区間なので
-
-      (115,766 - 100,000)
-      ÷
-      (200,000 - 100,000)
-
-      = 15.766%
+      進捗率は累計ではなく、
+      現在のキリ番区間で計算
     */
 
     const percent =
@@ -2041,15 +2292,20 @@ function updateMvCounterDisplay(data) {
       );
 
 
-    document.getElementById("mvProgressFill").style.width =
+    document.getElementById(
+      "mvProgressFill"
+    ).style.width =
       percent + "%";
 
 
-    document.getElementById("mvProgressPercent").textContent =
+    document.getElementById(
+      "mvProgressPercent"
+    ).textContent =
       percent.toLocaleString(
         "ja-JP",
         {
-          maximumFractionDigits: 2
+          maximumFractionDigits:
+            2
         }
       ) +
       "%";
@@ -2057,21 +2313,31 @@ function updateMvCounterDisplay(data) {
   }
 
 
+  /* 6時間ペース */
+
   const paceElement =
-    document.getElementById("mvPace");
+    document.getElementById(
+      "mvPace"
+    );
 
 
-  if (video.six_hour_pace) {
+  if (
+    video.six_hour_pace
+  ) {
 
     const pace =
       video.six_hour_pace;
 
     paceElement.textContent =
       "6時間ペース " +
-      formatMvSignedNumber(pace.views_change) +
+      formatMvSignedNumber(
+        pace.views_change
+      ) +
       "回" +
       "（平均 " +
-      formatMvSignedNumber(pace.views_per_hour) +
+      formatMvSignedNumber(
+        pace.views_per_hour
+      ) +
       "回/時）" +
       "　｜　達成予測：" +
       formatMvEstimatedTime(
@@ -2096,19 +2362,29 @@ async function loadMvCounter() {
       await fetch(
         MV_COUNTER_API,
         {
-          method: "GET",
-          cache: "no-store"
+          method:
+            "GET",
+          cache:
+            "no-store"
         }
       );
 
-    if (!response.ok) {
-      throw new Error("MV Counter API Error");
+    if (
+      !response.ok
+    ) {
+
+      throw new Error(
+        "MV Counter API Error"
+      );
+
     }
 
     const data =
       await response.json();
 
-    updateMvCounterDisplay(data);
+    updateMvCounterDisplay(
+      data
+    );
 
   } catch (error) {
 
@@ -2132,15 +2408,25 @@ drawReleasedContents();
 loadMvCounter();
 
 
-setInterval(() => {
-  updateMvCountdown();
-},1000);
+setInterval(
+  () => {
+
+    updateMvCountdown();
+
+  },
+  1000
+);
 
 
-setInterval(() => {
-  drawSchedule();
-  drawReleasedContents();
-},60000);
+setInterval(
+  () => {
+
+    drawSchedule();
+    drawReleasedContents();
+
+  },
+  60000
+);
 
 
 setInterval(
