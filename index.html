@@ -348,7 +348,7 @@ body::before {
 
 
 /* ==============================
-   急上昇ランキング
+   急上昇
 ============================== */
 
 .mv-trending {
@@ -357,152 +357,152 @@ body::before {
   overflow: hidden;
 
   margin-top: 9px;
-  padding: 7px 5px;
+  padding: 8px 6px;
 
-  border-radius: 7px;
+  border-radius: 8px;
 
   font-size: 10px;
   font-weight: 900;
   line-height: 1.3;
+
+  transition:
+    border-color .3s ease,
+    background .3s ease,
+    color .3s ease,
+    box-shadow .3s ease;
 }
 
 
 /* 11位以下 */
 
-.mv-trending.rank-normal {
-  border: 1px solid rgba(190,25,25,.70);
+.mv-trending.rank-red {
+  border: 2px solid #d52b2b;
 
-  background: rgba(255,255,255,.65);
+  background:
+    rgba(255,255,255,.68);
 
-  color: #a51f1f;
+  color: #b51f1f;
 
   box-shadow:
-    0 0 7px rgba(210,30,30,.16);
+    0 0 8px rgba(213,43,43,.18);
 }
 
 
-/* 4〜10位 */
+/* 4～10位 */
 
 .mv-trending.rank-medal {
-  border: 2px solid #d92929;
+  border: 2px solid #e12626;
 
   background:
     linear-gradient(
       120deg,
-      #fff 0%,
-      #ffe6e6 23%,
-      #fff 43%,
-      #ffd4d4 66%,
-      #fff 100%
+      rgba(255,255,255,.92),
+      rgba(255,225,225,.88),
+      rgba(255,255,255,.92)
     );
 
-  background-size: 230% 100%;
+  background-size: 220% 220%;
 
-  color: #ae1616;
+  color: #b71919;
 
   box-shadow:
-    0 0 8px rgba(220,30,30,.38),
-    0 0 17px rgba(255,70,70,.22);
+    0 0 7px rgba(255,40,40,.40),
+    0 0 16px rgba(255,70,70,.24);
 
   animation:
-    trendingShine 2.2s linear infinite,
-    trendingRedGlow 1.6s ease-in-out infinite alternate;
+    trendingShine 2s linear infinite,
+    trendingPulse 1.6s ease-in-out infinite;
 }
 
 
 /* 3位 */
 
 .mv-trending.rank-bronze {
-  border: 2px solid #d69a22;
+  border: 2px solid #d59a22;
 
   background:
     linear-gradient(
       120deg,
-      #fff9df 0%,
-      #ffd96b 25%,
-      #fffdf1 48%,
-      #eeb84c 72%,
-      #fff8d7 100%
+      #fff9d8,
+      #ffd76d,
+      #fff6c3,
+      #e7ad34
     );
 
-  background-size: 230% 100%;
+  background-size: 250% 250%;
 
-  color: #674200;
+  color: #6e4900;
 
   box-shadow:
-    0 0 9px rgba(222,164,32,.48),
-    0 0 20px rgba(255,204,65,.30);
+    0 0 8px rgba(229,171,39,.52),
+    0 0 20px rgba(255,210,79,.38);
 
   animation:
-    trendingShine 1.9s linear infinite,
-    trendingBronzeGlow 1.35s ease-in-out infinite alternate;
+    trendingShine 1.8s linear infinite,
+    trendingPulse 1.45s ease-in-out infinite;
 }
 
 
 /* 2位 */
 
 .mv-trending.rank-silver {
-  border: 2px solid #aeb4bc;
+  border: 2px solid #a8adb4;
 
   background:
     linear-gradient(
       120deg,
-      #f7f7f7 0%,
-      #cbd0d5 24%,
-      #ffffff 47%,
-      #b9bec4 70%,
-      #f7f7f7 100%
+      #ffffff,
+      #cfd3d8,
+      #f8f8f8,
+      #b6bbc2,
+      #ffffff
     );
 
-  background-size: 230% 100%;
+  background-size: 260% 260%;
 
-  color: #3c4146;
+  color: #41464d;
 
   box-shadow:
-    0 0 10px rgba(160,170,180,.55),
-    0 0 21px rgba(220,225,230,.48);
+    0 0 9px rgba(180,185,194,.65),
+    0 0 22px rgba(220,225,232,.55);
 
   animation:
     trendingShine 1.6s linear infinite,
-    trendingSilverGlow 1.2s ease-in-out infinite alternate;
+    trendingPulse 1.35s ease-in-out infinite;
 }
 
 
 /* 1位 */
 
 .mv-trending.rank-gold {
-  border: 2px solid #d5a400;
+  border: 2px solid #c89b00;
 
   background:
     linear-gradient(
-      115deg,
-      #fff7c2 0%,
-      #e8bd28 18%,
-      #fffbe4 38%,
-      #ffd94d 55%,
-      #fff 67%,
-      #e5b917 83%,
-      #fff6bd 100%
+      120deg,
+      #fff7bf,
+      #ffd642,
+      #fffbe6,
+      #e9b900,
+      #fff4a5
     );
 
-  background-size: 260% 100%;
+  background-size: 280% 280%;
 
-  color: #5c4100;
-
-  font-size: 11px;
+  color: #5c4300;
 
   box-shadow:
-    0 0 10px rgba(224,177,0,.65),
-    0 0 22px rgba(255,210,40,.52),
-    0 0 32px rgba(255,225,100,.30);
+    0 0 10px rgba(255,196,0,.75),
+    0 0 24px rgba(255,213,47,.65),
+    0 0 38px rgba(255,221,72,.35);
 
   animation:
-    trendingShine 1.15s linear infinite,
-    trendingGoldGlow .9s ease-in-out infinite alternate;
+    trendingShine 1.25s linear infinite,
+    trendingGoldPulse 1.15s ease-in-out infinite;
 }
 
 
-/* キラキラ */
+/* キラキラ光 */
 
 .mv-trending.rank-medal::after,
 .mv-trending.rank-bronze::after,
@@ -511,137 +511,112 @@ body::before {
   content: "✦";
   position: absolute;
 
-  top: 50%;
-  left: -25%;
-
-  transform: translateY(-50%);
+  top: -2px;
+  right: 5px;
 
   color: rgba(255,255,255,.95);
 
-  font-size: 15px;
+  font-size: 11px;
 
   text-shadow:
-    20px -8px 0 rgba(255,255,255,.70),
-    42px 8px 0 rgba(255,255,255,.85),
-    68px -5px 0 rgba(255,255,255,.65);
-
-  pointer-events: none;
+    0 0 5px rgba(255,255,255,.95),
+    0 0 9px rgba(255,255,255,.75);
 
   animation:
-    sparkleMove 2s linear infinite;
+    sparkle 1.1s ease-in-out infinite;
 }
 
-.mv-trending.rank-gold::after {
-  font-size: 18px;
+.mv-trending.rank-gold::before {
+  content: "✧";
+  position: absolute;
 
-  animation-duration: 1.25s;
+  left: 5px;
+  bottom: -1px;
+
+  color: #fff;
+
+  font-size: 10px;
 
   text-shadow:
-    18px -8px 0 rgba(255,255,255,.95),
-    38px 8px 0 rgba(255,255,255,.90),
-    60px -7px 0 rgba(255,255,255,.95),
-    82px 6px 0 rgba(255,255,255,.85);
+    0 0 6px #fff,
+    0 0 12px #ffd900;
+
+  animation:
+    sparkle .85s ease-in-out infinite alternate;
 }
 
 
 @keyframes trendingShine {
 
   0% {
-    background-position: 100% 0;
+    background-position:
+      0% 50%;
   }
 
   100% {
-    background-position: -100% 0;
+    background-position:
+      200% 50%;
   }
 
 }
 
 
-@keyframes sparkleMove {
+@keyframes trendingPulse {
 
-  0% {
-    left: -25%;
-    opacity: 0;
-  }
-
-  15% {
-    opacity: 1;
-  }
-
-  85% {
-    opacity: 1;
-  }
-
+  0%,
   100% {
-    left: 115%;
-    opacity: 0;
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.025);
   }
 
 }
 
 
-@keyframes trendingRedGlow {
+@keyframes trendingGoldPulse {
 
-  from {
+  0%,
+  100% {
+    transform:
+      scale(1);
+
     box-shadow:
-      0 0 6px rgba(230,30,30,.30),
-      0 0 12px rgba(255,70,70,.18);
+      0 0 10px rgba(255,196,0,.70),
+      0 0 24px rgba(255,213,47,.55);
   }
 
-  to {
+  50% {
+    transform:
+      scale(1.035);
+
     box-shadow:
-      0 0 11px rgba(230,30,30,.60),
-      0 0 22px rgba(255,70,70,.38);
-  }
-
-}
-
-
-@keyframes trendingBronzeGlow {
-
-  from {
-    box-shadow:
-      0 0 7px rgba(222,164,32,.35);
-  }
-
-  to {
-    box-shadow:
-      0 0 14px rgba(222,164,32,.70),
-      0 0 24px rgba(255,204,65,.40);
+      0 0 14px rgba(255,196,0,.95),
+      0 0 32px rgba(255,213,47,.78),
+      0 0 44px rgba(255,225,85,.45);
   }
 
 }
 
 
-@keyframes trendingSilverGlow {
+@keyframes sparkle {
 
-  from {
-    box-shadow:
-      0 0 7px rgba(160,170,180,.38);
+  0%,
+  100% {
+    opacity: .25;
+    transform:
+      scale(.65)
+      rotate(0deg);
   }
 
-  to {
-    box-shadow:
-      0 0 15px rgba(160,170,180,.75),
-      0 0 25px rgba(230,235,240,.60);
-  }
-
-}
-
-
-@keyframes trendingGoldGlow {
-
-  from {
-    box-shadow:
-      0 0 8px rgba(224,177,0,.48),
-      0 0 17px rgba(255,210,40,.30);
-  }
-
-  to {
-    box-shadow:
-      0 0 15px rgba(224,177,0,.90),
-      0 0 29px rgba(255,210,40,.65),
-      0 0 38px rgba(255,235,120,.38);
+  50% {
+    opacity: 1;
+    transform:
+      scale(1.35)
+      rotate(90deg);
   }
 
 }
@@ -686,6 +661,7 @@ body::before {
 
 .mv-release-badge:hover {
   background: #000;
+
   box-shadow:
     0 5px 16px rgba(0,0,0,.24);
 }
@@ -694,12 +670,10 @@ body::before {
   transform: scale(.97);
 }
 
-.mv-countdown {
-  margin-top: 8px;
-  color: #555;
-  font-size: 10px;
-  font-weight: 700;
-}
+
+/* ==============================
+   MV STATS
+============================== */
 
 .mv-stats {
   display: grid;
@@ -1099,7 +1073,8 @@ body::before {
   }
 
   .mv-top {
-    grid-template-columns: 1.2fr .8fr;
+    grid-template-columns:
+      1.2fr .8fr;
     gap: 8px;
   }
 
@@ -1109,12 +1084,8 @@ body::before {
 
   .mv-trending {
     margin-top: 7px;
-    padding: 6px 3px;
+    padding: 7px 3px;
     font-size: 8.5px;
-  }
-
-  .mv-trending.rank-gold {
-    font-size: 9px;
   }
 
   .mv-release-badge {
@@ -1122,10 +1093,6 @@ body::before {
     margin-top: 7px;
     padding: 8px 4px;
     font-size: 9px;
-  }
-
-  .mv-countdown {
-    font-size: 8px;
   }
 
   .mv-stat-column {
@@ -1369,14 +1336,6 @@ body::before {
         ▶ YouTubeで再生
       </a>
 
-
-      <div
-        class="mv-countdown"
-        id="mvCountdown"
-      >
-        MUSIC VIDEO OUT
-      </div>
-
     </div>
 
   </div>
@@ -1401,7 +1360,10 @@ body::before {
         <span class="mv-stat-row-label">
           1時間比
         </span>
-        <span id="mvViewsHourly">—</span>
+
+        <span id="mvViewsHourly">
+          —
+        </span>
       </div>
 
       <div
@@ -1415,6 +1377,7 @@ body::before {
         <span class="mv-stat-row-label">
           前日比
         </span>
+
         <span id="mvViewsDailyComparison">
           —
         </span>
@@ -1447,7 +1410,10 @@ body::before {
         <span class="mv-stat-row-label">
           1時間比
         </span>
-        <span id="mvLikesHourly">—</span>
+
+        <span id="mvLikesHourly">
+          —
+        </span>
       </div>
 
       <div
@@ -1461,6 +1427,7 @@ body::before {
         <span class="mv-stat-row-label">
           前日比
         </span>
+
         <span id="mvLikesDailyComparison">
           —
         </span>
@@ -1677,10 +1644,6 @@ body::before {
 
 <script>
 
-const MV_RELEASE_TIME =
-  new Date("2026-09-28T20:00:00+09:00");
-
-
 const SCHEDULE_ITEMS = [
 
   {
@@ -1742,45 +1705,6 @@ const SCHEDULE_ITEMS = [
 ];
 
 
-function getRemainingParts(target) {
-
-  const difference =
-    target.getTime() -
-    new Date().getTime();
-
-  if (difference <= 0) {
-    return null;
-  }
-
-  const totalSeconds =
-    Math.floor(difference / 1000);
-
-  return {
-    days:
-      Math.floor(totalSeconds / 86400),
-
-    hours:
-      Math.floor(
-        (totalSeconds % 86400) / 3600
-      ),
-
-    minutes:
-      Math.floor(
-        (totalSeconds % 3600) / 60
-      ),
-
-    seconds:
-      totalSeconds % 60
-  };
-
-}
-
-
-function twoDigits(number) {
-  return String(number).padStart(2,"0");
-}
-
-
 function getYouTubeVideoId(url) {
 
   if (!url) return null;
@@ -1805,57 +1729,6 @@ function getYouTubeVideoId(url) {
   } catch {
 
     return null;
-
-  }
-
-}
-
-
-function updateMvCountdown() {
-
-  const target =
-    document.getElementById(
-      "mvCountdown"
-    );
-
-  const remaining =
-    getRemainingParts(
-      MV_RELEASE_TIME
-    );
-
-  if (!remaining) {
-
-    target.textContent =
-      "MUSIC VIDEO OUT";
-
-    return;
-
-  }
-
-  if (remaining.days > 0) {
-
-    target.textContent =
-      "公開まで あと" +
-      remaining.days +
-      "日 " +
-      remaining.hours +
-      "時間";
-
-  } else {
-
-    target.textContent =
-      "公開まで あと " +
-      twoDigits(
-        remaining.hours
-      ) +
-      ":" +
-      twoDigits(
-        remaining.minutes
-      ) +
-      ":" +
-      twoDigits(
-        remaining.seconds
-      );
 
   }
 
@@ -2282,6 +2155,122 @@ function getGoalProgressPercent(
 }
 
 
+/* ==============================
+   急上昇デザイン
+============================== */
+
+function updateTrendingDisplay(
+  video
+) {
+
+  const trending =
+    document.getElementById(
+      "mvTrending"
+    );
+
+  if (!trending) {
+    return;
+  }
+
+
+  const rank =
+    Number(
+      video.trending_rank
+    );
+
+
+  trending.className =
+    "mv-trending";
+
+
+  if (
+    !Number.isFinite(rank) ||
+    rank <= 0
+  ) {
+
+    trending.style.display =
+      "none";
+
+    trending.textContent =
+      "";
+
+    return;
+
+  }
+
+
+  let medal =
+    "📢";
+
+  let rankClass =
+    "rank-red";
+
+
+  if (
+    rank >= 4 &&
+    rank <= 10
+  ) {
+
+    medal =
+      "🏅";
+
+    rankClass =
+      "rank-medal";
+
+  }
+
+
+  if (rank === 3) {
+
+    medal =
+      "🥉";
+
+    rankClass =
+      "rank-bronze";
+
+  }
+
+
+  if (rank === 2) {
+
+    medal =
+      "🥈";
+
+    rankClass =
+      "rank-silver";
+
+  }
+
+
+  if (rank === 1) {
+
+    medal =
+      "🥇";
+
+    rankClass =
+      "rank-gold";
+
+  }
+
+
+  trending.textContent =
+    medal +
+    " 急上昇 " +
+    rank +
+    "位";
+
+
+  trending.classList.add(
+    rankClass
+  );
+
+
+  trending.style.display =
+    "block";
+
+}
+
+
 function resetMvCounter() {
 
   const simpleIds = [
@@ -2302,8 +2291,10 @@ function resetMvCounter() {
         );
 
       if (element) {
+
         element.textContent =
           "—";
+
       }
 
     }
@@ -2361,11 +2352,11 @@ function resetMvCounter() {
     trending.style.display =
       "none";
 
-    trending.textContent =
-      "";
-
     trending.className =
       "mv-trending";
+
+    trending.textContent =
+      "";
 
   }
 
@@ -2392,136 +2383,18 @@ function updateMvCounterDisplay(
     data.video;
 
 
-  /* ==============================
+  /* ==========================
      急上昇
-  ============================== */
+  ========================== */
 
-  const trending =
-    document.getElementById(
-      "mvTrending"
-    );
-
-  const trendingRank =
-    Number(
-      video.trending_rank
-    );
+  updateTrendingDisplay(
+    video
+  );
 
 
-  if (
-    trending &&
-    Number.isFinite(
-      trendingRank
-    ) &&
-    trendingRank > 0
-  ) {
-
-    trending.className =
-      "mv-trending";
-
-
-    /* 1位 */
-
-    if (
-      trendingRank === 1
-    ) {
-
-      trending.textContent =
-        "🥇 急上昇 1位 ✦";
-
-      trending.classList.add(
-        "rank-gold"
-      );
-
-    }
-
-
-    /* 2位 */
-
-    else if (
-      trendingRank === 2
-    ) {
-
-      trending.textContent =
-        "🥈 急上昇 2位 ✦";
-
-      trending.classList.add(
-        "rank-silver"
-      );
-
-    }
-
-
-    /* 3位 */
-
-    else if (
-      trendingRank === 3
-    ) {
-
-      trending.textContent =
-        "🥉 急上昇 3位 ✦";
-
-      trending.classList.add(
-        "rank-bronze"
-      );
-
-    }
-
-
-    /* 4〜10位 */
-
-    else if (
-      trendingRank >= 4 &&
-      trendingRank <= 10
-    ) {
-
-      trending.textContent =
-        "🏅 急上昇 " +
-        trendingRank +
-        "位 ✦";
-
-      trending.classList.add(
-        "rank-medal"
-      );
-
-    }
-
-
-    /* 11位以下 */
-
-    else {
-
-      trending.textContent =
-        "📢 急上昇 " +
-        trendingRank +
-        "位";
-
-      trending.classList.add(
-        "rank-normal"
-      );
-
-    }
-
-
-    trending.style.display =
-      "block";
-
-  } else if (trending) {
-
-    trending.style.display =
-      "none";
-
-    trending.textContent =
-      "";
-
-    trending.className =
-      "mv-trending";
-
-  }
-
-
-  /* ==============================
+  /* ==========================
      再生回数 / 高評価
-  ============================== */
+  ========================== */
 
   document.getElementById(
     "mvViews"
@@ -2538,9 +2411,9 @@ function updateMvCounterDisplay(
     );
 
 
-  /* ==============================
+  /* ==========================
      1時間比
-  ============================== */
+  ========================== */
 
   document.getElementById(
     "mvViewsHourly"
@@ -2561,9 +2434,9 @@ function updateMvCounterDisplay(
       : "—";
 
 
-  /* ==============================
+  /* ==========================
      トータル
-  ============================== */
+  ========================== */
 
   document.getElementById(
     "mvViewsTotal"
@@ -2590,9 +2463,9 @@ function updateMvCounterDisplay(
     );
 
 
-  /* ==============================
+  /* ==========================
      前日比
-  ============================== */
+  ========================== */
 
   document.getElementById(
     "mvViewsDailyComparison"
@@ -2613,9 +2486,9 @@ function updateMvCounterDisplay(
       : "—";
 
 
-  /* ==============================
+  /* ==========================
      前日増加
-  ============================== */
+  ========================== */
 
   if (
     video.previous_day
@@ -2626,6 +2499,7 @@ function updateMvCounterDisplay(
         video.previous_day.date
       );
 
+
     document.getElementById(
       "mvViewsPreviousDay"
     ).textContent =
@@ -2634,6 +2508,7 @@ function updateMvCounterDisplay(
       formatMvSignedNumber(
         video.previous_day.views
       );
+
 
     document.getElementById(
       "mvLikesPreviousDay"
@@ -2647,12 +2522,13 @@ function updateMvCounterDisplay(
   }
 
 
-  /* ==============================
+  /* ==========================
      目標
-  ============================== */
+  ========================== */
 
   const goal =
     video.goal;
+
 
   if (goal) {
 
@@ -2702,9 +2578,9 @@ function updateMvCounterDisplay(
   }
 
 
-  /* ==============================
+  /* ==========================
      6時間ペース
-  ============================== */
+  ========================== */
 
   const paceElement =
     document.getElementById(
@@ -2718,6 +2594,7 @@ function updateMvCounterDisplay(
 
     const pace =
       video.six_hour_pace;
+
 
     paceElement.textContent =
       "6時間ペース " +
@@ -2755,10 +2632,12 @@ async function loadMvCounter() {
         {
           method:
             "GET",
+
           cache:
             "no-store"
         }
       );
+
 
     if (
       !response.ok
@@ -2770,8 +2649,10 @@ async function loadMvCounter() {
 
     }
 
+
     const data =
       await response.json();
+
 
     updateMvCounterDisplay(
       data
@@ -2793,20 +2674,9 @@ async function loadMvCounter() {
    INITIAL
 ============================== */
 
-updateMvCountdown();
 drawSchedule();
 drawReleasedContents();
 loadMvCounter();
-
-
-setInterval(
-  () => {
-
-    updateMvCountdown();
-
-  },
-  1000
-);
 
 
 setInterval(
