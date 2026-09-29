@@ -347,17 +347,23 @@ body::before {
 }
 
 
-/* 急上昇表示 */
+/* 急上昇表示用
+   Workerから trending_rank が来た時だけ表示 */
 .mv-trending {
-  display: none; position: relative; overflow: hidden; margin-top: 9px; padding: 8px 6px; border-radius: 8px; font-size: 10px; font-weight: 900; line-height: 1.25; text-align: center;
+  display: none;
+  margin-top: 9px;
+  padding: 7px 5px;
+
+  border: 1px solid rgba(170,35,35,.58);
+  border-radius: 7px;
+
+  background: rgba(255,255,255,.60);
+  color: #a51f1f;
+
+  font-size: 10px;
+  font-weight: 900;
 }
-.mv-trending.rank-11 { border: 2px solid #d51f2b; background: rgba(255,255,255,.78); color: #b31220; box-shadow: 0 0 10px rgba(213,31,43,.28); }
-.mv-trending.rank-4-10 { border: 2px solid #e21d2f; background: linear-gradient(120deg,#fff,#ffdfe3,#fff); color:#b10f1d; box-shadow:0 0 8px rgba(226,29,47,.45),0 0 18px rgba(255,70,90,.28); animation:trendingSparkle 1.6s ease-in-out infinite; }
-.mv-trending.rank-3 { border:2px solid #d7a600; background:linear-gradient(120deg,#fffdf1,#fff1a8,#fffdf1); color:#795900; box-shadow:0 0 9px rgba(229,185,20,.5),0 0 20px rgba(255,218,70,.3); animation:trendingSparkle 1.35s ease-in-out infinite; }
-.mv-trending.rank-2 { border:2px solid #9fa7b2; background:linear-gradient(120deg,#fff,#dfe4e9,#fff); color:#3f4650; box-shadow:0 0 10px rgba(150,160,172,.58),0 0 22px rgba(220,226,234,.5); animation:trendingSparkle 1.2s ease-in-out infinite; }
-.mv-trending.rank-1 { border:2px solid #c99a00; background:linear-gradient(120deg,#fff9d5,#ffd95a,#fff7c4,#eabf2e,#fff9d5); background-size:250% 250%; color:#5b4100; box-shadow:0 0 11px rgba(216,169,0,.7),0 0 25px rgba(255,210,42,.58),0 0 38px rgba(255,230,100,.32); animation:trendingGold 1.25s linear infinite,trendingSparkle 1s ease-in-out infinite; }
-@keyframes trendingSparkle { 0%,100%{filter:brightness(1);transform:scale(1)} 50%{filter:brightness(1.12);transform:scale(1.015)} }
-@keyframes trendingGold { 0%{background-position:0% 50%} 100%{background-position:100% 50%} }
+
 
 /* YouTubeボタン */
 
@@ -1076,6 +1082,14 @@ body::before {
       >
         ▶ YouTubeで再生
       </a>
+
+
+      <div
+        class="mv-countdown"
+        id="mvCountdown"
+      >
+        MUSIC VIDEO OUT
+      </div>
 
     </div>
 
@@ -2091,25 +2105,40 @@ function updateMvCounterDisplay(
 
   /* 急上昇 */
 
-  const trending = document.getElementById("mvTrending");
-  const trendingRank = Number(video.trending_rank);
+  const trending =
+    document.getElementById(
+      "mvTrending"
+    );
 
-  if (trending && Number.isFinite(trendingRank) && trendingRank > 0) {
-    trending.className = "mv-trending";
-    let icon = "📢";
+  const trendingRank =
+    Number(
+      video.trending_rank
+    );
 
-    if (trendingRank === 1) { icon = "🥇"; trending.classList.add("rank-1"); }
-    else if (trendingRank === 2) { icon = "🥈"; trending.classList.add("rank-2"); }
-    else if (trendingRank === 3) { icon = "🥉"; trending.classList.add("rank-3"); }
-    else if (trendingRank >= 4 && trendingRank <= 10) { icon = "🏅"; trending.classList.add("rank-4-10"); }
-    else if (trendingRank === 11) { trending.classList.add("rank-11"); }
+  if (
+    trending &&
+    Number.isFinite(
+      trendingRank
+    ) &&
+    trendingRank > 0
+  ) {
 
-    trending.textContent = icon + " 急上昇 " + trendingRank + "位";
-    trending.style.display = "block";
+    trending.textContent =
+      "📢 急上昇 " +
+      trendingRank +
+      "位";
+
+    trending.style.display =
+      "block";
+
   } else if (trending) {
-    trending.style.display = "none";
-    trending.className = "mv-trending";
-    trending.textContent = "";
+
+    trending.style.display =
+      "none";
+
+    trending.textContent =
+      "";
+
   }
 
 
