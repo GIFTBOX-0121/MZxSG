@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -8,10 +7,9 @@
 <title>Nameless MythS</title>
 
 <meta
-name="description"
-content="MAZZEL × STARGLOW『Nameless MythS』非公式ファンサイト"
-
-
+  name="description"
+  content="MAZZEL × STARGLOW『Nameless MythS』非公式ファンサイト"
+>
 
 <style>
 
@@ -349,23 +347,17 @@ body::before {
 }
 
 
-/* 急上昇表示用
-   Workerから trending_rank が来た時だけ表示 */
+/* 急上昇表示 */
 .mv-trending {
-  display: none;
-  margin-top: 9px;
-  padding: 7px 5px;
-
-  border: 1px solid rgba(170,35,35,.58);
-  border-radius: 7px;
-
-  background: rgba(255,255,255,.60);
-  color: #a51f1f;
-
-  font-size: 10px;
-  font-weight: 900;
+  display: none; position: relative; overflow: hidden; margin-top: 9px; padding: 8px 6px; border-radius: 8px; font-size: 10px; font-weight: 900; line-height: 1.25; text-align: center;
 }
-
+.mv-trending.rank-11 { border: 2px solid #d51f2b; background: rgba(255,255,255,.78); color: #b31220; box-shadow: 0 0 10px rgba(213,31,43,.28); }
+.mv-trending.rank-4-10 { border: 2px solid #e21d2f; background: linear-gradient(120deg,#fff,#ffdfe3,#fff); color:#b10f1d; box-shadow:0 0 8px rgba(226,29,47,.45),0 0 18px rgba(255,70,90,.28); animation:trendingSparkle 1.6s ease-in-out infinite; }
+.mv-trending.rank-3 { border:2px solid #d7a600; background:linear-gradient(120deg,#fffdf1,#fff1a8,#fffdf1); color:#795900; box-shadow:0 0 9px rgba(229,185,20,.5),0 0 20px rgba(255,218,70,.3); animation:trendingSparkle 1.35s ease-in-out infinite; }
+.mv-trending.rank-2 { border:2px solid #9fa7b2; background:linear-gradient(120deg,#fff,#dfe4e9,#fff); color:#3f4650; box-shadow:0 0 10px rgba(150,160,172,.58),0 0 22px rgba(220,226,234,.5); animation:trendingSparkle 1.2s ease-in-out infinite; }
+.mv-trending.rank-1 { border:2px solid #c99a00; background:linear-gradient(120deg,#fff9d5,#ffd95a,#fff7c4,#eabf2e,#fff9d5); background-size:250% 250%; color:#5b4100; box-shadow:0 0 11px rgba(216,169,0,.7),0 0 25px rgba(255,210,42,.58),0 0 38px rgba(255,230,100,.32); animation:trendingGold 1.25s linear infinite,trendingSparkle 1s ease-in-out infinite; }
+@keyframes trendingSparkle { 0%,100%{filter:brightness(1);transform:scale(1)} 50%{filter:brightness(1.12);transform:scale(1.015)} }
+@keyframes trendingGold { 0%{background-position:0% 50%} 100%{background-position:100% 50%} }
 
 /* YouTubeボタン */
 
@@ -911,12 +903,13 @@ body::before {
 }
 
 </style>
-
 </head>
+
 
 <body>
 
 <div class="container">
+
 
 <header class="hero">
 
@@ -932,9 +925,11 @@ body::before {
 
 </header>
 
+
 <div class="myth-divider">
   <span class="myth-symbol">◇ ✦ ◇</span>
 </div>
+
 
 <!-- DIGITAL RELEASE / DOWNLOAD -->
 
@@ -946,91 +941,93 @@ body::before {
 
   <div class="download-area">
 
-<div class="download-title">
-  DOWNLOAD
-</div>
+    <div class="download-title">
+      DOWNLOAD
+    </div>
 
-<a
-  class="amazon-download"
-  href="https://www.amazon.co.jp/dp/B0HJWSH834/ref=mp_s_a_1_1?crid=3NZBUSG8L9B7H&dib=eyJ2IjoiMSJ9.UqGElh_vFBP_WlrpUqz0FHfhoEwGwYB0qnZ7hSCKILzGjHj071QN20LucGBJIEps.-o1c5dree_H5oTcHAG8YykQhzHmqkq67MpJFN2yHT48&dib_tag=se&keywords=Nameless+MythS&marketplaceId=A1VC38T7YXB528&musicTerritory=JP&qid=1790524624&sprefix=nameless+myths%2Caps%2C220&sr=8-1&trackAsin=B0HJWSH834"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <span class="amazon-name">
-    Amazon Music
-  </span>
+    <a
+      class="amazon-download"
+      href="https://www.amazon.co.jp/dp/B0HJWSH834/ref=mp_s_a_1_1?crid=3NZBUSG8L9B7H&dib=eyJ2IjoiMSJ9.UqGElh_vFBP_WlrpUqz0FHfhoEwGwYB0qnZ7hSCKILzGjHj071QN20LucGBJIEps.-o1c5dree_H5oTcHAG8YykQhzHmqkq67MpJFN2yHT48&dib_tag=se&keywords=Nameless+MythS&marketplaceId=A1VC38T7YXB528&musicTerritory=JP&qid=1790524624&sprefix=nameless+myths%2Caps%2C220&sr=8-1&trackAsin=B0HJWSH834"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="amazon-name">
+        Amazon Music
+      </span>
 
-  <span class="amazon-note">
-    1人、1日1回購入が可能
-  </span>
-</a>
+      <span class="amazon-note">
+        1人、1日1回購入が可能
+      </span>
+    </a>
 
 
-<div class="download-grid">
+    <div class="download-grid">
 
-  <a
-    class="download-btn"
-    href="https://itunes.apple.com/jp/album/id6812651631?app=itunes&ls=1"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    iTunes
-  </a>
+      <a
+        class="download-btn"
+        href="https://itunes.apple.com/jp/album/id6812651631?app=itunes&ls=1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        iTunes
+      </a>
 
-  <a
-    class="download-btn"
-    href="https://recochoku.jp/song/S1031553739/single"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    レコチョク
-  </a>
+      <a
+        class="download-btn"
+        href="https://recochoku.jp/song/S1031553739/single"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        レコチョク
+      </a>
 
-  <a
-    class="download-btn"
-    href="https://recochoku.jp/song/S1031553738/hires_single"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    レコチョク<br>(ハイレゾ)
-  </a>
+      <a
+        class="download-btn"
+        href="https://recochoku.jp/song/S1031553738/hires_single"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        レコチョク<br>(ハイレゾ)
+      </a>
 
-  <a
-    class="download-btn"
-    href="https://sp-m.mu-mo.net/music/13148287/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    mu-mo
-  </a>
+      <a
+        class="download-btn"
+        href="https://sp-m.mu-mo.net/music/13148287/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        mu-mo
+      </a>
 
-  <a
-    class="download-btn"
-    href="https://mora.jp/package/43000002/ANTCD-75861/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    mora
-  </a>
+      <a
+        class="download-btn"
+        href="https://mora.jp/package/43000002/ANTCD-75861/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        mora
+      </a>
 
-  <a
-    class="download-btn"
-    href="https://mora.jp/package/43000002/ANTCD-75862_F/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    mora<br>(ハイレゾ)
-  </a>
+      <a
+        class="download-btn"
+        href="https://mora.jp/package/43000002/ANTCD-75862_F/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        mora<br>(ハイレゾ)
+      </a>
 
-</div>
+    </div>
 
   </div>
 
 </section>
 
+
 <div class="myth-divider">
   <span class="myth-symbol">◇ ✧ ◇</span>
 </div>
+
 
 <!-- NAMELESS MYTHS MV -->
 
@@ -1042,186 +1039,181 @@ body::before {
 
   <div class="mv-top">
 
-<a
-  class="mv-thumb-link"
-  href="https://youtu.be/nn2V3mptPLg?si=MSaWc3TrRSQSbStS"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <img
-    class="mv-placeholder-image"
-    src="https://i.ytimg.com/vi/nn2V3mptPLg/hqdefault.jpg"
-    alt="Nameless MythS Music Video"
-  >
-</a>
+    <a
+      class="mv-thumb-link"
+      href="https://youtu.be/nn2V3mptPLg?si=MSaWc3TrRSQSbStS"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="mv-placeholder-image"
+        src="https://i.ytimg.com/vi/nn2V3mptPLg/hqdefault.jpg"
+        alt="Nameless MythS Music Video"
+      >
+    </a>
 
 
-<div class="mv-top-info">
+    <div class="mv-top-info">
 
-  <div class="mv-song-title">
-    Nameless MythS
-  </div>
-
-
-  <!-- 急上昇は取得できた時だけここに表示 -->
-
-  <div
-    class="mv-trending"
-    id="mvTrending"
-  ></div>
+      <div class="mv-song-title">
+        Nameless MythS
+      </div>
 
 
-  <a
-    class="mv-release-badge"
-    href="https://youtu.be/nn2V3mptPLg?si=MSaWc3TrRSQSbStS"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    ▶ YouTubeで再生
-  </a>
+      <!-- 急上昇は取得できた時だけここに表示 -->
+
+      <div
+        class="mv-trending"
+        id="mvTrending"
+      ></div>
 
 
-  <div
-    class="mv-countdown"
-    id="mvCountdown"
-  >
-    MUSIC VIDEO OUT
-  </div>
+      <a
+        class="mv-release-badge"
+        href="https://youtu.be/nn2V3mptPLg?si=MSaWc3TrRSQSbStS"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ▶ YouTubeで再生
+      </a>
 
-</div>
+    </div>
 
   </div>
+
 
   <div class="mv-stats">
 
-<div class="mv-stat-column">
+    <div class="mv-stat-column">
 
-  <div class="mv-stat-label">
-    ▶ 再生回数
+      <div class="mv-stat-label">
+        ▶ 再生回数
+      </div>
+
+      <div
+        class="mv-stat-number"
+        id="mvViews"
+      >
+        —
+      </div>
+
+      <div class="mv-stat-row">
+        <span class="mv-stat-row-label">
+          1時間比
+        </span>
+        <span id="mvViewsHourly">—</span>
+      </div>
+
+      <div
+        class="mv-stat-box"
+        id="mvViewsTotal"
+      >
+        トータル —
+      </div>
+
+      <div class="mv-stat-row">
+        <span class="mv-stat-row-label">
+          前日比
+        </span>
+        <span id="mvViewsDailyComparison">
+          —
+        </span>
+      </div>
+
+      <div
+        class="mv-stat-box"
+        id="mvViewsPreviousDay"
+      >
+        9/28 —
+      </div>
+
+    </div>
+
+
+    <div class="mv-stat-column">
+
+      <div class="mv-stat-label">
+        👍 高評価
+      </div>
+
+      <div
+        class="mv-stat-number"
+        id="mvLikes"
+      >
+        —
+      </div>
+
+      <div class="mv-stat-row">
+        <span class="mv-stat-row-label">
+          1時間比
+        </span>
+        <span id="mvLikesHourly">—</span>
+      </div>
+
+      <div
+        class="mv-stat-box"
+        id="mvLikesTotal"
+      >
+        トータル —
+      </div>
+
+      <div class="mv-stat-row">
+        <span class="mv-stat-row-label">
+          前日比
+        </span>
+        <span id="mvLikesDailyComparison">
+          —
+        </span>
+      </div>
+
+      <div
+        class="mv-stat-box"
+        id="mvLikesPreviousDay"
+      >
+        9/28 —
+      </div>
+
+    </div>
+
   </div>
 
-  <div
-    class="mv-stat-number"
-    id="mvViews"
-  >
-    —
-  </div>
-
-  <div class="mv-stat-row">
-    <span class="mv-stat-row-label">
-      1時間比
-    </span>
-    <span id="mvViewsHourly">—</span>
-  </div>
-
-  <div
-    class="mv-stat-box"
-    id="mvViewsTotal"
-  >
-    トータル —
-  </div>
-
-  <div class="mv-stat-row">
-    <span class="mv-stat-row-label">
-      前日比
-    </span>
-    <span id="mvViewsDailyComparison">
-      —
-    </span>
-  </div>
-
-  <div
-    class="mv-stat-box"
-    id="mvViewsPreviousDay"
-  >
-    9/28 —
-  </div>
-
-</div>
-
-
-<div class="mv-stat-column">
-
-  <div class="mv-stat-label">
-    👍 高評価
-  </div>
-
-  <div
-    class="mv-stat-number"
-    id="mvLikes"
-  >
-    —
-  </div>
-
-  <div class="mv-stat-row">
-    <span class="mv-stat-row-label">
-      1時間比
-    </span>
-    <span id="mvLikesHourly">—</span>
-  </div>
-
-  <div
-    class="mv-stat-box"
-    id="mvLikesTotal"
-  >
-    トータル —
-  </div>
-
-  <div class="mv-stat-row">
-    <span class="mv-stat-row-label">
-      前日比
-    </span>
-    <span id="mvLikesDailyComparison">
-      —
-    </span>
-  </div>
-
-  <div
-    class="mv-stat-box"
-    id="mvLikesPreviousDay"
-  >
-    9/28 —
-  </div>
-
-</div>
-
-  </div>
 
   <div class="mv-goal">
 
-<div
-  class="mv-goal-text"
-  id="mvGoalText"
->
-  10万回再生まで あと —
-</div>
+    <div
+      class="mv-goal-text"
+      id="mvGoalText"
+    >
+      10万回再生まで あと —
+    </div>
 
-<div
-  class="mv-pace"
-  id="mvPace"
->
-  6時間ペース —　｜　達成予測：—
-</div>
+    <div
+      class="mv-pace"
+      id="mvPace"
+    >
+      6時間ペース —　｜　達成予測：—
+    </div>
 
-<div class="mv-progress">
+    <div class="mv-progress">
 
-  <div
-    class="mv-progress-fill"
-    id="mvProgressFill"
-  ></div>
+      <div
+        class="mv-progress-fill"
+        id="mvProgressFill"
+      ></div>
 
-</div>
+    </div>
 
-<div
-  class="mv-progress-percent"
-  id="mvProgressPercent"
->
-  —%
-</div>
+    <div
+      class="mv-progress-percent"
+      id="mvProgressPercent"
+    >
+      —%
+    </div>
 
   </div>
 
 </div>
+
 
 <!-- So Strawberry / WISHES -->
 
@@ -1229,67 +1221,69 @@ body::before {
 
   <div class="related-mv">
 
-<a
-  class="related-mv-link"
-  href="https://youtu.be/76lNhpUKrEc?si=TSiAilz1MT0JfQy3"
-  target="_blank"
-  rel="noopener noreferrer"
->
+    <a
+      class="related-mv-link"
+      href="https://youtu.be/76lNhpUKrEc?si=TSiAilz1MT0JfQy3"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
 
-  <img
-    class="related-mv-thumb"
-    src="https://i.ytimg.com/vi/76lNhpUKrEc/hqdefault.jpg"
-    alt="MAZZEL So Strawberry"
-  >
+      <img
+        class="related-mv-thumb"
+        src="https://i.ytimg.com/vi/76lNhpUKrEc/hqdefault.jpg"
+        alt="MAZZEL So Strawberry"
+      >
 
-  <div class="related-mv-info">
+      <div class="related-mv-info">
 
-    <div class="related-mv-group">
-      MAZZEL
-    </div>
+        <div class="related-mv-group">
+          MAZZEL
+        </div>
 
-    <div class="related-mv-title">
-      So Strawberry
-    </div>
+        <div class="related-mv-title">
+          So Strawberry
+        </div>
+
+      </div>
+
+    </a>
 
   </div>
 
-</a>
-
-  </div>
 
   <div class="related-mv">
 
-<a
-  class="related-mv-link"
-  href="https://youtu.be/3gsVVVndUKM?si=OuJ1lZK1oHOADuid"
-  target="_blank"
-  rel="noopener noreferrer"
->
+    <a
+      class="related-mv-link"
+      href="https://youtu.be/3gsVVVndUKM?si=OuJ1lZK1oHOADuid"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
 
-  <img
-    class="related-mv-thumb"
-    src="https://i.ytimg.com/vi/3gsVVVndUKM/hqdefault.jpg"
-    alt="STARGLOW WISHES"
-  >
+      <img
+        class="related-mv-thumb"
+        src="https://i.ytimg.com/vi/3gsVVVndUKM/hqdefault.jpg"
+        alt="STARGLOW WISHES"
+      >
 
-  <div class="related-mv-info">
+      <div class="related-mv-info">
 
-    <div class="related-mv-group">
-      STARGLOW
-    </div>
+        <div class="related-mv-group">
+          STARGLOW
+        </div>
 
-    <div class="related-mv-title">
-      WISHES
-    </div>
+        <div class="related-mv-title">
+          WISHES
+        </div>
 
-  </div>
+      </div>
 
-</a>
+    </a>
 
   </div>
 
 </div>
+
 
 <!-- OFFICIAL YOUTUBE -->
 
@@ -1301,35 +1295,35 @@ body::before {
 
   <div class="official-youtube-buttons">
 
-<a
-  class="official-youtube-btn"
-  href="https://youtube.com/@mazzel_official?si=mHObSHUFBMvSlKyo"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  MAZZEL
-  <span class="youtube-play">▶</span>
-</a>
+    <a
+      class="official-youtube-btn"
+      href="https://youtube.com/@mazzel_official?si=mHObSHUFBMvSlKyo"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      MAZZEL
+      <span class="youtube-play">▶</span>
+    </a>
 
-<a
-  class="official-youtube-btn"
-  href="https://youtube.com/@starglow_bmsg?si=_Q1ZAvwjMoMXDGSo"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  STARGLOW
-  <span class="youtube-play">▶</span>
-</a>
+    <a
+      class="official-youtube-btn"
+      href="https://youtube.com/@starglow_bmsg?si=_Q1ZAvwjMoMXDGSo"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      STARGLOW
+      <span class="youtube-play">▶</span>
+    </a>
 
-<a
-  class="official-youtube-btn"
-  href="https://youtube.com/@bmsg_official?si=eBkefHrERor5ncml"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  BMSG
-  <span class="youtube-play">▶</span>
-</a>
+    <a
+      class="official-youtube-btn"
+      href="https://youtube.com/@bmsg_official?si=eBkefHrERor5ncml"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      BMSG
+      <span class="youtube-play">▶</span>
+    </a>
 
   </div>
 
@@ -1339,9 +1333,11 @@ body::before {
 
 </section>
 
+
 <div class="myth-divider">
   <span class="myth-symbol">◇ ✦ ◇</span>
 </div>
+
 
 <!-- RELEASE SCHEDULE -->
 
@@ -1360,10 +1356,10 @@ body::before {
 
   <div class="released-content">
 
-<div
-  class="contents"
-  id="releasedContents"
-></div>
+    <div
+      class="contents"
+      id="releasedContents"
+    ></div>
 
   </div>
 
@@ -1371,11 +1367,13 @@ body::before {
 
 </section>
 
+
 <footer class="footer">
   非公式ファンサイト
 </footer>
 
 </div>
+
 
 <script>
 
@@ -2093,40 +2091,25 @@ function updateMvCounterDisplay(
 
   /* 急上昇 */
 
-  const trending =
-    document.getElementById(
-      "mvTrending"
-    );
+  const trending = document.getElementById("mvTrending");
+  const trendingRank = Number(video.trending_rank);
 
-  const trendingRank =
-    Number(
-      video.trending_rank
-    );
+  if (trending && Number.isFinite(trendingRank) && trendingRank > 0) {
+    trending.className = "mv-trending";
+    let icon = "📢";
 
-  if (
-    trending &&
-    Number.isFinite(
-      trendingRank
-    ) &&
-    trendingRank > 0
-  ) {
+    if (trendingRank === 1) { icon = "🥇"; trending.classList.add("rank-1"); }
+    else if (trendingRank === 2) { icon = "🥈"; trending.classList.add("rank-2"); }
+    else if (trendingRank === 3) { icon = "🥉"; trending.classList.add("rank-3"); }
+    else if (trendingRank >= 4 && trendingRank <= 10) { icon = "🏅"; trending.classList.add("rank-4-10"); }
+    else if (trendingRank === 11) { trending.classList.add("rank-11"); }
 
-    trending.textContent =
-      "📢 急上昇 " +
-      trendingRank +
-      "位";
-
-    trending.style.display =
-      "block";
-
+    trending.textContent = icon + " 急上昇 " + trendingRank + "位";
+    trending.style.display = "block";
   } else if (trending) {
-
-    trending.style.display =
-      "none";
-
-    trending.textContent =
-      "";
-
+    trending.style.display = "none";
+    trending.className = "mv-trending";
+    trending.textContent = "";
   }
 
 
