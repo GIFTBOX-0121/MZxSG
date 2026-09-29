@@ -347,25 +347,309 @@ body::before {
 }
 
 
-/* 急上昇表示用
-   Workerから trending_rank が来た時だけ表示 */
+/* ==============================
+   急上昇ランキング
+============================== */
+
 .mv-trending {
   display: none;
+  position: relative;
+  overflow: hidden;
+
   margin-top: 9px;
   padding: 7px 5px;
 
-  border: 1px solid rgba(170,35,35,.58);
   border-radius: 7px;
-
-  background: rgba(255,255,255,.60);
-  color: #a51f1f;
 
   font-size: 10px;
   font-weight: 900;
+  line-height: 1.3;
 }
 
 
-/* YouTubeボタン */
+/* 11位以下 */
+
+.mv-trending.rank-normal {
+  border: 1px solid rgba(190,25,25,.70);
+
+  background: rgba(255,255,255,.65);
+
+  color: #a51f1f;
+
+  box-shadow:
+    0 0 7px rgba(210,30,30,.16);
+}
+
+
+/* 4〜10位 */
+
+.mv-trending.rank-medal {
+  border: 2px solid #d92929;
+
+  background:
+    linear-gradient(
+      120deg,
+      #fff 0%,
+      #ffe6e6 23%,
+      #fff 43%,
+      #ffd4d4 66%,
+      #fff 100%
+    );
+
+  background-size: 230% 100%;
+
+  color: #ae1616;
+
+  box-shadow:
+    0 0 8px rgba(220,30,30,.38),
+    0 0 17px rgba(255,70,70,.22);
+
+  animation:
+    trendingShine 2.2s linear infinite,
+    trendingRedGlow 1.6s ease-in-out infinite alternate;
+}
+
+
+/* 3位 */
+
+.mv-trending.rank-bronze {
+  border: 2px solid #d69a22;
+
+  background:
+    linear-gradient(
+      120deg,
+      #fff9df 0%,
+      #ffd96b 25%,
+      #fffdf1 48%,
+      #eeb84c 72%,
+      #fff8d7 100%
+    );
+
+  background-size: 230% 100%;
+
+  color: #674200;
+
+  box-shadow:
+    0 0 9px rgba(222,164,32,.48),
+    0 0 20px rgba(255,204,65,.30);
+
+  animation:
+    trendingShine 1.9s linear infinite,
+    trendingBronzeGlow 1.35s ease-in-out infinite alternate;
+}
+
+
+/* 2位 */
+
+.mv-trending.rank-silver {
+  border: 2px solid #aeb4bc;
+
+  background:
+    linear-gradient(
+      120deg,
+      #f7f7f7 0%,
+      #cbd0d5 24%,
+      #ffffff 47%,
+      #b9bec4 70%,
+      #f7f7f7 100%
+    );
+
+  background-size: 230% 100%;
+
+  color: #3c4146;
+
+  box-shadow:
+    0 0 10px rgba(160,170,180,.55),
+    0 0 21px rgba(220,225,230,.48);
+
+  animation:
+    trendingShine 1.6s linear infinite,
+    trendingSilverGlow 1.2s ease-in-out infinite alternate;
+}
+
+
+/* 1位 */
+
+.mv-trending.rank-gold {
+  border: 2px solid #d5a400;
+
+  background:
+    linear-gradient(
+      115deg,
+      #fff7c2 0%,
+      #e8bd28 18%,
+      #fffbe4 38%,
+      #ffd94d 55%,
+      #fff 67%,
+      #e5b917 83%,
+      #fff6bd 100%
+    );
+
+  background-size: 260% 100%;
+
+  color: #5c4100;
+
+  font-size: 11px;
+
+  box-shadow:
+    0 0 10px rgba(224,177,0,.65),
+    0 0 22px rgba(255,210,40,.52),
+    0 0 32px rgba(255,225,100,.30);
+
+  animation:
+    trendingShine 1.15s linear infinite,
+    trendingGoldGlow .9s ease-in-out infinite alternate;
+}
+
+
+/* キラキラ */
+
+.mv-trending.rank-medal::after,
+.mv-trending.rank-bronze::after,
+.mv-trending.rank-silver::after,
+.mv-trending.rank-gold::after {
+  content: "✦";
+  position: absolute;
+
+  top: 50%;
+  left: -25%;
+
+  transform: translateY(-50%);
+
+  color: rgba(255,255,255,.95);
+
+  font-size: 15px;
+
+  text-shadow:
+    20px -8px 0 rgba(255,255,255,.70),
+    42px 8px 0 rgba(255,255,255,.85),
+    68px -5px 0 rgba(255,255,255,.65);
+
+  pointer-events: none;
+
+  animation:
+    sparkleMove 2s linear infinite;
+}
+
+.mv-trending.rank-gold::after {
+  font-size: 18px;
+
+  animation-duration: 1.25s;
+
+  text-shadow:
+    18px -8px 0 rgba(255,255,255,.95),
+    38px 8px 0 rgba(255,255,255,.90),
+    60px -7px 0 rgba(255,255,255,.95),
+    82px 6px 0 rgba(255,255,255,.85);
+}
+
+
+@keyframes trendingShine {
+
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+
+}
+
+
+@keyframes sparkleMove {
+
+  0% {
+    left: -25%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 115%;
+    opacity: 0;
+  }
+
+}
+
+
+@keyframes trendingRedGlow {
+
+  from {
+    box-shadow:
+      0 0 6px rgba(230,30,30,.30),
+      0 0 12px rgba(255,70,70,.18);
+  }
+
+  to {
+    box-shadow:
+      0 0 11px rgba(230,30,30,.60),
+      0 0 22px rgba(255,70,70,.38);
+  }
+
+}
+
+
+@keyframes trendingBronzeGlow {
+
+  from {
+    box-shadow:
+      0 0 7px rgba(222,164,32,.35);
+  }
+
+  to {
+    box-shadow:
+      0 0 14px rgba(222,164,32,.70),
+      0 0 24px rgba(255,204,65,.40);
+  }
+
+}
+
+
+@keyframes trendingSilverGlow {
+
+  from {
+    box-shadow:
+      0 0 7px rgba(160,170,180,.38);
+  }
+
+  to {
+    box-shadow:
+      0 0 15px rgba(160,170,180,.75),
+      0 0 25px rgba(230,235,240,.60);
+  }
+
+}
+
+
+@keyframes trendingGoldGlow {
+
+  from {
+    box-shadow:
+      0 0 8px rgba(224,177,0,.48),
+      0 0 17px rgba(255,210,40,.30);
+  }
+
+  to {
+    box-shadow:
+      0 0 15px rgba(224,177,0,.90),
+      0 0 29px rgba(255,210,40,.65),
+      0 0 38px rgba(255,235,120,.38);
+  }
+
+}
+
+
+/* ==============================
+   YouTubeボタン
+============================== */
 
 .mv-release-badge {
   display: flex;
@@ -829,6 +1113,10 @@ body::before {
     font-size: 8.5px;
   }
 
+  .mv-trending.rank-gold {
+    font-size: 9px;
+  }
+
   .mv-release-badge {
     min-height: 39px;
     margin-top: 7px;
@@ -1065,8 +1353,6 @@ body::before {
         Nameless MythS
       </div>
 
-
-      <!-- 急上昇は取得できた時だけここに表示 -->
 
       <div
         class="mv-trending"
@@ -2078,6 +2364,9 @@ function resetMvCounter() {
     trending.textContent =
       "";
 
+    trending.className =
+      "mv-trending";
+
   }
 
 }
@@ -2103,7 +2392,9 @@ function updateMvCounterDisplay(
     data.video;
 
 
-  /* 急上昇 */
+  /* ==============================
+     急上昇
+  ============================== */
 
   const trending =
     document.getElementById(
@@ -2115,6 +2406,7 @@ function updateMvCounterDisplay(
       video.trending_rank
     );
 
+
   if (
     trending &&
     Number.isFinite(
@@ -2123,10 +2415,92 @@ function updateMvCounterDisplay(
     trendingRank > 0
   ) {
 
-    trending.textContent =
-      "📢 急上昇 " +
-      trendingRank +
-      "位";
+    trending.className =
+      "mv-trending";
+
+
+    /* 1位 */
+
+    if (
+      trendingRank === 1
+    ) {
+
+      trending.textContent =
+        "🥇 急上昇 1位 ✦";
+
+      trending.classList.add(
+        "rank-gold"
+      );
+
+    }
+
+
+    /* 2位 */
+
+    else if (
+      trendingRank === 2
+    ) {
+
+      trending.textContent =
+        "🥈 急上昇 2位 ✦";
+
+      trending.classList.add(
+        "rank-silver"
+      );
+
+    }
+
+
+    /* 3位 */
+
+    else if (
+      trendingRank === 3
+    ) {
+
+      trending.textContent =
+        "🥉 急上昇 3位 ✦";
+
+      trending.classList.add(
+        "rank-bronze"
+      );
+
+    }
+
+
+    /* 4〜10位 */
+
+    else if (
+      trendingRank >= 4 &&
+      trendingRank <= 10
+    ) {
+
+      trending.textContent =
+        "🏅 急上昇 " +
+        trendingRank +
+        "位 ✦";
+
+      trending.classList.add(
+        "rank-medal"
+      );
+
+    }
+
+
+    /* 11位以下 */
+
+    else {
+
+      trending.textContent =
+        "📢 急上昇 " +
+        trendingRank +
+        "位";
+
+      trending.classList.add(
+        "rank-normal"
+      );
+
+    }
+
 
     trending.style.display =
       "block";
@@ -2139,10 +2513,15 @@ function updateMvCounterDisplay(
     trending.textContent =
       "";
 
+    trending.className =
+      "mv-trending";
+
   }
 
 
-  /* 再生回数 / 高評価 */
+  /* ==============================
+     再生回数 / 高評価
+  ============================== */
 
   document.getElementById(
     "mvViews"
@@ -2159,7 +2538,9 @@ function updateMvCounterDisplay(
     );
 
 
-  /* 1時間比 */
+  /* ==============================
+     1時間比
+  ============================== */
 
   document.getElementById(
     "mvViewsHourly"
@@ -2180,7 +2561,9 @@ function updateMvCounterDisplay(
       : "—";
 
 
-  /* トータル */
+  /* ==============================
+     トータル
+  ============================== */
 
   document.getElementById(
     "mvViewsTotal"
@@ -2207,7 +2590,9 @@ function updateMvCounterDisplay(
     );
 
 
-  /* 前日比 */
+  /* ==============================
+     前日比
+  ============================== */
 
   document.getElementById(
     "mvViewsDailyComparison"
@@ -2228,7 +2613,9 @@ function updateMvCounterDisplay(
       : "—";
 
 
-  /* 前日増加 */
+  /* ==============================
+     前日増加
+  ============================== */
 
   if (
     video.previous_day
@@ -2260,7 +2647,9 @@ function updateMvCounterDisplay(
   }
 
 
-  /* 目標 */
+  /* ==============================
+     目標
+  ============================== */
 
   const goal =
     video.goal;
@@ -2281,8 +2670,8 @@ function updateMvCounterDisplay(
 
 
     /*
-      進捗率は累計ではなく、
-      現在のキリ番区間で計算
+      現在のキリ番区間だけで
+      進捗率を計算
     */
 
     const percent =
@@ -2313,7 +2702,9 @@ function updateMvCounterDisplay(
   }
 
 
-  /* 6時間ペース */
+  /* ==============================
+     6時間ペース
+  ============================== */
 
   const paceElement =
     document.getElementById(
